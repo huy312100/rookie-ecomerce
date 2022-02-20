@@ -33,11 +33,17 @@
     <None Remove="Data\EF\" />
     <None Remove="Models\" />
     <None Remove="Models\Enums\" />
+    <None Remove="Models\Enums\Order\" />
+    <None Remove="Models\Enums\User\" />
+    <None Remove="Data\Design\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Data\EF\" />
     <Folder Include="Models\" />
     <Folder Include="Models\Enums\" />
+    <Folder Include="Models\Enums\Order\" />
+    <Folder Include="Models\Enums\User\" />
+    <Folder Include="Data\Design\" />
   </ItemGroup>
 </Project>
