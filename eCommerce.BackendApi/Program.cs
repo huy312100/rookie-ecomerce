@@ -1,9 +1,15 @@
 ﻿using eCommerce.BackendApi.Data.EF;
+using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
+using eCommerce.BackendApi.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Add dependency injection
+builder.Services.AddTransient<IProductService, ProductService>();
+
 
 // Add services to the container.
 
@@ -28,8 +34,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-
 
 app.UseHttpsRedirection();
 

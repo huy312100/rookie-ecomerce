@@ -37,6 +37,8 @@
     <None Remove="Models\Enums\User\" />
     <None Remove="Data\Design\" />
     <None Remove="NuGet.CommandLine" />
+    <None Remove="Interfaces\" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -46,5 +48,7 @@
     <Folder Include="Models\Enums\Order\" />
     <Folder Include="Models\Enums\User\" />
     <Folder Include="Data\Design\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>
