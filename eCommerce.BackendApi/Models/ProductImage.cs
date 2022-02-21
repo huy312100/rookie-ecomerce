@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using eCommerce.BackendApi.Data.Models;
 
 namespace eCommerce.BackendApi.Models
 {

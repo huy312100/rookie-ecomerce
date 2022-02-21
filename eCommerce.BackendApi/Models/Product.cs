@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using eCommerce.BackendApi.Models;
 
-namespace eCommerce.BackendApi.Data.Models
+namespace eCommerce.BackendApi.Models
 {
 	[Table("Product")]
 	public class Product

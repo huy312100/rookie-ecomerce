@@ -1,10 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using eCommerce.BackendApi.Models;
 using eCommerce.BackendApi.Models.Enums.Order;
 
-namespace eCommerce.BackendApi.Data.Models
+namespace eCommerce.BackendApi.Models
 {
 	[Table("Order")]
 	public class Order

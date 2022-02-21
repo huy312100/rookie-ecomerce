@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace eCommerce.BackendApi.Data.Models
+namespace eCommerce.BackendApi.Models
 {
     [Table("Category")]
 	public class Category

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using eCommerce.BackendApi.Models;
 using eCommerce.BackendApi.Models.Enums.User;
 using Microsoft.AspNetCore.Identity;
 
-namespace eCommerce.BackendApi.Data.Models
+namespace eCommerce.BackendApi.Models
 {
-	public class User : IdentityRole<Guid>
+	public class User : IdentityUser<Guid>
 	{
 		[PersonalData]
 		public string FirstName { get; set; }
