@@ -13,18 +13,19 @@ namespace eCommerce.BackendApi.Controllers
     {
         private readonly IProductService _prodService;
 
-        [HttpGet("all")]
+        public ProductController(IProductService prodService)
+        {
+            _prodService = prodService;
+        }
+
+        [HttpGet("product/all")]
         public async Task<IActionResult> GetAllProducts()
         {
             var prod = await _prodService.GetAllProducts();
             return Ok(prod);
         }
 
-        // GET: /<controller>/
-        public IActionResult Index()
-        {
-            return View();
-        }
+       
     }
 }
 

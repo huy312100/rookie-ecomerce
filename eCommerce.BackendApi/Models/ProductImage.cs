@@ -11,12 +11,13 @@ namespace eCommerce.BackendApi.Models
 		public int Id { get; set; }
 		[Required]
 		public bool IsThumbnail { get; set; }
+		[Required]
+		public string ImageUrl { get; set; }
 
+		//Foreign
 		public int ProductId { get; set; }
 		public Product Product { get; set; }
 
-		public int ImageId { get; set; }
-		public Image Image { get; set; }
 	}
 }
 

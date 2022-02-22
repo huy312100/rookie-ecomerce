@@ -20,7 +20,7 @@ namespace eCommerce.BackendApi.Models
         //Foreign
         public Category? Parent { get; set; }
 
-        public List<Product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
             = new List<Product>();
 
     }

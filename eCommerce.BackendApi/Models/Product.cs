@@ -22,7 +22,6 @@ namespace eCommerce.BackendApi.Models
 		public int CategoryId { get; set; }
 		public Category Category { get; set; }
 
-		public ICollection<Image> Images { get; set; }
 		public List<ProductImage> ProductImages { get; set; }
 
 		public List<Rating> Ratings { get; set; }
