@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eCommerce.BackendApi.Models
 {
-	[Table("Rating")]
+	[Table("Ratings")]
 	public class Rating
 	{
 		[Key]
@@ -14,13 +14,13 @@ namespace eCommerce.BackendApi.Models
 		[StringLength(300)]
 		public string? Comment { get; set; }
 		public DateTime? CreatedDate { get; set; }
+		public int ProductId { get; set; }
+		public Guid UserId { get; set; }
 
 		//Forign key
-		public int ProductId { get; set; }
-		public Product Product { get; set; }
+		public virtual Product Product { get; set; }
 
-		public Guid UserId { get; set; }
-		public User User { get; set; }
+		public virtual User User { get; set; }
 
 	}
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eCommerce.BackendApi.Models
 {
-	[Table("ProductImage")]
+	[Table("ProductImages")]
 	public class ProductImage
 	{
 		[Key]
@@ -13,10 +13,10 @@ namespace eCommerce.BackendApi.Models
 		public bool IsThumbnail { get; set; }
 		[Required]
 		public string ImageUrl { get; set; }
+		public int ProductId { get; set; }
 
 		//Foreign
-		public int ProductId { get; set; }
-		public Product Product { get; set; }
+		public virtual Product Product { get; set; }
 
 	}
 }

@@ -13,12 +13,52 @@ namespace eCommerce.BackendApi.Data.EF
 
 		protected override void OnModelCreating(ModelBuilder builder)
         {
-			builder.Entity<IdentityUserClaim<Guid>>().ToTable("UserClaims");
-			builder.Entity<IdentityUserRole<Guid>>().ToTable("UserRoles").HasKey(x => new { x.UserId, x.RoleId });
-			builder.Entity<IdentityUserLogin<Guid>>().ToTable("UserLogins").HasKey(x => x.UserId);
+			base.OnModelCreating(builder);
+			//Using Fluent Api to create relationship
+			builder.Entity<Category>().HasOne(prop => prop.Parent)
+				.WithOne()
+				.HasForeignKey<Category>(prop => prop.ParentId);
 
+			builder.Entity<Order>().HasOne(prop => prop.User)
+				.WithMany(prop => prop.Orders)
+				.HasForeignKey(prop => prop.UserId);
+
+			builder.Entity<OrderDetail>().HasOne(prop => prop.Order)
+				.WithMany(prop => prop.OrderDetails)
+				.HasForeignKey(prop => prop.OrderId);
+
+			builder.Entity<OrderDetail>().HasOne(prop => prop.Product)
+				.WithMany(prop => prop.OrderDetails)
+				.HasForeignKey(prop => prop.ProductId);
+
+			builder.Entity<Product>().HasOne(prop => prop.Category)
+				.WithMany(prop => prop.Products)
+				.HasForeignKey(prop => prop.CategoryId);
+
+			builder.Entity<ProductImage>().HasOne(prop => prop.Product)
+				.WithMany(prop => prop.ProductImages)
+				.HasForeignKey(prop => prop.ProductId);
+
+			builder.Entity<Rating>().HasOne(prop => prop.Product)
+				.WithMany(prop => prop.Ratings)
+				.HasForeignKey(prop => prop.ProductId);
+
+			builder.Entity<Rating>().HasOne(prop => prop.User)
+				.WithMany(prop => prop.Ratings)
+				.HasForeignKey(prop => prop.UserId);
+
+
+			//Change table name identity entities
+			builder.Entity<IdentityUser<Guid>>().ToTable("Users");
+			builder.Entity<IdentityUser<Guid>>().ToTable("Roles");
+			builder.Entity<IdentityUserClaim<Guid>>().ToTable("UserClaims");
+			builder.Entity<IdentityUserRole<Guid>>().ToTable("UserRoles")
+				.HasKey(x => new { x.UserId, x.RoleId }); ;
+			builder.Entity<IdentityUserLogin<Guid>>().ToTable("UserLogins")
+				.HasKey(x => x.UserId);
 			builder.Entity<IdentityRoleClaim<Guid>>().ToTable("RoleClaims");
-			builder.Entity<IdentityUserToken<Guid>>().ToTable("UserTokens").HasKey(x => x.UserId);
+			builder.Entity<IdentityUserToken<Guid>>().ToTable("UserTokens")
+				.HasKey(x => x.UserId);
 		}
 
 		public DbSet<Category> Categories { get; set; }
