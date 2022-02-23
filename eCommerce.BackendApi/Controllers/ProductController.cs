@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.ViewModels.Products;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -59,6 +60,31 @@ namespace eCommerce.BackendApi.Controllers
             return Ok(res);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct([FromForm] ProductCreateRequest req)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var productId = await _prodService.CreateProduct(req);
+            if (productId < 0)
+                return BadRequest();
+            var product = await _prodService.GetProductById(productId);
+            return CreatedAtAction(nameof(GetProductById), new { id = productId }, product);
+        }
+
+        [HttpDelete("{productId}")]
+        public async Task<IActionResult> DeleteProduct(int productId)
+        {
+            var res = await _prodService.DeleteProduct(productId);
+            if (res < 0)
+            {
+                return BadRequest();
+            }
+
+            return Ok(res);
+        }
 
     }
 }

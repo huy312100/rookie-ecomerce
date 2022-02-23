@@ -41,6 +41,8 @@
     <None Remove="Services\" />
     <None Remove="Microsoft.AspNetCore.Http" />
     <None Remove="Storage\" />
+    <None Remove="Repo\" />
+    <None Remove="Repo\file-source\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -53,6 +55,8 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="Storage\" />
+    <Folder Include="Repo\" />
+    <Folder Include="Repo\file-source\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Shared\eCommerce.Shared.csproj">

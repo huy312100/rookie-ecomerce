@@ -2,6 +2,7 @@
 using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
 using eCommerce.BackendApi.Services;
+using eCommerce.BackendApi.Storage;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Add dependency injection
 builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddTransient<IFileStorageService, FileStorageService>();
 // Add services to the container.
 
 builder.Services.AddControllers();

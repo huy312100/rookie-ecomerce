@@ -5,15 +5,19 @@ using eCommerce.BackendApi.Models;
 using Microsoft.EntityFrameworkCore;
 using eCommerce.Shared.ViewModels.Products;
 using eCommerce.Shared.ViewModels.Categories;
+using System.Net.Http.Headers;
 
 namespace eCommerce.BackendApi.Services
 {
 	public class ProductService : IProductService
 	{
 		private readonly ApplicationDbContext _dbContext;
-		public ProductService(ApplicationDbContext dbContext)
+        private readonly IFileStorageService _fileStorageService;
+        private const string FILE_SOURCE_FOLDER_NAME = "file-source";
+        public ProductService(ApplicationDbContext dbContext,IFileStorageService fileStorageService)
         {
 			_dbContext = dbContext;
+            _fileStorageService = fileStorageService;
         }
 
 		public async Task<List<ProductVM>> GetAllProducts()
@@ -58,10 +62,7 @@ namespace eCommerce.BackendApi.Services
             var images = await _dbContext.ProductImages.Where(prop => prop.ProductId == id)
                             .ToListAsync();
 
-            //var thumbnailImg = images.SingleOrDefault(prop => prop.IsThumbnail == true);
             var category = await _dbContext.Categories.FindAsync(product.CategoryId);
-
-            //var ratingCount = _dbContext.Ratings.Where(x => x.ProductId == productId).Count();
 
             var productViewModel = new ProductVM()
             {
@@ -146,33 +147,72 @@ namespace eCommerce.BackendApi.Services
             return imageViewModel;
         }
 
-        //public async Task<ProductVM> CreateProduct(ProductCreateRequest req)
-        //{
-        //    //check if category is existed or not
-        //    var categoryId = await _dbContext.Categories.FindAsync(req.CategoryId);
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            #pragma warning disable CS8602 // Dereference of a possibly null reference.
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition)
+                                    .FileName.Trim('"');
+            #pragma warning restore CS8602 // Dereference of a possibly null reference.
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await _fileStorageService.SaveFileAsync(file.OpenReadStream(), fileName);
+            return FILE_SOURCE_FOLDER_NAME + "/" + fileName;
+           
+        }
 
-        //    if(categoryId == null)
-        //    {
-        //        throw new Exception($"Cannot create product because CategoryId {cateforyId} not found");
-        //    }
+        //CUD
+        public async Task<int> CreateProduct(ProductCreateRequest req)
+        {
+            //check if category is existed or not
+            var categoryId = await _dbContext.Categories.FindAsync(req.CategoryId);
 
-        //    var product = new Product()
-        //    {
-        //        Name = req.Name,
-        //        Price=req.Price,
-        //        CreatedDate=DateTime.Now,
-        //        CategoryId=req.CategoryId
-        //    }
-        //    if(req.Image != null) {
-        //        product.ProductImages = new List<ProductImage>()
-        //        {
-        //            new ProductImage()
-        //            {
-        //                ImageUrl=;
-        //            }
-        //        }
-        //    }
-        //}
+            if (categoryId == null)
+            {
+                throw new Exception($"Cannot create product because CategoryId {req.CategoryId} not found");
+            }
+
+            var product = new Product()
+            {
+                Name = req.Name,
+                Price = req.Price,
+                CreatedDate = DateTime.Now,
+                CategoryId = req.CategoryId
+            };
+
+            if (req.Image != null)
+            {
+                product.ProductImages = new List<ProductImage>()
+                {
+                    new ProductImage()
+                    {
+                        ImageUrl= await SaveFile(req.Image),
+                        IsThumbnail=false
+                    }
+                };
+            }
+            _dbContext.Products.Add(product);
+            await _dbContext.SaveChangesAsync();
+            return product.Id;
+        }
+
+        public async Task<int> DeleteProduct(int productId)
+        {
+            var product = await _dbContext.Products.FindAsync(productId);
+
+            if(product == null)
+            {
+                throw new Exception($"Cannot delete product because ProductId not found");
+            }
+
+            var image = _dbContext.ProductImages.Where(data => data.ProductId == productId);
+
+            foreach(var item in image)
+            {
+                await _fileStorageService.DeleteFileAsync(item.ImageUrl);
+            }
+
+            _dbContext.Products.Remove(product);
+            return await _dbContext.SaveChangesAsync();
+        }
     }
 }
 

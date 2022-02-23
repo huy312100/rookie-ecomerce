@@ -13,6 +13,7 @@ namespace eCommerce.Shared.ViewModels.Products
 		public IFormFile Image { get; set; }
 		public DateTime CreatedDate { get; set; }
 		public DateTime? UpdatedDate { get; set; }
+		[Required(ErrorMessage = "Please enter category id")]
 		public int CategoryId { get; set; }
 	}
 }
