@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eCommerce.BackendApi.Models
 {
-    [Table("Category")]
 	public class Category
 	{
         [Key]
@@ -18,10 +17,9 @@ namespace eCommerce.BackendApi.Models
         public int? ParentId { get; set; }
 
         //Foreign
-        public Category? Parent { get; set; }
+        public virtual Category? Parent { get; set; }
 
         public virtual List<Product> Products { get; set; }
-            = new List<Product>();
 
     }
 }

@@ -9,8 +9,12 @@ namespace eCommerce.BackendApi.Models
 	public class User : IdentityUser<Guid>
 	{
 		[PersonalData]
+		[Required]
+		[MaxLength(128)]
 		public string FirstName { get; set; }
 		[PersonalData]
+		[Required]
+		[MaxLength(128)]
 		public string LastName { get; set; }
 		[PersonalData]
 		public DateTime? Dob { get; set; }
@@ -20,9 +24,8 @@ namespace eCommerce.BackendApi.Models
 		public string? ImageUrl { get; set; }
 
 		//Foreign
-		public List<Rating> Ratings { get; set; }
-
-		public List<Order> Orders { get; set; }
+		public virtual List<Rating> Ratings { get; set; }
+		public virtual List<Order> Orders { get; set; }
 	}
 }
 
