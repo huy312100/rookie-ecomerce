@@ -5,7 +5,6 @@ using eCommerce.BackendApi.Models;
 
 namespace eCommerce.BackendApi.Models
 {
-	[Table("Product")]
 	public class Product
 	{
 		[Key]
@@ -20,15 +19,13 @@ namespace eCommerce.BackendApi.Models
 
 		//Foreign 
 		public int CategoryId { get; set; }
-		public Category Category { get; set; }
+		public virtual Category Category { get; set; }
 
-		public ICollection<Image> Images { get; set; }
-		public List<ProductImage> ProductImages { get; set; }
+		public virtual List<ProductImage> ProductImages { get; set; }
 
-		public List<Rating> Ratings { get; set; }
+		public virtual List<Rating> Ratings { get; set; }
 
-		public ICollection<Order> Orders { get; set; }
-		public List<OrderDetail> OrderDetails { get; set; }
+		public virtual List<OrderDetail> OrderDetails { get; set; }
 	}
 }
 
