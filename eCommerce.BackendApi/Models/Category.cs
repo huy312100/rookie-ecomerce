@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eCommerce.BackendApi.Models
 {
-    [Table("Categories")]
 	public class Category
 	{
         [Key]

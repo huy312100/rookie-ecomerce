@@ -5,7 +5,6 @@ using eCommerce.BackendApi.Models;
 
 namespace eCommerce.BackendApi.Models
 {
-	[Table("Products")]
 	public class Product
 	{
 		[Key]

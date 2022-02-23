@@ -14,6 +14,15 @@ namespace eCommerce.BackendApi.Data.EF
 		protected override void OnModelCreating(ModelBuilder builder)
         {
 			base.OnModelCreating(builder);
+
+			//Add table name
+			builder.Entity<Category>().ToTable("Categories");
+			builder.Entity<Order>().ToTable("Orders");
+			builder.Entity<OrderDetail>().ToTable("OrderDetails");
+			builder.Entity<Product>().ToTable("Products");
+			builder.Entity<ProductImage>().ToTable("ProductImages");
+			builder.Entity<Rating>().ToTable("Ratings");
+
 			//Using Fluent Api to create relationship
 			builder.Entity<Category>().HasOne(prop => prop.Parent)
 				.WithOne()
@@ -49,16 +58,11 @@ namespace eCommerce.BackendApi.Data.EF
 
 
 			//Change table name identity entities
-			builder.Entity<IdentityUser<Guid>>().ToTable("Users");
-			builder.Entity<IdentityUser<Guid>>().ToTable("Roles");
 			builder.Entity<IdentityUserClaim<Guid>>().ToTable("UserClaims");
-			builder.Entity<IdentityUserRole<Guid>>().ToTable("UserRoles")
-				.HasKey(x => new { x.UserId, x.RoleId }); ;
-			builder.Entity<IdentityUserLogin<Guid>>().ToTable("UserLogins")
-				.HasKey(x => x.UserId);
+			builder.Entity<IdentityUserRole<Guid>>().ToTable("UserRoles");
+			builder.Entity<IdentityUserLogin<Guid>>().ToTable("UserLogins");
 			builder.Entity<IdentityRoleClaim<Guid>>().ToTable("RoleClaims");
-			builder.Entity<IdentityUserToken<Guid>>().ToTable("UserTokens")
-				.HasKey(x => x.UserId);
+			builder.Entity<IdentityUserToken<Guid>>().ToTable("UserTokens");
 		}
 
 		public DbSet<Category> Categories { get; set; }

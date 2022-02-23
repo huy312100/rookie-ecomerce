@@ -5,7 +5,6 @@ using eCommerce.BackendApi.Models.Enums.Order;
 
 namespace eCommerce.BackendApi.Models
 {
-	[Table("Orders")]
 	public class Order
 	{
 		[Key]
@@ -21,7 +20,6 @@ namespace eCommerce.BackendApi.Models
 
 		//Foreign
 		public virtual List<OrderDetail> OrderDetails { get; set; }
-
 		public virtual User User { get; set; }
 	}
 }
