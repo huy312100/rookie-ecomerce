@@ -39,6 +39,8 @@
     <None Remove="NuGet.CommandLine" />
     <None Remove="Interfaces\" />
     <None Remove="Services\" />
+    <None Remove="Microsoft.AspNetCore.Http" />
+    <None Remove="Storage\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -50,6 +52,7 @@
     <Folder Include="Data\Design\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
+    <Folder Include="Storage\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Shared\eCommerce.Shared.csproj">

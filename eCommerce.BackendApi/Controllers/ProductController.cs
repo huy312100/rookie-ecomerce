@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eCommerce.BackendApi.Controllers
 {
+    [Route("api/[controller]")]
     public class ProductController : Controller
     {
         private readonly IProductService _prodService;
@@ -18,14 +19,47 @@ namespace eCommerce.BackendApi.Controllers
             _prodService = prodService;
         }
 
-        [HttpGet("product/all")]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllProducts()
         {
-            var prod = await _prodService.GetAllProducts();
-            return Ok(prod);
+            var res = await _prodService.GetAllProducts();
+            return Ok(res);
         }
 
-       
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProductById(int id)
+        {
+            var res = await _prodService.GetProductById(id);
+            if(res == null)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
+        [HttpGet("image/{id}")]
+        public async Task<IActionResult> GetImageById(int id)
+        {
+            var res = await _prodService.GetImageById(id);
+            if (res == null)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
+        [HttpGet("category/{categoryId}")]
+        public async Task<IActionResult> GetProductByCategory(int categoryId)
+        {
+            var res = await _prodService.GetProductByCategory(categoryId);
+            if (res == null)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
+
     }
 }
 

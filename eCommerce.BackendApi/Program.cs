@@ -9,8 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Add dependency injection
 builder.Services.AddTransient<IProductService, ProductService>();
-
-
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -25,6 +23,7 @@ builder.Services.AddIdentity<User, Role>()
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
 var app = builder.Build();
 

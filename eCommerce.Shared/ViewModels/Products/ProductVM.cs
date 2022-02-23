@@ -10,7 +10,7 @@ namespace eCommerce.Shared.ViewModels.Products
 		public double Price { get; set; }
 		public DateTime CreatedDate { get; set; }
 		public DateTime? UpdatedDate { get; set; }
-		public CategoryVM? Category { get; set; }
+		public CategoryVM Category { get; set; }
 		public List<ProductImageVM>? Images { get; set; }
 	}
 }
