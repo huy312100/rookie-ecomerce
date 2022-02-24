@@ -12,7 +12,6 @@ namespace eCommerce.BackendApi.Services
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IFileStorageService _fileStorageService;
-        private const string FILE_SOURCE_FOLDER_NAME = "file-source";
 
         public CategoryService(ApplicationDbContext dbContext, IFileStorageService fileStorageService)
         {
@@ -72,7 +71,7 @@ namespace eCommerce.BackendApi.Services
 
             if (req.Image != null)
             {
-                category.ImageUrl = await SaveFile(req.Image);
+                category.ImageUrl = await _fileStorageService.SaveFile(req.Image);
             }
             _dbContext.Categories.Add(category);
             await _dbContext.SaveChangesAsync();
@@ -94,16 +93,7 @@ namespace eCommerce.BackendApi.Services
             return await _dbContext.SaveChangesAsync();
         }
 
-        private async Task<string> SaveFile(IFormFile file)
-        {
-            #pragma warning disable CS8602 // Dereference of a possibly null reference.
-            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition)
-                                    .FileName.Trim('"');
-            #pragma warning restore CS8602 // Dereference of a possibly null reference.
-            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
-            await _fileStorageService.SaveFileAsync(file.OpenReadStream(), fileName);
-            return FILE_SOURCE_FOLDER_NAME + "/" + fileName;
-        }
+        
 
 
     }

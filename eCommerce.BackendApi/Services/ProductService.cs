@@ -13,7 +13,7 @@ namespace eCommerce.BackendApi.Services
 	{
 		private readonly ApplicationDbContext _dbContext;
         private readonly IFileStorageService _fileStorageService;
-        private const string FILE_SOURCE_FOLDER_NAME = "file-source";
+
         public ProductService(ApplicationDbContext dbContext,IFileStorageService fileStorageService)
         {
 			_dbContext = dbContext;
@@ -147,18 +147,6 @@ namespace eCommerce.BackendApi.Services
             return imageViewModel;
         }
 
-        private async Task<string> SaveFile(IFormFile file)
-        {
-            #pragma warning disable CS8602 // Dereference of a possibly null reference.
-            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition)
-                                    .FileName.Trim('"');
-            #pragma warning restore CS8602 // Dereference of a possibly null reference.
-            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
-            await _fileStorageService.SaveFileAsync(file.OpenReadStream(), fileName);
-            return FILE_SOURCE_FOLDER_NAME + "/" + fileName;
-           
-        }
-
         //CUD
         public async Task<int> CreateProduct(ProductCreateRequest req)
         {
@@ -184,7 +172,7 @@ namespace eCommerce.BackendApi.Services
                 {
                     new ProductImage()
                     {
-                        ImageUrl= await SaveFile(req.Image),
+                        ImageUrl= await _fileStorageService.SaveFile(req.Image),
                         IsThumbnail=false
                     }
                 };

@@ -1,23 +1,29 @@
 ﻿using System;
 using Microsoft.AspNetCore.Hosting; 
 using eCommerce.BackendApi.Interfaces;
+using System.Net.Http.Headers;
 
 namespace eCommerce.BackendApi.Storage
 {
 	public class FileStorageService : IFileStorageService
 	{
 		private readonly string _fileSourceFolder;
-		private const string FILE_SOURCE_FOLDER_NAME = "Repo/file-source";
+		private const string FILE_SOURCE_FOLDER_NAME = "file-source";
 
 		public FileStorageService(IWebHostEnvironment webHostEnvironment)
 		{
-            _fileSourceFolder = Path.Combine(webHostEnvironment.ContentRootPath, FILE_SOURCE_FOLDER_NAME);
+            _fileSourceFolder = Path.Combine(webHostEnvironment.ContentRootPath, "Repo/"+FILE_SOURCE_FOLDER_NAME);
 		}
 
-        public string GetFileUrl(string fileName)
+        public async Task<string> SaveFile(IFormFile file)
         {
-            return $"Repo/{FILE_SOURCE_FOLDER_NAME}/{fileName}";
-    
+            #pragma warning disable CS8602 // Dereference of a possibly null reference.
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition)
+                                    .FileName.Trim('"');
+            #pragma warning restore CS8602 // Dereference of a possibly null reference.
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await SaveFileAsync(file.OpenReadStream(), fileName);
+            return FILE_SOURCE_FOLDER_NAME + "/" + fileName;
         }
 
         public async Task SaveFileAsync(Stream mediaBinaryStream, string fileName)
