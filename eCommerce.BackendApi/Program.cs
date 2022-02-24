@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 //Add dependency injection
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IFileStorageService, FileStorageService>();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
 // Add services to the container.
 
 builder.Services.AddControllers();
