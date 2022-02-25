@@ -32,6 +32,7 @@ namespace eCommerce.BackendApi.Services
 			{
 				Id = res.p.Id,
 				Name = res.p.Name,
+                Description=res.p.Description,
 				Price = res.p.Price,
 				CreatedDate = res.p.CreatedDate,
 				UpdatedDate = res.p.UpdatedDate,
@@ -69,6 +70,7 @@ namespace eCommerce.BackendApi.Services
                 Id = product.Id,
                 Name = product.Name,
                 Price = product.Price,
+                Description=product.Description,
                 CreatedDate = product.CreatedDate,
                 UpdatedDate = product.UpdatedDate,
                 Category = new CategoryVM
@@ -104,6 +106,7 @@ namespace eCommerce.BackendApi.Services
             {
                 Id = res.p.Id,
                 Name = res.p.Name,
+                Description=res.p.Description,
                 Price = res.p.Price,
                 CreatedDate = res.p.CreatedDate,
                 UpdatedDate = res.p.UpdatedDate,
@@ -161,6 +164,7 @@ namespace eCommerce.BackendApi.Services
             var product = new Product()
             {
                 Name = req.Name,
+                Description=req.Description,
                 Price = req.Price,
                 CreatedDate = DateTime.Now,
                 CategoryId = req.CategoryId

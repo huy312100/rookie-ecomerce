@@ -11,7 +11,6 @@ namespace eCommerce.BackendApi.Models
         [Required]
         public string Name { get; set; }
         public string? Description { get; set; }
-        [Required]
         public string? ImageUrl { get; set; }
         public DateTime? CreatedDate { get; set; }
         public int? ParentId { get; set; }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net.Http.Headers;
-using eCommerce.BackendApi.Data.EF;
+﻿using eCommerce.BackendApi.Data.EF;
 using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
 using eCommerce.Shared.ViewModels.Categories;
@@ -78,22 +76,49 @@ namespace eCommerce.BackendApi.Services
             return category.Id;
         }
 
-        public async Task<int> DeleteCategory(int categoryId)
+        public async Task<int> DeleteCategory(CategoryDeleteRequest req)
         {
-            var category = await _dbContext.Categories.FindAsync(categoryId);
+            var category = await _dbContext.Categories.FindAsync(req.Id);
 
             if (category == null)
             {
-                throw new Exception($"Cannot delete category because CategoryID not found");
+                throw new Exception($"Cannot delete category because CategoryID {req.Id} is null not found");
             }
 
-            await _fileStorageService.DeleteFileAsync(category.ImageUrl);
+            if(category.ImageUrl != null)
+            {
+                await _fileStorageService.DeleteFileAsync(category.ImageUrl);
+            }
 
             _dbContext.Categories.Remove(category);
             return await _dbContext.SaveChangesAsync();
         }
 
-        
+        public async Task<int> UpdateCategory(CategoryUpdateRequest req)
+        {
+            var category = await _dbContext.Categories.FindAsync(req.Id);
+
+            if(category == null)
+            {
+                throw new Exception($"Cannot update category because CategoryID {req.Id} is null or not found");
+            }
+
+            if(req.Name != null)
+            {
+                category.Name = req.Name;
+            }
+
+            category.Description = req.Description;
+            category.ParentId = req.ParentId;
+
+            if(req.Image != null)
+            {
+                category.ImageUrl = await _fileStorageService.SaveFile(req.Image);
+            }
+
+            _dbContext.Categories.Update(category);
+            return await _dbContext.SaveChangesAsync();
+        }
 
 
     }
