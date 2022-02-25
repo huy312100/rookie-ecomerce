@@ -58,6 +58,8 @@ namespace eCommerce.BackendApi.Data.EF
 
 
 			//Change table name identity entities
+			builder.Entity<IdentityUser>().ToTable("Users");
+			builder.Entity<IdentityUser>().ToTable("Roles");
 			builder.Entity<IdentityUserClaim<Guid>>().ToTable("UserClaims");
 			builder.Entity<IdentityUserRole<Guid>>().ToTable("UserRoles");
 			builder.Entity<IdentityUserLogin<Guid>>().ToTable("UserLogins");

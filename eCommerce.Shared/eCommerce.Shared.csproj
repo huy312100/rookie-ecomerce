@@ -11,11 +11,13 @@
     <None Remove="ViewModels\Product\" />
     <None Remove="ViewModels\Categories\" />
     <None Remove="Microsoft.AspNetCore.Http" />
+    <None Remove="ViewModels\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Products\" />
     <Folder Include="ViewModels\Categories\" />
+    <Folder Include="ViewModels\Users\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
