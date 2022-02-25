@@ -58,10 +58,26 @@ namespace eCommerce.BackendApi.Controllers
             return CreatedAtAction(nameof(GetCategoryById), new { id = categoryId }, category);
         }
 
-        [HttpDelete("{categoryId}")]
-        public async Task<IActionResult> DeleteCategory(int categoryId)
+        [HttpPut]
+        public async Task<IActionResult> UpdateCategory([FromForm] CategoryUpdateRequest req)
         {
-            var res = await _categoryService.DeleteCategory(categoryId);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var res = await _categoryService.UpdateCategory(req);
+            if (res < 0)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCategory([FromForm] CategoryDeleteRequest req)
+        {
+            var res = await _categoryService.DeleteCategory(req);
             if (res < 0)
             {
                 return BadRequest();

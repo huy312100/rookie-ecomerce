@@ -13,7 +13,7 @@ namespace eCommerce.BackendApi.Services
 	{
 		private readonly ApplicationDbContext _dbContext;
         private readonly IFileStorageService _fileStorageService;
-        private const string FILE_SOURCE_FOLDER_NAME = "file-source";
+
         public ProductService(ApplicationDbContext dbContext,IFileStorageService fileStorageService)
         {
 			_dbContext = dbContext;
@@ -32,6 +32,7 @@ namespace eCommerce.BackendApi.Services
 			{
 				Id = res.p.Id,
 				Name = res.p.Name,
+                Description=res.p.Description,
 				Price = res.p.Price,
 				CreatedDate = res.p.CreatedDate,
 				UpdatedDate = res.p.UpdatedDate,
@@ -69,6 +70,7 @@ namespace eCommerce.BackendApi.Services
                 Id = product.Id,
                 Name = product.Name,
                 Price = product.Price,
+                Description=product.Description,
                 CreatedDate = product.CreatedDate,
                 UpdatedDate = product.UpdatedDate,
                 Category = new CategoryVM
@@ -104,6 +106,7 @@ namespace eCommerce.BackendApi.Services
             {
                 Id = res.p.Id,
                 Name = res.p.Name,
+                Description=res.p.Description,
                 Price = res.p.Price,
                 CreatedDate = res.p.CreatedDate,
                 UpdatedDate = res.p.UpdatedDate,
@@ -147,18 +150,6 @@ namespace eCommerce.BackendApi.Services
             return imageViewModel;
         }
 
-        private async Task<string> SaveFile(IFormFile file)
-        {
-            #pragma warning disable CS8602 // Dereference of a possibly null reference.
-            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition)
-                                    .FileName.Trim('"');
-            #pragma warning restore CS8602 // Dereference of a possibly null reference.
-            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
-            await _fileStorageService.SaveFileAsync(file.OpenReadStream(), fileName);
-            return FILE_SOURCE_FOLDER_NAME + "/" + fileName;
-           
-        }
-
         //CUD
         public async Task<int> CreateProduct(ProductCreateRequest req)
         {
@@ -173,6 +164,7 @@ namespace eCommerce.BackendApi.Services
             var product = new Product()
             {
                 Name = req.Name,
+                Description=req.Description,
                 Price = req.Price,
                 CreatedDate = DateTime.Now,
                 CategoryId = req.CategoryId
@@ -184,7 +176,7 @@ namespace eCommerce.BackendApi.Services
                 {
                     new ProductImage()
                     {
-                        ImageUrl= await SaveFile(req.Image),
+                        ImageUrl= await _fileStorageService.SaveFile(req.Image),
                         IsThumbnail=false
                     }
                 };

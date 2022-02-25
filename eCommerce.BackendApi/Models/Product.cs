@@ -13,6 +13,7 @@ namespace eCommerce.BackendApi.Models
 		public string Name { get; set; }
 		[Required]
 		public double Price { get; set; }
+		public string? Description { get; set; }
 		[Required]
 		public DateTime CreatedDate { get; set; }
 		public DateTime? UpdatedDate { get; set; }

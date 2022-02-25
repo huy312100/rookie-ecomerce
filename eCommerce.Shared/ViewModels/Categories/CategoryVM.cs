@@ -1,5 +1,4 @@
-﻿using System;
-namespace eCommerce.Shared.ViewModels.Categories
+﻿namespace eCommerce.Shared.ViewModels.Categories
 {
 	public class CategoryVM
 	{
