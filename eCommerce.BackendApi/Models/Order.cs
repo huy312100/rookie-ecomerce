@@ -5,7 +5,6 @@ using eCommerce.BackendApi.Models.Enums.Order;
 
 namespace eCommerce.BackendApi.Models
 {
-	[Table("Order")]
 	public class Order
 	{
 		[Key]
@@ -17,13 +16,11 @@ namespace eCommerce.BackendApi.Models
 		public OrderStatus Status { get; set; }
 		[Required]
 		public OrderPayment PaymentType { get; set; }
+		public Guid UserId { get; set; }
 
 		//Foreign
-		public ICollection<Product> Products { get; set; }
-		public List<OrderDetail> OrderDetails { get; set; }
-
-		public Guid UserId { get; set; }
-		public User User { get; set; }
+		public virtual List<OrderDetail> OrderDetails { get; set; }
+		public virtual User User { get; set; }
 	}
 }
 
