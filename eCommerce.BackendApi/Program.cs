@@ -15,6 +15,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IFileStorageService, FileStorageService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<UserManager<User>,UserManager<User>>();
+builder.Services.AddTransient<SignInManager<User>, SignInManager<User>>();
+builder.Services.AddTransient<RoleManager<Role>, RoleManager<Role>>();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
