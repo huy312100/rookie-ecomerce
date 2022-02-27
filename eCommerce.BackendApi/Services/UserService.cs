@@ -17,14 +17,17 @@ namespace eCommerce.BackendApi.Services
 		private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<Role> _roleManager;
         private readonly IConfiguration _config;
+        private readonly IFileStorageService _fileStorageService;
 
-		public UserService(UserManager<User> userManager,SignInManager<User> signInManager,
-            RoleManager<Role> roleManager,IConfiguration config)
+        public UserService(UserManager<User> userManager,SignInManager<User> signInManager,
+            RoleManager<Role> roleManager,IConfiguration config,
+            IFileStorageService fileStorageService)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
             _roleManager = roleManager;
             _config = config;
+            _fileStorageService = fileStorageService;
 		}
 
         public async Task<string?> Login(LoginRequest req)
@@ -88,6 +91,11 @@ namespace eCommerce.BackendApi.Services
                 UserName = req.Username,
             };
 
+            if(req.ImageUrl != null)
+            {
+                user.ImageUrl = await _fileStorageService.SaveFile(req.ImageUrl);
+            }
+
             var res = await _userManager.CreateAsync(user, req.Password);
             if (res.Succeeded)
             {
@@ -104,6 +112,7 @@ namespace eCommerce.BackendApi.Services
                 FirstName = res.FirstName,
                 LastName = res.LastName,
                 //Gender = res.Gender,
+                ImageUrl = res.ImageUrl,
                 Dob = res.Dob,
                 PhoneNumber = res.PhoneNumber,
                 Username = res.UserName,
@@ -126,12 +135,75 @@ namespace eCommerce.BackendApi.Services
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Dob = user.Dob,
+                ImageUrl= user.ImageUrl,
                 PhoneNumber = user.PhoneNumber,
                 Username = user.UserName,
                 Email = user.Email
             };
 
             return userViewModel;
+        }
+
+        public async Task<bool> UpdateUser(UserUpdateRequest req)
+        {
+            if (await _userManager.Users.AnyAsync(prop => prop.Email == req.Email && prop.Id != req.Id))
+            {
+                throw new Exception("Email existed");
+            }
+            var user = await _userManager.FindByIdAsync(req.Id.ToString());
+
+            if(user == null)
+            {
+                throw new Exception($"Cannot update user because CategoryID {req.Id} is null or not found");
+            }
+
+            if (req.FirstName != null)
+            {
+                user.FirstName = req.FirstName;
+            }
+            if(req.LastName != null)
+            {
+                user.LastName = req.LastName;
+            }
+          
+            user.Dob = req.Dob;
+            user.Email = req.Email;
+            user.PhoneNumber = req.PhoneNumber;
+
+            if(req.ImageUrl != null)
+            {
+                user.ImageUrl = await _fileStorageService.SaveFile(req.ImageUrl);
+            }
+
+            var res = await _userManager.UpdateAsync(user);
+            if (res.Succeeded)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public async Task<bool> DeleteUser(UserDeleteRequest req)
+        {
+            var user = await _userManager.FindByIdAsync(req.Id.ToString());
+
+            if (user == null)
+            {
+                throw new Exception("User not existed");
+            }
+
+            if (user.ImageUrl != null)
+            {
+                await _fileStorageService.DeleteFileAsync(user.ImageUrl);
+            }
+
+            var res = await _userManager.DeleteAsync(user);
+
+            if (res.Succeeded)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

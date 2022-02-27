@@ -68,6 +68,28 @@ namespace eCommerce.BackendApi.Controllers
             }
             return Ok(res);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateUser(UserUpdateRequest req)
+        {
+            var res = await _userService.UpdateUser(req);
+            if (!res)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUser(UserDeleteRequest req)
+        {
+            var res = await _userService.DeleteUser(req);
+            if (!res)
+            {
+                return BadRequest("Delete user unsuccessful");
+            }
+            return Ok(res);
+        }
     }
 }
 
