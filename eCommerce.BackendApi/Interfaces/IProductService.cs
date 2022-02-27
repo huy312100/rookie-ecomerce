@@ -1,5 +1,4 @@
-﻿using System;
-using eCommerce.Shared.ViewModels.Products;
+﻿using eCommerce.Shared.ViewModels.Products;
 
 namespace eCommerce.BackendApi.Interfaces
 {
