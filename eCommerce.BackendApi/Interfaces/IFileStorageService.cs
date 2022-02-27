@@ -1,5 +1,4 @@
-﻿using System;
-namespace eCommerce.BackendApi.Interfaces
+﻿namespace eCommerce.BackendApi.Interfaces
 {
 	public interface IFileStorageService
 	{

@@ -1,5 +1,4 @@
-﻿using System;
-using eCommerce.Shared.ViewModels.Categories;
+﻿using eCommerce.Shared.ViewModels.Categories;
 
 namespace eCommerce.BackendApi.Interfaces
 {

@@ -34,7 +34,6 @@ namespace eCommerce.BackendApi.Services
             return data;
         }
 
-
         public async Task<CategoryVM> GetCategoryById(int id)
         {
             var categories = await _dbContext.Categories.FindAsync(id);
