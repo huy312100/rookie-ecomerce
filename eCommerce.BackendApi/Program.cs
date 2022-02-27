@@ -73,7 +73,10 @@ string issuer = builder.Configuration.GetValue<string>("JwtAuthentication:Issuer
 string signingKey = builder.Configuration.GetValue<string>("JwtAuthentication:Key");
 byte[] signingKeyBytes = System.Text.Encoding.UTF8.GetBytes(signingKey);
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder.Services.AddAuthentication(options => {
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
 .AddJwtBearer(options =>
 {
     options.RequireHttpsMetadata = false;
@@ -99,6 +102,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseAuthentication();
 
 app.UseHttpsRedirection();
 

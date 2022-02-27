@@ -6,6 +6,7 @@ using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
 using eCommerce.Shared.ViewModels.Users;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace eCommerce.BackendApi.Services
@@ -93,6 +94,44 @@ namespace eCommerce.BackendApi.Services
                 return true;
             }
             return false;
+        }
+
+        public async Task<List<UserVM>> GetAllUser()
+        {
+            var data = await _userManager.Users.Select(res => new UserVM()
+            {
+                Id = res.Id,
+                FirstName = res.FirstName,
+                LastName = res.LastName,
+                //Gender = res.Gender,
+                Dob = res.Dob,
+                PhoneNumber = res.PhoneNumber,
+                Username = res.UserName,
+                Email = res.Email
+            }).ToListAsync();
+            return data;
+        }
+
+        public async Task<UserVM> GetUserById(Guid id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if(user == null)
+            {
+                throw new Exception("User is not existed");
+            }
+
+            var userViewModel = new UserVM()
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Dob = user.Dob,
+                PhoneNumber = user.PhoneNumber,
+                Username = user.UserName,
+                Email = user.Email
+            };
+
+            return userViewModel;
         }
     }
 }

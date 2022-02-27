@@ -6,6 +6,8 @@ namespace eCommerce.BackendApi.Interfaces
 	{
 		Task<bool> Register(RegisterRequest req);
 		Task<string?> Login(LoginRequest req);
+		Task<List<UserVM>> GetAllUser();
+		Task<UserVM> GetUserById(Guid id);
 	}
 }
 
