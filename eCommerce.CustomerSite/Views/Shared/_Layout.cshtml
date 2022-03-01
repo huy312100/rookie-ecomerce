@@ -4,47 +4,195 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - eCommerce.CustomerSite</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/eCommerce.CustomerSite.styles.css" asp-append-version="true" />
+
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+    <link href='font-awesome/css/font-awesome.css' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- main css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+    <!-- Slider -->
+    <!--<link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/owl.transitions.css" rel="stylesheet">-->
+
+    <!-- lightbox -->
+    <!--<link href="css/prettyPhoto.css" rel="stylesheet">-->
+
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">eCommerce.CustomerSite</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    @*<header>
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">eCommerce.CustomerSite</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
             </div>
-        </nav>
-    </header>
+
+            <footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2022 - eCommerce.CustomerSite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)*@
+
+
+
+    <div id="wrapper" class="homepage-1">
+        <!-- wrapper -->
+        <div id="header">
+            <!-- header -->
+            <div class="top">
+                <!-- top -->
+                <div class="container">
+                    <ul class="top-support">
+                        <li><i class="fa fa-phone-square"></i><span>(+800) 123 456 7890</span></li>
+                        <li><a href=""><i class="fa fa-envelope-square"></i><span>info@bootstrapmart.com</span></a></li>
+                    </ul>
+                    <div class="top-control">
+                        <a href="">Register</a><span>•</span><a href="">Login</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="top-offers show-mobile">
+                        <div class="alert alert-warning alert-dismissible fade in offers" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button>
+                            Free Shipping <a href="">on All Orders Over</a> $75!
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- top -->
+        </div>
+    </div>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - eCommerce.CustomerSite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <div id="footer">
+        <!-- Footer -->
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-widget">
+                            <div class="wid-title">Welcome to</div>
+                            <img src="images/logo-white.png" alt="ft-logo">
+                            <p>
+                                Believe isCommerce WordPress theme. It has<br />everything you need to start selling today! <a href="">Get this theme on ThemeForest!</a>
+                            </p>
+                            <ul class="ft-soc clearfix">
+                                <li><a href=""><i class="fa fa-facebook-square"></i></a></li>
+                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fa fa-google-plus-square"></i></a></li>
+                                <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                                <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="quick-links">
+                            <div class="wid-title">Quick Links</div>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#">About US</a></li>
+                                <li><a href="contact.html">contact US</a></li>
+                                <li><a href="#">deals</a></li>
+                                <li><a href="blog.html">blog</a></li>
+                                <li><a href="#">help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="term">
+                            <div class="wid-title">&nbsp;</div>
+                            <p>
+                                <a href="#">Tearms & condition</a><br />
+                                <a href="#">FAQs</a><br />
+                                <a href="#">Privacy Policy</a><br />
+                                <a href="#">Legal Desclaimer</a><br />
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="quick-links">
+                            <div class="wid-title">My Account</div>
+
+                            <ul>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Personal Information</a></li>
+                                <li><a href="#">Addresses</a></li>
+                                <li><a href="#">Orders</a></li>
+                                <li><a href="#">Wishlist</a></li>
+                                <li><a href="#">track order</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="subscribe">
+                            <div class="wid-title">Subscribe for OFFERS & UPDATES</div>
+                            <p>
+                                Enter your email and we'll send you a coupon
+                                with 10% off your next order. Add any text here
+                            </p>
+                            <form>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                </div>
+                                <button type="submit" class="btn btn-default">Subscribe Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+        <div class="footer-text">
+            <div class="container">
+                @*<p>Copyright 2018. Designed and Developed by <a href="https://bootstrapmart.com/">BootstrapMart </a> &amp; Distributed by <a href="https://themewagon.com/">ThemeWagon</a></p>*@
+            </div>
+        </div>
+    </div><!-- Footer -->
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
 
