@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\images\" />
+    <Content Remove="wwwroot\css\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
 </Project>

@@ -4,28 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - eCommerce.CustomerSite</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/eCommerce.CustomerSite.styles.css" asp-append-version="true" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
     <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/simple-line-icons.css">
-
-
-
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/linearicons.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/simple-line-icons.css">
+    <!--- owl carousel CSS-->
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
 <body>
@@ -68,9 +78,9 @@
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end">
                             <div class="lng_dropdown">
                                 <select name="countries" class="custome_select">
-                                    <option value='en' data-image="assets/images/eng.png" data-title="English">English</option>
-                                    <option value='fn' data-image="assets/images/fn.png" data-title="France">France</option>
-                                    <option value='us' data-image="assets/images/us.png" data-title="United States">United States</option>
+                                    <option value='en' data-image="images/eng.png" data-title="English">English</option>
+                                    <option value='fn' data-image="images/fn.png" data-title="France">France</option>
+                                    <option value='us' data-image="images/us.png" data-title="United States">United States</option>
                                 </select>
                             </div>
                             <div class="ms-3">
@@ -91,24 +101,24 @@
             <div class="container">
                 <div class="nav_block">
                     <a class="navbar-brand" href="index.html">
-                        <img class="logo_light" src="assets/images/logo_light.png" alt="logo">
-                        <img class="logo_dark" src="assets/images/logo_dark.png" alt="logo">
+                        <img class="logo_light" src="" alt="logo">
+                        <img class="logo_dark" src="" alt="logo">
                     </a>
                     <div class="product_search_form radius_input search_form_btn">
                         <form>
                             <div class="input-group">
                                 @*<div class="input-group-prepend">
-                                    <div class="custom_select">
-                                        <select class="first_null not_chosen">
-                                            <option value="">All Category</option>
-                                            <option value="Dresses">Dresses</option>
-                                            <option value="Shirt-Tops">Shirt &amp; Tops</option>
-                                            <option value="T-Shirt">T-Shirt</option>
-                                            <option value="Pents">Pents</option>
-                                            <option value="Jeans">Jeans</option>
-                                        </select>
-                                    </div>
-                                </div>*@
+                                        <div class="custom_select">
+                                            <select class="first_null not_chosen">
+                                                <option value="">All Category</option>
+                                                <option value="Dresses">Dresses</option>
+                                                <option value="Shirt-Tops">Shirt &amp; Tops</option>
+                                                <option value="T-Shirt">T-Shirt</option>
+                                                <option value="Pents">Pents</option>
+                                                <option value="Jeans">Jeans</option>
+                                            </select>
+                                        </div>
+                                    </div>*@
                                 <input class="form-control" placeholder="Search Product..." required="" type="text">
                                 <button type="submit" class="search_btn3">Search</button>
                             </div>
@@ -158,7 +168,7 @@
                             </button>
                             <div id="navCatContent" class="navbar collapse">
                                 <ul>
-                                   
+
                                     <li class="dropdown dropdown-mega-menu">
                                         <a class="dropdown-item nav-link dropdown-toggler" href="#" data-bs-toggle="dropdown"><i class="flaticon-tv"></i> <span>Computer</span></a>
                                         <div class="dropdown-menu">
@@ -293,11 +303,11 @@
                     <div class="col-lg-9 col-md-8 col-sm-6 col-9">
                         <nav class="navbar navbar-expand-lg">
                             @*<button class="navbar-toggler side_navbar_toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSidetoggle" aria-expanded="false">
-                                <span class="ion-android-menu"></span>
-                            </button>
-                            <div class="pr_search_icon">
-                                <a href="javascript:void(0);" class="nav-link pr_search_trigger"><i class="linearicons-magnifier"></i></a>
-                            </div>*@
+                                    <span class="ion-android-menu"></span>
+                                </button>
+                                <div class="pr_search_icon">
+                                    <a href="javascript:void(0);" class="nav-link pr_search_trigger"><i class="linearicons-magnifier"></i></a>
+                                </div>*@
                             <div class="collapse navbar-collapse mobile_side_menu" id="navbarSidetoggle">
                                 <ul class="navbar-nav">
                                     <li class="dropdown">
@@ -507,7 +517,7 @@
                                     <li><a class="nav-link nav_item" href="contact.html">Contact Us</a></li>
                                 </ul>
                             </div>
-                            
+
                         </nav>
                     </div>
                 </div>
@@ -517,14 +527,13 @@
 
     </header>
 
+    @*Start Content*@
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+    @*End Content*@
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-   
-
+    @*Start Footer*@
     <footer class="footer_dark">
         <div class="footer_top">
             <div class="container">
@@ -596,17 +605,42 @@
             </div>
         </div>
 
-        <div class="bottom_footer border-top-tran">
-            <div class="col-lg-4 copyright-bottom">
-                <p class="mb-lg-0 text-center">© 2022 All Rights Reserved by <a href="https://github.com/huy312100">Nguyen Ngoc Duc Huy</a></p>
-            </div>
-        </div>
-
     </footer>
-    <!-- END FOOTER -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @*End Footer*@
+
+    <!-- Latest jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- popper min js -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Latest compiled and minified Bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- owl-carousel min js  -->
+    <script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
+    <!-- magnific-popup min js  -->
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <!-- waypoints min js  -->
+    <script src="assets/js/waypoints.min.js"></script>
+    <!-- parallax js  -->
+    <script src="assets/js/parallax.js"></script>
+    <!-- countdown js  -->
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <!-- imagesloaded js -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- isotope min js -->
+    <script src="assets/js/isotope.min.js"></script>
+    <!-- jquery.dd.min js -->
+    <script src="assets/js/jquery.dd.min.js"></script>
+    <!-- slick js -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- elevatezoom js -->
+    <script src="assets/js/jquery.elevatezoom.js"></script>
+    <!-- scripts js -->
+    <script src="assets/js/scripts.js"></script>
+
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>*@
     @await RenderSectionAsync("Scripts", required: false)
 
 
