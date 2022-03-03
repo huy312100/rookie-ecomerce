@@ -22,6 +22,13 @@ namespace eCommerce.CustomerSite.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Category()
+        {
+            return View();
+        }
+
     }
 }
 
