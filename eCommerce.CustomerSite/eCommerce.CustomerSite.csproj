@@ -11,9 +11,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
-    <Folder Include="Views\Authen\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Views\Authen\" />
+    <None Remove="Views\Product\" />
   </ItemGroup>
 </Project>
