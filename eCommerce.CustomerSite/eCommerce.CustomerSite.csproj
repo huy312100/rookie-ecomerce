@@ -12,8 +12,10 @@
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
     <Folder Include="Views\Product\" />
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Product\" />
+    <None Remove="Views\Cart\" />
   </ItemGroup>
 </Project>
