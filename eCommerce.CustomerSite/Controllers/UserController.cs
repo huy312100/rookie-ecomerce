@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eCommerce.CustomerSite.Controllers
 {
-    public class AuthenController : Controller
+    public class UserController : Controller
     {
-        private readonly ILogger<AuthenController> _logger;
+        private readonly ILogger<UserController> _logger;
 
-        public AuthenController(ILogger<AuthenController> logger)
+        public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
         }
@@ -20,6 +20,12 @@ namespace eCommerce.CustomerSite.Controllers
         // GET: /<controller>/
         [HttpGet]
         public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Register()
         {
             return View();
         }
