@@ -71,7 +71,8 @@
 
                     <div class="col-lg-6 col-md-8">
                         <div class="header_topbar_info">
-                            <span>You are not logged in ? <a href ="@Url.Action("login","user")" class="widget widget_links">Login now</a>
+                            <span>
+                                You are not logged in ? <a href="@Url.Action("login","user")" class="widget widget_links">Login now</a>
                             </span>
                         </div>
                     </div>
@@ -309,20 +310,6 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">Pages</a>
-                                        <div class="dropdown-menu">
-                                            <ul>
-                                                <li><a class="dropdown-item nav-link nav_item" href="about.html">About Us</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="contact.html">Contact Us</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="faq.html">Faq</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="404.html">404 Error Page</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="login.html">Login</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="signup.html">Register</a></li>
-                                                <li><a class="dropdown-item nav-link nav_item" href="term-condition.html">Terms and Conditions</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
                                     <li class="dropdown dropdown-mega-menu">
                                         <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">Products</a>
                                         <div class="dropdown-menu">
@@ -500,7 +487,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a class="nav-link nav_item" href="contact.html">Contact Us</a></li>
+                                    <li><a class="nav-link nav_item" href="@Url.Action("contact","home")">Contact Us</a></li>
                                 </ul>
                             </div>
 
@@ -530,7 +517,7 @@
                             <ul class="contact_info contact_info_light">
                                 <li>
                                     <i class="ti-location-pin"></i>
-                                    <p>110 Nguyen Dinh Chinh, Phu Nhuan, TP HCM, VN</p>
+                                    <p>110 Nguyen Dinh Chinh, Phu Nhuan, HCM, VN</p>
                                 </li>
                                 <li>
                                     <i class="ti-email"></i>
@@ -559,7 +546,7 @@
                                 <li><a href="#">FAQ</a></li>
                                 <li><a href="#">Location</a></li>
                                 <li><a href="#">Affiliates</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a asp-controller="home" asp-action="contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -620,15 +607,14 @@
     <script src="~/assets/js/slick.min.js"></script>
     <!-- elevatezoom js -->
     <script src="~/assets/js/jquery.elevatezoom.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
     <!-- scripts js -->
     <script src="~/assets/js/scripts.js"></script>
 
 
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>*@
-    @await RenderSectionAsync("Scripts", required: false)
-
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>*@
 
 
 </body>
