@@ -12,7 +12,7 @@ namespace eCommerce.BackendApi.Models
 		public int Quantity { get; set; }
 		public int OrderId { get; set; }
 		public int ProductId { get; set; }
-
+		public double SubTotal { get; set; }
 		//Foreign
 		public virtual Order Order { get; set; }
 
