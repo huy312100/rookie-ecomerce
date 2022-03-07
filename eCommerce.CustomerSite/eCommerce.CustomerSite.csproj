@@ -13,7 +13,7 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Cart\" />
-    <Folder Include="Views\NotFound\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Product\" />

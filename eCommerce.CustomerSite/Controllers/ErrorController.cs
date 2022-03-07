@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace eCommerce.CustomerSite.Controllers
 {
-    public class NotFoundController : Controller
+    public class ErrorController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult Index()
+        [Route("/404")]
+        public IActionResult PageNotFound()
         {
             return View();
         }
