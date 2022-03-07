@@ -1,5 +1,5 @@
 ﻿using System;
-namespace eCommerce.BackendApi.Models.Enums.User
+namespace eCommerce.Shared.Enums.User
 {
 	public enum UserGender
 	{

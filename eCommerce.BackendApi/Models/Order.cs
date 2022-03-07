@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using eCommerce.BackendApi.Models.Enums.Order;
+using eCommerce.Shared.Enums.Order;
 
 namespace eCommerce.BackendApi.Models
 {
