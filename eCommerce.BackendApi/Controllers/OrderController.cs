@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace eCommerce.BackendApi.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;

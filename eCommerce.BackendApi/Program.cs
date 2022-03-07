@@ -1,4 +1,5 @@
-﻿using eCommerce.BackendApi.Data.EF;
+﻿using System.Text.Json.Serialization;
+using eCommerce.BackendApi.Data.EF;
 using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
 using eCommerce.BackendApi.Services;
@@ -22,8 +23,12 @@ builder.Services.AddTransient<SignInManager<User>, SignInManager<User>>();
 builder.Services.AddTransient<RoleManager<Role>, RoleManager<Role>>();
 
 // Add services to the container.
+builder.Services.AddControllers().AddJsonOptions(x =>
+{
+    // serialize enums as strings in api responses (e.g. Role)
+    x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
-builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
