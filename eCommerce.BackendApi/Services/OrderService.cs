@@ -1,6 +1,7 @@
 ﻿using System;
 using eCommerce.BackendApi.Data.EF;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.BackendApi.Models;
 using eCommerce.Shared.ViewModels.Categories;
 using eCommerce.Shared.ViewModels.Orders;
 using eCommerce.Shared.ViewModels.Products;
@@ -34,12 +35,15 @@ namespace eCommerce.BackendApi.Services
 			{
 				Id= res.o.Id,
 				OrderDate = res.o.OrderDate,
+				Address=res.o.Address,
+				Email=res.o.Email,
+				PhoneNumber=res.o.PhoneNumber,
 				Note =res.o.Note,
 				Status=res.o.Status,
 				PaymentType=res.o.PaymentType,
+				Total=res.o.Total,
 				OrderDetails = query.Select(dataOrderDetail => new OrderDetailVM()
 				{
-					Id = dataOrderDetail.od.Id,
 					Quantity = dataOrderDetail.od.Quantity,
 					Product = new ProductVM()
 					{
@@ -60,9 +64,55 @@ namespace eCommerce.BackendApi.Services
 					}
 				}).ToList()
             }).ToListAsync();
-
 			return data;
         }
+
+		public async Task<int> CheckoutOrder(CheckoutRequest req)
+        {
+			double totalPrice = 0;
+            var orderDetails = new List<OrderDetail>();
+			foreach (var item in req.OrderDetails)
+			{
+				orderDetails.Add(new OrderDetail()
+				{
+					ProductId = item.Product.Id,
+					Quantity = item.Quantity,
+					SubTotal = item.Product.Price * item.Quantity,
+				});
+				totalPrice += item.Product.Price * item.Quantity;
+			}
+
+			var order = new Order()
+			{
+				UserId = req.UserId,
+				OrderDate = DateTime.Now,
+				Address = req.Address,
+				Email = req.Email,
+				PhoneNumber = req.PhoneNumber,
+				Note = req.Note,
+				Status = 0,
+				PaymentType = req.PaymentType,
+				OrderDetails = orderDetails,
+				Total = totalPrice
+			};
+
+			_dbContext.Orders.Add(order);
+			await _dbContext.SaveChangesAsync();
+			int orderId = order.Id;
+
+			foreach (var detail in orderDetails)
+            {
+				var itemOrderDetails = new OrderDetail()
+				{
+					ProductId = detail.Product.Id,
+					Quantity = detail.Quantity,
+					SubTotal = detail.Product.Price * detail.Quantity,
+					OrderId = orderId
+				};
+				_dbContext.OrderDetails.Add(itemOrderDetails);
+			}
+			return await _dbContext.SaveChangesAsync();
+		}
 	}
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.ViewModels.Orders;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace eCommerce.BackendApi.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;
@@ -26,6 +27,17 @@ namespace eCommerce.BackendApi.Controllers
         {
             var res = await _orderService.GetAllOrders(userId);
             if (res == null)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CheckoutOrder([FromForm] CheckoutRequest req)
+        {
+            var res = await _orderService.CheckoutOrder(req);
+            if (res < 0)
             {
                 return BadRequest();
             }
