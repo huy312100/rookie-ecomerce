@@ -73,13 +73,23 @@ namespace eCommerce.BackendApi.Services
             var orderDetails = new List<OrderDetail>();
 			foreach (var item in req.OrderDetails)
 			{
+				var query = await _dbContext.Products
+								.Where(prop => prop.Id == item.ProductId)
+								.Select(data => new { data.Price }).FirstOrDefaultAsync();
+
+				//var subTotal = (from p in _dbContext.Products
+				//                where p.Id == item.ProductId
+				//                select new { p.Price }).ToString();
+
+				var subTotal = query.Price * item.Quantity;
+
 				orderDetails.Add(new OrderDetail()
 				{
-					ProductId = item.Product.Id,
+					ProductId = item.ProductId,
 					Quantity = item.Quantity,
-					SubTotal = item.Product.Price * item.Quantity,
-				});
-				totalPrice += item.Product.Price * item.Quantity;
+					SubTotal = subTotal
+				}) ;
+				totalPrice += subTotal;
 			}
 
 			var order = new Order()
@@ -97,20 +107,20 @@ namespace eCommerce.BackendApi.Services
 			};
 
 			_dbContext.Orders.Add(order);
-			await _dbContext.SaveChangesAsync();
-			int orderId = order.Id;
+			//await _dbContext.SaveChangesAsync();
+			//int orderId = order.Id;
 
-			foreach (var detail in orderDetails)
-            {
-				var itemOrderDetails = new OrderDetail()
-				{
-					ProductId = detail.Product.Id,
-					Quantity = detail.Quantity,
-					SubTotal = detail.Product.Price * detail.Quantity,
-					OrderId = orderId
-				};
-				_dbContext.OrderDetails.Add(itemOrderDetails);
-			}
+			//foreach (var detail in orderDetails.ToList())
+   //         {
+			//	var itemOrderDetails = new OrderDetail()
+			//	{
+			//		ProductId = detail.ProductId,
+			//		Quantity = detail.Quantity,
+			//		SubTotal = detail.SubTotal,
+			//		OrderId = orderId
+			//	};
+			//	_dbContext.OrderDetails.Add(itemOrderDetails);
+			//}
 			return await _dbContext.SaveChangesAsync();
 		}
 	}

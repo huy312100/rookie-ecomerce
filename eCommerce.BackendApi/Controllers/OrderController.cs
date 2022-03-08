@@ -34,7 +34,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CheckoutOrder([FromForm] CheckoutRequest req)
+        public async Task<IActionResult> CheckoutOrder([FromBody] CheckoutRequest req)
         {
             var res = await _orderService.CheckoutOrder(req);
             if (res < 0)

@@ -17,7 +17,7 @@ namespace eCommerce.Shared.ViewModels.Orders
 		public string? Note { get; set; }
 		[Required(ErrorMessage = "Please choose payment type")]
 		public OrderPayment PaymentType { get; set; }
-		public List<OrderDetailVM> OrderDetails { get; set; }
+		public List<OrderDetailCreateRequest> OrderDetails { set; get; } = new List<OrderDetailCreateRequest>();
 	}
 }
 
