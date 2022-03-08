@@ -1,10 +1,10 @@
 ﻿using System;
-namespace eCommerce.BackendApi.Models.Enums.Order
+namespace eCommerce.Shared.Enums.Order
 {
 	public enum OrderStatus
 	{
-		InProgress,
 		Confirmed,
+		InProgress,
 		Delivering,
 		Success,
 		Canceled

@@ -11,8 +11,9 @@ namespace eCommerce.BackendApi.Models
 		[Required]
 		public int Quantity { get; set; }
 		public int OrderId { get; set; }
+		[Required(ErrorMessage ="Please enter product id")]
 		public int ProductId { get; set; }
-
+		public double SubTotal { get; set; }
 		//Foreign
 		public virtual Order Order { get; set; }
 
