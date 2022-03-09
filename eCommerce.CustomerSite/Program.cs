@@ -1,7 +1,15 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using eCommerce.CustomerSite.Interfaces;
+using eCommerce.CustomerSite.Services;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpClient();
+
 builder.Services.AddControllersWithViews();
+
+//Add DI
+builder.Services.AddTransient<IUserService, UserService>();
 
 var app = builder.Build();
 

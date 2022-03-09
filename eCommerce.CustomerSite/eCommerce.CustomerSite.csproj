@@ -14,10 +14,23 @@
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Cart\" />
     <Folder Include="Views\Error\" />
+    <Folder Include="Services\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Product\" />
     <None Remove="Views\Cart\" />
     <None Remove="Views\NotFound\" />
+    <None Remove="Services\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eCommerce.Shared\eCommerce.Shared.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 </Project>

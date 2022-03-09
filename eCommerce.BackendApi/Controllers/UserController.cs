@@ -23,7 +23,7 @@ namespace eCommerce.BackendApi.Controllers
 
         [HttpPost("login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromForm] LoginRequest req)
+        public async Task<IActionResult> Login([FromBody] LoginRequest req)
         {
             var token = await _userService.Login(req);
 
