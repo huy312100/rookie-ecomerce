@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using eCommerce.BackendApi.Data.EF;
 using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
@@ -10,7 +11,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
+//var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: MyAllowSpecificOrigins,
+//                      builder =>
+//                      {
+//                          builder.WithOrigins("http://localhost:7273");
+//                      });
+//});
 
 //Add dependency injection
 builder.Services.AddTransient<IProductService, ProductService>();
@@ -18,16 +30,20 @@ builder.Services.AddTransient<IFileStorageService, FileStorageService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
+builder.Services.AddTransient<IRatingService, RatingService>();
 builder.Services.AddTransient<UserManager<User>,UserManager<User>>();
 builder.Services.AddTransient<SignInManager<User>, SignInManager<User>>();
 builder.Services.AddTransient<RoleManager<Role>, RoleManager<Role>>();
 
-// Add services to the container.
+//Add services to the container.
 builder.Services.AddControllers().AddJsonOptions(x =>
 {
     // serialize enums as strings in api responses (e.g. Role)
     x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
+
+builder.Services.AddControllers().AddNewtonsoftJson(
+    x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
@@ -108,6 +124,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//app.UseCors(MyAllowSpecificOrigins);
+
 app.UseAuthentication();
 
 app.UseHttpsRedirection();
