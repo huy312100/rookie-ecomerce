@@ -7,6 +7,7 @@ using eCommerce.CustomerSite.Interfaces;
 using eCommerce.Shared.ViewModels.Users;
 using System.Text;
 using System.Security.Claims;
+using eCommerce.Shared.Constants;
 
 namespace eCommerce.CustomerSite.Services
 {
@@ -28,7 +29,7 @@ namespace eCommerce.CustomerSite.Services
 
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri(_configuration["BaseAddress"]);
-            var response = await client.PostAsync("api/user/login",httpContent);
+            var response = await client.PostAsync($"{EndpointConstants.USER_LOGIN}",httpContent);
             var token = await response.Content.ReadAsStringAsync();
 
             return token;
@@ -43,7 +44,7 @@ namespace eCommerce.CustomerSite.Services
             var json = JsonConvert.SerializeObject(registerRequest);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync("/api/user/register", httpContent);
+            var response = await client.PostAsync($"{EndpointConstants.USER_REGISTER}", httpContent);
             var result = await response.Content.ReadAsStringAsync();
             return response.IsSuccessStatusCode;
         }

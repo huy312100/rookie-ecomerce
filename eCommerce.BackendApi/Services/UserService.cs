@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Text;
 using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
+using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -120,6 +121,38 @@ namespace eCommerce.BackendApi.Services
             }).ToListAsync();
             return data;
         }
+
+        public async Task<PagedResult<UserVM>> GetUsersPaging(PagingRequest req)
+        {
+            var query = _userManager.Users;
+
+            //3. Paging
+            int totalRow = await query.CountAsync();
+
+            var data = await query.Skip((req.PageIndex - 1) * req.PageSize)
+                .Take(req.PageSize)
+                .Select(prop => new UserVM()
+                {
+                    Id=prop.Id,
+                    FirstName = prop.FirstName,
+                    LastName = prop.LastName,
+                    Dob=prop.Dob,
+                    PhoneNumber=prop.PhoneNumber,
+                    Username=prop.UserName,
+                    Email=prop.Email
+                }).ToListAsync();
+
+            //4. Select and projection
+            var pagedResult = new PagedResult<UserVM>()
+            {
+                TotalRecords = totalRow,
+                PageIndex = req.PageIndex,
+                PageSize = req.PageSize,
+                Items = data
+            };
+            return pagedResult;
+        }
+
 
         public async Task<UserVM> GetUserById(Guid id)
         {

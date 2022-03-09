@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using eCommerce.Shared.ViewModels.Products;
 using eCommerce.Shared.ViewModels.Categories;
 using System.Net.Http.Headers;
+using eCommerce.Shared.ViewModels.Common;
 
 namespace eCommerce.BackendApi.Services
 {
@@ -20,36 +21,80 @@ namespace eCommerce.BackendApi.Services
             _fileStorageService = fileStorageService;
         }
 
-		public async Task<List<ProductVM>> GetAllProducts()
-		{
-			var query = from p in _dbContext.Products
-						join c in _dbContext.Categories
-						on p.CategoryId equals c.Id
-						join pi in _dbContext.ProductImages
-						on p.Id equals pi.ProductId
-						select new { p, c, pi };
-			var data = await query.Select(res => new ProductVM()
-			{
-				Id = res.p.Id,
-				Name = res.p.Name,
-                Description=res.p.Description,
-				Price = res.p.Price,
-				CreatedDate = res.p.CreatedDate,
-				UpdatedDate = res.p.UpdatedDate,
-				Category = new CategoryVM
-				{
-					Id = res.c.Id,
-					Name = res.c.Name
-				},
-                Images = query.Select(data => new ProductImageVM()
+		//public async Task<List<ProductVM>> GetAllProducts()
+		//{
+		//	var query = from p in _dbContext.Products
+		//				join c in _dbContext.Categories
+		//				on p.CategoryId equals c.Id
+		//				join pi in _dbContext.ProductImages
+		//				on p.Id equals pi.ProductId
+		//				select new { p, c, pi };
+		//	var data = await query.Select(res => new ProductVM()
+		//	{
+		//		Id = res.p.Id,
+		//		Name = res.p.Name,
+  //              Description=res.p.Description,
+		//		Price = res.p.Price,
+		//		CreatedDate = res.p.CreatedDate,
+		//		UpdatedDate = res.p.UpdatedDate,
+		//		Category = new CategoryVM
+		//		{
+		//			Id = res.c.Id,
+		//			Name = res.c.Name
+		//		},
+  //              Images = query.Select(data => new ProductImageVM()
+  //              {
+  //                  Id = data.pi.Id,
+  //                  ImageUrl = data.pi.ImageUrl,
+  //                  IsThumbnail = data.pi.IsThumbnail
+  //              }).ToList()
+  //          }).ToListAsync();
+		//	return data;
+		//}
+
+        public async Task<PagedResult<ProductVM>> GetProductPaging(PagingRequest req)
+        {
+            //1. join product and category
+            var query = from p in _dbContext.Products
+                        join c in _dbContext.Categories
+                        on p.CategoryId equals c.Id
+                        join pi in _dbContext.ProductImages
+                        on p.Id equals pi.ProductId
+                        select new { p, c, pi };
+
+            //3.Paging
+            int totalRow = await query.CountAsync();
+            var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
+                .Select(prop => new ProductVM()
                 {
-                    Id = data.pi.Id,
-                    ImageUrl = data.pi.ImageUrl,
-                    IsThumbnail = data.pi.IsThumbnail
-                }).ToList()
-            }).ToListAsync();
-			return data;
-		}
+                    Id = prop.p.Id,
+                    Name = prop.p.Name,
+                    Description = prop.p.Description,
+                    Price = prop.p.Price,
+                    CreatedDate = prop.p.CreatedDate,
+                    UpdatedDate = prop.p.UpdatedDate,
+                    Category = new CategoryVM
+                    {
+                        Id = prop.c.Id,
+                        Name = prop.c.Name
+                    },
+                    Images = query.Select(data => new ProductImageVM()
+                    {
+                        Id = data.pi.Id,
+                        ImageUrl = data.pi.ImageUrl,
+                        IsThumbnail = data.pi.IsThumbnail
+                    }).ToList()
+                }).ToListAsync();
+
+            var pagedResult = new PagedResult<ProductVM>()
+            {
+                TotalRecords = totalRow,
+                PageSize = req.PageSize,
+                PageIndex = req.PageIndex,
+                Items = data
+            };
+            return pagedResult;
+        }
 
         public async Task<ProductVM> GetProductById(int id)
         {
@@ -92,7 +137,7 @@ namespace eCommerce.BackendApi.Services
             return productViewModel;
         }
 
-        public async Task<List<ProductVM>> GetProductByCategory(int categoryId)
+        public async Task<List<ProductVM>> GetProductByCategory(PagingRequest req,int categoryId)
         {
             var query = from p in _dbContext.Products
                         join c in _dbContext.Categories
@@ -102,8 +147,11 @@ namespace eCommerce.BackendApi.Services
                         where c.Id == categoryId
                         select new { p, c, pi };
 
-            var data = await query.Select(res => new ProductVM()
-            {
+            int totalRow = await query.CountAsync();
+
+            var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
+            .Select(res => new ProductVM()
+             {
                 Id = res.p.Id,
                 Name = res.p.Name,
                 Description=res.p.Description,

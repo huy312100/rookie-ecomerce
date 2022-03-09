@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Orders;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,9 +24,9 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpGet("{userId}")]
-        public async Task<IActionResult> GetAllOrders(Guid userId)
+        public async Task<IActionResult> GetOrdersPaging(PagingRequest req,Guid userId)
         {
-            var res = await _orderService.GetAllOrders(userId);
+            var res = await _orderService.GetOrdersPaging(req,userId);
             if (res == null)
             {
                 return BadRequest();

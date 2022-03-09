@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -67,6 +68,13 @@ namespace eCommerce.BackendApi.Controllers
                 return BadRequest();
             }
             return Ok(res);
+        }
+
+        [HttpPost("paging")]
+        public async Task<IActionResult> GetUsersPaging([FromQuery] PagingRequest request)
+        {
+            var users = await _userService.GetUsersPaging(request);
+            return Ok(users);
         }
 
         [HttpPut]

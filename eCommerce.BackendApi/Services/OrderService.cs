@@ -3,6 +3,7 @@ using eCommerce.BackendApi.Data.EF;
 using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
 using eCommerce.Shared.ViewModels.Categories;
+using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Orders;
 using eCommerce.Shared.ViewModels.Products;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ namespace eCommerce.BackendApi.Services
 			_dbContext = dbContext;
 		}
 
-		public async Task<List<OrderVM>> GetAllOrders(Guid userId)
+		public async Task<List<OrderVM>> GetOrdersPaging(PagingRequest req,Guid userId)
         {
 			var query = from o in _dbContext.Orders
 						join od in _dbContext.OrderDetails
@@ -31,7 +32,10 @@ namespace eCommerce.BackendApi.Services
 						where o.UserId == userId
 						select new { o, od, p, c, pi };
 
-			var data = await query.Select(res => new OrderVM()
+			int totalRow = await query.CountAsync();
+
+			var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
+			.Select(res => new OrderVM()
 			{
 				Id= res.o.Id,
 				OrderDate = res.o.OrderDate,

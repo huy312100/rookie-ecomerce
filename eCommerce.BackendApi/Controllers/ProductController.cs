@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Products;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,11 +21,18 @@ namespace eCommerce.BackendApi.Controllers
             _prodService = prodService;
         }
 
-        [HttpGet("all")]
-        public async Task<IActionResult> GetAllProducts()
+        //[HttpGet("all")]
+        //public async Task<IActionResult> GetAllProducts()
+        //{
+        //    var res = await _prodService.GetAllProducts();
+        //    return Ok(res);
+        //}
+
+        [HttpGet("paging")]
+        public async Task<IActionResult> GetAllProductPaging([FromQuery] PagingRequest req)
         {
-            var res = await _prodService.GetAllProducts();
-            return Ok(res);
+            var products = await _prodService.GetProductPaging(req);
+            return Ok(products);
         }
 
         [HttpGet("{id}")]
@@ -50,9 +58,9 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpGet("category/{categoryId}")]
-        public async Task<IActionResult> GetProductByCategory(int categoryId)
+        public async Task<IActionResult> GetProductByCategory(PagingRequest req,int categoryId)
         {
-            var res = await _prodService.GetProductByCategory(categoryId);
+            var res = await _prodService.GetProductByCategory(req,categoryId);
             if (res == null)
             {
                 return BadRequest();
