@@ -8,6 +8,7 @@ namespace eCommerce.CustomerSite.Interfaces
 	{
 		Task<string> Login(LoginRequest req);
 		ClaimsPrincipal ValidateToken(string jwtToken);
+		Task<bool> RegisterUser(RegisterRequest registerRequest);
 	}
 }
 

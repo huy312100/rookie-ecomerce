@@ -35,6 +35,19 @@ namespace eCommerce.CustomerSite.Services
 
         }
 
+        public async Task<bool> RegisterUser(RegisterRequest registerRequest)
+        {
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+
+            var json = JsonConvert.SerializeObject(registerRequest);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync("/api/user/register", httpContent);
+            var result = await response.Content.ReadAsStringAsync();
+            return response.IsSuccessStatusCode;
+        }
+
 
         public ClaimsPrincipal ValidateToken(string jwtToken)
         {

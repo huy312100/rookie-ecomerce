@@ -36,7 +36,7 @@ namespace eCommerce.BackendApi.Controllers
 
         [HttpPost("register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register([FromForm] RegisterRequest req)
+        public async Task<IActionResult> Register([FromBody] RegisterRequest req)
         {
             var res = await _userService.Register(req);
 

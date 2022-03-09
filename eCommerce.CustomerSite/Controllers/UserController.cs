@@ -25,7 +25,7 @@ namespace eCommerce.CustomerSite.Controllers
 
         // GET: /<controller>/
         [HttpGet]
-        public async Task<IActionResult> Login()
+        public IActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -67,6 +67,32 @@ namespace eCommerce.CustomerSite.Controllers
         public IActionResult Register()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterRequest req)
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+            //    return View(req);
+            //}
+
+            var result = await _userService.RegisterUser(req);
+            if (!result)
+            {
+                ModelState.AddModelError("", "Register fail");
+                return View();
+            }
+
+            //var user = new LoginRequest()
+            //{
+            //    Username = req.Username,
+            //    Password = req.Password,
+            //    RememberMe=false
+            //};
+            return RedirectToAction("login", "user");
         }
     }
 }
