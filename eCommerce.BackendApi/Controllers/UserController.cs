@@ -31,7 +31,7 @@ namespace eCommerce.BackendApi.Controllers
             {
                 return BadRequest("Username or password is incorrect");
             }
-            return Ok(new { token = token });
+            return Ok(token);
         }
 
         [HttpPost("register")]

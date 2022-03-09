@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.CustomerSite.Interfaces;
 using eCommerce.Shared.ViewModels.Users;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -23,9 +25,21 @@ namespace eCommerce.CustomerSite.Controllers
 
         // GET: /<controller>/
         [HttpGet]
-        public IActionResult Login()
+        public async Task<IActionResult> Login()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("index", "home");
+            }
+            //await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("index", "home");
         }
 
         [HttpPost]
@@ -36,7 +50,17 @@ namespace eCommerce.CustomerSite.Controllers
                 return View(ModelState);
             }
             var token = await _userService.Login(req);
-            return View(token);
+
+            var userPrincipal = _userService.ValidateToken(token);
+            var authProperties = new AuthenticationProperties
+            {
+                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30),
+                IsPersistent = true
+            };
+            await HttpContext.SignInAsync(
+               CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal, authProperties);
+
+            return RedirectToAction("index", "home");
         }
 
         [HttpGet]

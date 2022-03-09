@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using eCommerce.Shared.ViewModels.Users
+@model UserVM
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -70,10 +72,19 @@
                 <div class="row align-items-center">
 
                     <div class="col-lg-6 col-md-8">
+                       
                         <div class="header_topbar_info">
-                            <span>
-                                You are not logged in ? <a href="@Url.Action("login","user")" class="widget widget_links">Login now</a>
-                            </span>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <span>Welcome @User.Identity.Name</span>
+                            }
+                            else
+                            {
+                                <span>
+                                    You are not logged in ? <a href="@Url.Action("login","user")" class="widget widget_links">Login now</a>
+                                </span>
+
+                            }
                         </div>
                     </div>
 
@@ -109,7 +120,25 @@
                         </form>
                     </div>
                     <ul class="navbar-nav attr-nav align-items-center">
-                        <li><a href="#" class="nav-link"><i class="linearicons-user"></i></a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="dropdown cart_dropdown">
+                                <a href="#" class="nav-link"><i class="linearicons-user"></i></a>
+                                <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
+                                    <ul class="cart_list">
+                                        <li>
+                                            <a href="#">Account information</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("logout","user")">Logout</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+                        }
+
+
                         <li class="dropdown cart_dropdown">
                             <a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">2</span><span class="amount"><span class="currency_symbol">$</span>159.00</span></a>
                             <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
