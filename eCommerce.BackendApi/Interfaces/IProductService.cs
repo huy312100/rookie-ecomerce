@@ -9,7 +9,7 @@ namespace eCommerce.BackendApi.Interfaces
 		Task<ProductVM> GetProductById(int id);
 		Task<ProductImageVM> GetImageById(int id);
 		Task<PagedResult<ProductVM>> GetProductPaging(PagingRequest req);
-		Task<List<ProductVM>> GetProductByCategory(PagingRequest req, int categoryId);
+		Task<PagedResult<ProductVM>> GetProductByCategory(PagingRequest req, int categoryId);
 		Task<int> CreateProduct(ProductCreateRequest req);
 		Task<int> DeleteProduct(int productId);
 	}

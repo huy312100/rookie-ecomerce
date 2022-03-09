@@ -137,7 +137,7 @@ namespace eCommerce.BackendApi.Services
             return productViewModel;
         }
 
-        public async Task<List<ProductVM>> GetProductByCategory(PagingRequest req,int categoryId)
+        public async Task<PagedResult<ProductVM>> GetProductByCategory(PagingRequest req,int categoryId)
         {
             var query = from p in _dbContext.Products
                         join c in _dbContext.Categories
@@ -175,7 +175,14 @@ namespace eCommerce.BackendApi.Services
                 }).ToList()
             }).ToListAsync();
 
-            return data;
+            var pagedResult = new PagedResult<ProductVM>()
+            {
+                TotalRecords = totalRow,
+                PageSize = req.PageSize,
+                PageIndex = req.PageIndex,
+                Items = data
+            };
+            return pagedResult;
         }
 
         public async Task<ProductImageVM> GetImageById(int id)

@@ -58,7 +58,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpGet("category/{categoryId}")]
-        public async Task<IActionResult> GetProductByCategory(PagingRequest req,int categoryId)
+        public async Task<IActionResult> GetProductByCategory([FromQuery] PagingRequest req,int categoryId)
         {
             var res = await _prodService.GetProductByCategory(req,categoryId);
             if (res == null)

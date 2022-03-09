@@ -1,7 +1,7 @@
 ﻿using System;
 namespace eCommerce.Shared.ViewModels.Common
 {
-	public class PagedResultBase
+    public class PagedResultBase
 	{
         public int PageIndex { get; set; }
 
