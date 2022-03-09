@@ -16,6 +16,7 @@
     <Folder Include="Views\Error\" />
     <Folder Include="Services\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Product\" />
@@ -27,6 +28,7 @@
     <None Remove="Microsoft.IdentityModel.Logging" />
     <None Remove="Microsoft.IdentityModel.Tokens" />
     <None Remove="System.IdentityModel.Tokens.Jwt" />
+    <None Remove="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Shared\eCommerce.Shared.csproj">

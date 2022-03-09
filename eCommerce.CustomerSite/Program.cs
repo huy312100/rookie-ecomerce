@@ -17,6 +17,7 @@ builder.Services.AddControllersWithViews();
 
 //Add DI
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 var app = builder.Build();
 
