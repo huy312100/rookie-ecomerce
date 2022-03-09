@@ -1,10 +1,17 @@
 ﻿using eCommerce.CustomerSite.Interfaces;
 using eCommerce.CustomerSite.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddHttpClient();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+.AddCookie(options =>
+{
+    options.LoginPath = "/user/login";
+    options.AccessDeniedPath = "/User/Forbidden/";
+});
 
 builder.Services.AddControllersWithViews();
 
@@ -29,6 +36,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
+app.UseAuthentication();
 
 app.UseRouting();
 
