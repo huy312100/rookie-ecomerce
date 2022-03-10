@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\css\" />
+    <Content Remove="App_Code\Functions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\css\" />

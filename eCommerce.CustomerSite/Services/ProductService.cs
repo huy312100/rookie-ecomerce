@@ -22,7 +22,19 @@ namespace eCommerce.CustomerSite.Services
             return await this.GetAsync<PagedResult<ProductVM>>(url, client);
 
         }
+        public async Task<ProductVM> GetProductById(int id)
+        {
+            var client = this.CreateClient();
+            var url = $"{EndpointConstants.PRODUCT}{id}";
+            return await this.GetAsync<ProductVM>(url, client);
+        }
 
+        public async Task<PagedResult<ProductVM>> GetProductByCategory(PagingRequest req, int categoryId)
+        {
+            var client = this.CreateClient();
+            var url = $"{EndpointConstants.PRODUCT_CATEGORY}/{categoryId}?pageIndex={req.PageIndex}&pageSize={req.PageSize}";
+            return await this.GetAsync<PagedResult<ProductVM>>(url, client);
+        }
     }
 }
 

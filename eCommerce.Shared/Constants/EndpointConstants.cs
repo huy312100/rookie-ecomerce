@@ -4,6 +4,8 @@ namespace eCommerce.Shared.Constants
 	public class EndpointConstants
 	{
 		public static string PRODUCT_PAGING = "/api/product/paging";
+		public static string PRODUCT= "/api/product/";
+		public static string PRODUCT_CATEGORY = "/api/product/category";
 
 		public static string CATEGORY = "/api/category";
 

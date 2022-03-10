@@ -17,6 +17,7 @@
     <None Remove="ViewModels\Common\" />
     <None Remove="Constants\" />
     <None Remove="ViewModels\Ratings\" />
+    <None Remove="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
