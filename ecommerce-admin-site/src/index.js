@@ -1,12 +1,19 @@
-import React from 'react';
+import React,{Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './assets/css/custom.css';
+import './assets/css/tailwind.css';
+import './assets/css/tailwind.output.css';
 import App from './App';
+import myTheme from './assets/theme/myTheme';
+import ThemeSuspense from './components/theme/ThemeSuspense';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={<ThemeSuspense />}>
+      <App />
+    </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 );
