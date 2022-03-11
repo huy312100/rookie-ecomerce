@@ -7,8 +7,11 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "@windmill/react-ui": "^0.5.1",
+    "js-cookie": "^3.0.1",
     "react": "^17.0.2",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
