@@ -17,10 +17,13 @@ namespace eCommerce.BackendApi.Models
 		[Required]
 		public DateTime CreatedDate { get; set; }
 		public DateTime? UpdatedDate { get; set; }
+		public int CategoryId { get; set; }
+		public int BrandId { get; set; }
 
 		//Foreign 
-		public int CategoryId { get; set; }
 		public virtual Category Category { get; set; }
+
+		public virtual Brand Brand { get; set; }
 
 		public virtual List<ProductImage> ProductImages { get; set; }
 

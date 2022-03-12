@@ -7,6 +7,7 @@ using eCommerce.Shared.ViewModels.Products;
 using eCommerce.Shared.ViewModels.Categories;
 using System.Net.Http.Headers;
 using eCommerce.Shared.ViewModels.Common;
+using eCommerce.Shared.ViewModels.Ratings;
 
 namespace eCommerce.BackendApi.Services
 {
@@ -60,7 +61,12 @@ namespace eCommerce.BackendApi.Services
                         on p.CategoryId equals c.Id
                         join pi in _dbContext.ProductImages
                         on p.Id equals pi.ProductId
-                        select new { p, c, pi };
+                        join r in _dbContext.Ratings
+                        on p.Id equals r.ProductId into obj
+                        from r in obj.DefaultIfEmpty()
+                        select new { p, c, pi ,r };
+
+            var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
 
             //3.Paging
             int totalRow = await query.CountAsync();
@@ -78,6 +84,9 @@ namespace eCommerce.BackendApi.Services
                         Id = prop.c.Id,
                         Name = prop.c.Name
                     },
+
+                    StarAverage = averageStar,
+
                     Images = query.Select(data => new ProductImageVM()
                     {
                         Id = data.pi.Id,
@@ -98,7 +107,20 @@ namespace eCommerce.BackendApi.Services
 
         public async Task<ProductVM> GetProductById(int id)
         {
-            var product = await _dbContext.Products.FindAsync(id);
+            
+            var query = from p in _dbContext.Products
+                        join c in _dbContext.Categories
+                        on p.CategoryId equals c.Id
+                        join pi in _dbContext.ProductImages
+                        on p.Id equals pi.ProductId
+                        join r in _dbContext.Ratings
+                        on p.Id equals r.ProductId into obj
+                        from r in obj.DefaultIfEmpty()
+                        where p.Id==id
+                        select new { p, c, pi, r };
+
+            var product = await query.FirstOrDefaultAsync();
+            var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
 
             if (product == null)
             {
@@ -108,25 +130,24 @@ namespace eCommerce.BackendApi.Services
             var images = await _dbContext.ProductImages.Where(prop => prop.ProductId == id)
                             .ToListAsync();
 
-            var category = await _dbContext.Categories.FindAsync(product.CategoryId);
-
             var productViewModel = new ProductVM()
             {
-                Id = product.Id,
-                Name = product.Name,
-                Price = product.Price,
-                Description=product.Description,
-                CreatedDate = product.CreatedDate,
-                UpdatedDate = product.UpdatedDate,
+                Id = product.p.Id,
+                Name = product.p.Name,
+                Price = product.p.Price,
+                Description=product.p.Description,
+                CreatedDate = product.p.CreatedDate,
+                UpdatedDate = product.p.UpdatedDate,
                 Category = new CategoryVM
                 {
-                    Id = category.Id,
-                    Name = category.Name,
-                    Description=category.Description,
-                    ImageUrl=category.ImageUrl,
-                    CreatedDate=category.CreatedDate,
-                    ParentId=category.ParentId
+                    Id = product.c.Id,
+                    Name = product.c.Name,
+                    Description=product.c.Description,
+                    ImageUrl=product.c.ImageUrl,
+                    CreatedDate=product.c.CreatedDate,
+                    ParentId=product.c.ParentId
                 },
+                StarAverage = averageStar,
                 Images = images.Select(data => new ProductImageVM()
                 {
                     Id = data.Id,
