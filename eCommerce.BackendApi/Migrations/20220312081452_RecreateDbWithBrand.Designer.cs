@@ -12,17 +12,60 @@ using eCommerce.BackendApi.Data.EF;
 namespace eCommerce.BackendApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220226130132_RecreateDatabase")]
-    partial class RecreateDatabase
+    [Migration("20220312081452_RecreateDbWithBrand")]
+    partial class RecreateDbWithBrand
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.2")
+                .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("eCommerce.BackendApi.Models.Brand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Brands", (string)null);
+                });
+
+            modelBuilder.Entity("eCommerce.BackendApi.Models.BrandCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("BrandCategories", (string)null);
+                });
 
             modelBuilder.Entity("eCommerce.BackendApi.Models.Category", b =>
                 {
@@ -65,6 +108,14 @@ namespace eCommerce.BackendApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
@@ -74,8 +125,15 @@ namespace eCommerce.BackendApi.Migrations
                     b.Property<int>("PaymentType")
                         .HasColumnType("int");
 
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("float");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -104,6 +162,9 @@ namespace eCommerce.BackendApi.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<double>("SubTotal")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
@@ -120,6 +181,9 @@ namespace eCommerce.BackendApi.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -141,6 +205,8 @@ namespace eCommerce.BackendApi.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
 
                     b.HasIndex("CategoryId");
 
@@ -423,6 +489,25 @@ namespace eCommerce.BackendApi.Migrations
                     b.ToTable("UserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("eCommerce.BackendApi.Models.BrandCategory", b =>
+                {
+                    b.HasOne("eCommerce.BackendApi.Models.Brand", "Brand")
+                        .WithMany("BrandCategories")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("eCommerce.BackendApi.Models.Category", "Category")
+                        .WithMany("BrandCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("eCommerce.BackendApi.Models.Category", b =>
                 {
                     b.HasOne("eCommerce.BackendApi.Models.Category", "Parent")
@@ -464,11 +549,19 @@ namespace eCommerce.BackendApi.Migrations
 
             modelBuilder.Entity("eCommerce.BackendApi.Models.Product", b =>
                 {
+                    b.HasOne("eCommerce.BackendApi.Models.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("eCommerce.BackendApi.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Brand");
 
                     b.Navigation("Category");
                 });
@@ -554,8 +647,17 @@ namespace eCommerce.BackendApi.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("eCommerce.BackendApi.Models.Brand", b =>
+                {
+                    b.Navigation("BrandCategories");
+
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("eCommerce.BackendApi.Models.Category", b =>
                 {
+                    b.Navigation("BrandCategories");
+
                     b.Navigation("Products");
                 });
 

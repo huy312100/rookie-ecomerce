@@ -45,6 +45,7 @@
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
+    <None Remove="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -56,6 +57,7 @@
     <Folder Include="Storage\" />
     <Folder Include="Repo\" />
     <Folder Include="Repo\file-source\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Shared\eCommerce.Shared.csproj">
