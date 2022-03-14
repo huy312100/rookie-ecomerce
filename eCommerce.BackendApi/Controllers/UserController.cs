@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace eCommerce.BackendApi.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class UserController : Controller
     {
         private readonly IUserService _userService;

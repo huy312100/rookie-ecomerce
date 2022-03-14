@@ -37,7 +37,7 @@ const Login = () => {
                 <h1 className="mb-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                     Login
                 </h1>
-                <form>
+                <form >
                   <LabelArea label="Email" />
                   <InputArea
                     // register={register}

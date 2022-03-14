@@ -13,36 +13,28 @@ import {
 } from '@windmill/react-ui';
 import { FiPlus } from 'react-icons/fi';
 
-// import useAsync from '../hooks/useAsync';
-// import useFilter from '../hooks/useFilter';
+import useAsync from '../hooks/useAsync';
 import NotFound from '../components/table/NotFound';
 // import Loading from '../components/preloader/Loading';
 import { SidebarContext } from '../context/SidebarContext';
 import PageTitle from '../components/Typography/PageTitle';
-// import CategoryServices from '../services/CategoryServices';
-// import CategoryTable from '../components/category/CategoryTable';
+import CategoryServices from '../services/CategoryServices';
+import CategoryTable from '../components/category/CategoryTable';
 import SelectCategory from '../components/form/SelectCategory';
-// import MainDrawer from '../components/drawer/MainDrawer';
-// import CategoryDrawer from '../components/drawer/CategoryDrawer';
+import MainDrawer from '../components/drawer/MainDrawer';
+import CategoryDrawer from '../components/drawer/CategoryDrawer';
 
 const Category = () => {
   const { toggleDrawer } = useContext(SidebarContext);
-  // const { data, loading } = useAsync(CategoryServices.getAllCategory);
-
-  // const {
-  //   categoryRef,
-  //   setFilter,
-  //   handleChangePage,
-  //   totalResults,
-  //   resultsPerPage,
-  //   dataTable,
-  //   serviceData,
-  //   handleSubmitCategory,
-  // } = useFilter(data);
+  const { data } = useAsync(CategoryServices.getAllCategory);
 
   return (
     <>
       <PageTitle>Category</PageTitle>
+
+      <MainDrawer>
+        <CategoryDrawer />
+      </MainDrawer>
       
       <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
         <CardBody>
@@ -69,7 +61,7 @@ const Category = () => {
             </div>
 
             <div className="w-full md:w-56 lg:w-56 xl:w-56">
-              <Button className="w-full rounded-md h-12">
+              <Button onClick={toggleDrawer} className="w-full rounded-md h-12">
                 <span className="mr-3">
                   <FiPlus />
                 </span>
@@ -87,14 +79,15 @@ const Category = () => {
                 <TableCell>ID</TableCell>
                 <TableCell>Name</TableCell>
                 <TableCell>Decription</TableCell>
+                <TableCell className="text-right">Actions</TableCell>
               </tr>
             </TableHeader>
-            {/* <CategoryTable categories={dataTable} /> */}
+            <CategoryTable categories={data} />
           </Table>
           <TableFooter>
             <Pagination
-              totalResults={20}
-              resultsPerPage={8}
+              totalResults={data.length}
+              resultsPerPage={data.length}
               onChange={() => {}}
               label="Table navigation"
             />
