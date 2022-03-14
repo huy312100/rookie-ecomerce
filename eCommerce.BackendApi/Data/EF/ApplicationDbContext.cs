@@ -16,6 +16,16 @@ namespace eCommerce.BackendApi.Data.EF
 			base.OnModelCreating(builder);
 
 			//Add table name and using Fluent Api to create relationship
+			builder.Entity<Brand>().ToTable("Brands");
+
+			builder.Entity<BrandCategory>().ToTable("BrandCategories");
+			builder.Entity<BrandCategory>().HasOne(prop => prop.Brand)
+				.WithMany(prop => prop.BrandCategories)
+				.HasForeignKey(prop => prop.BrandId);
+			builder.Entity<BrandCategory>().HasOne(prop => prop.Category)
+				.WithMany(prop => prop.BrandCategories)
+				.HasForeignKey(prop => prop.CategoryId);
+
 			builder.Entity<Category>().ToTable("Categories");
 			builder.Entity<Category>().HasOne(prop => prop.Parent)
 				.WithOne()
@@ -38,6 +48,9 @@ namespace eCommerce.BackendApi.Data.EF
 			builder.Entity<Product>().HasOne(prop => prop.Category)
 				.WithMany(prop => prop.Products)
 				.HasForeignKey(prop => prop.CategoryId);
+			builder.Entity<Product>().HasOne(prop => prop.Brand)
+				.WithMany(prop => prop.Products)
+				.HasForeignKey(prop => prop.BrandId);
 
 			builder.Entity<ProductImage>().ToTable("ProductImages");
 			builder.Entity<ProductImage>().HasOne(prop => prop.Product)
@@ -65,6 +78,8 @@ namespace eCommerce.BackendApi.Data.EF
 				.HasKey(prop => prop.UserId);
 		}
 
+		public DbSet<Brand> Brands { get; set; }
+		public DbSet<BrandCategory> BrandCategories { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Order> Orders { get; set; }
 		public DbSet<OrderDetail> OrderDetails { get; set; }

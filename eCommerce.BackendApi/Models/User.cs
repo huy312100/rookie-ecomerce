@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using eCommerce.BackendApi.Models.Enums.User;
+using eCommerce.Shared.Enums.User;
 using Microsoft.AspNetCore.Identity;
 
 namespace eCommerce.BackendApi.Models

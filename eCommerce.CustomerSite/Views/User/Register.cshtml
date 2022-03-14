@@ -1,4 +1,6 @@
-﻿@*
+﻿@using eCommerce.Shared.ViewModels.Users
+@model RegisterRequest
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -39,27 +41,30 @@
                             <div class="heading_s1">
                                 <h3>Create an Account</h3>
                             </div>
-                            <form method="post">
+                            <form method="post" asp-action="register" asp-controller="user">
                                 <div class="form-group mb-3">
-                                    <input type="text" required="" class="form-control" name="name" placeholder="First Name">
+                                    <input type="text" asp-for="FirstName" required="" class="form-control" name="FirstName" placeholder="First Name">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input type="text" required="" class="form-control" name="name" placeholder="Last Name">
+                                    <input type="text" asp-for="LastName" class="form-control" name="LastName" placeholder="Last Name">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input type="text" required="" class="form-control" name="email" placeholder="Email">
+                                    <input type="text" asp-for="PhoneNumber" class="form-control" name="PhoneNumber" placeholder="Phone Number">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input placeholder="Date" class="form-control" type="text" onfocus="(this.type='date')" name="name">
+                                    <input type="text" asp-for="Email" required="" class="form-control" name="Email" placeholder="Email">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input type="text" required="" class="form-control" name="name" placeholder="Username">
+                                    <input placeholder="Date" asp-for="Dob" class="form-control" type="text" onfocus="(this.type='date')" name="Dob">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input class="form-control" required="" type="password" name="password" placeholder="Password">
+                                    <input type="text" required="" asp-for="Username" class="form-control" name="Username" placeholder="Username">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input class="form-control" required="" type="password" name="password" placeholder="Confirm Password">
+                                    <input class="form-control" required="" asp-for="Password" type="password" name="Password" placeholder="Password">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input class="form-control" required="" type="password" name="confirm-password" placeholder="Confirm Password">
                                 </div>
                                 <div class="login_footer form-group mb-3">
                                     <div class="chek-form">
@@ -69,6 +74,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="form-group mb-3">
                                     <button type="submit" class="btn btn-fill-out btn-block" name="register">Register</button>
                                 </div>
@@ -88,4 +94,4 @@
         </div>
     </div>
 </div>
-    <!-- END LOGIN SECTION -->
+<!-- END LOGIN SECTION -->

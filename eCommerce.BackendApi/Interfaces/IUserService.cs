@@ -1,4 +1,5 @@
-﻿using eCommerce.Shared.ViewModels.Users;
+﻿using eCommerce.Shared.ViewModels.Common;
+using eCommerce.Shared.ViewModels.Users;
 
 namespace eCommerce.BackendApi.Interfaces
 {
@@ -8,6 +9,7 @@ namespace eCommerce.BackendApi.Interfaces
 		Task<string?> Login(LoginRequest req);
 		Task<List<UserVM>> GetAllUser();
 		Task<UserVM> GetUserById(Guid id);
+		Task<PagedResult<UserVM>> GetUsersPaging(PagingRequest req);
 		Task<bool> UpdateUser(UserUpdateRequest req);
 		Task<bool> DeleteUser(UserDeleteRequest req);
 	}

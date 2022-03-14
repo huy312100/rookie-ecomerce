@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace eCommerce.BackendApi.Controllers
 
         [HttpPost("login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromForm] LoginRequest req)
+        public async Task<IActionResult> Login([FromBody] LoginRequest req)
         {
             var token = await _userService.Login(req);
 
@@ -31,12 +32,12 @@ namespace eCommerce.BackendApi.Controllers
             {
                 return BadRequest("Username or password is incorrect");
             }
-            return Ok(new { token = token });
+            return Ok(token);
         }
 
         [HttpPost("register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register([FromForm] RegisterRequest req)
+        public async Task<IActionResult> Register([FromBody] RegisterRequest req)
         {
             var res = await _userService.Register(req);
 
@@ -67,6 +68,13 @@ namespace eCommerce.BackendApi.Controllers
                 return BadRequest();
             }
             return Ok(res);
+        }
+
+        [HttpPost("paging")]
+        public async Task<IActionResult> GetUsersPaging([FromQuery] PagingRequest request)
+        {
+            var users = await _userService.GetUsersPaging(request);
+            return Ok(users);
         }
 
         [HttpPut]

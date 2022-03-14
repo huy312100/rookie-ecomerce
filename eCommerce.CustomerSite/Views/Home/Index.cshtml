@@ -1,18 +1,28 @@
-﻿@{
+﻿@using System.Globalization
+@model HomeVM
+@{
     ViewData["Title"] = "Home Page";
+    @functions {
+        public static string ConvertToVnd(double data)
+        {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+            string res = data.ToString("#,###", cul.NumberFormat);
+            return res;
+        }
+    }
 }
 
 @*START CAROUSEL*@
 <div class="banner_section slide_medium shop_banner_slider staggered-animation-wrap">
     <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item background_bg active" data-img-src="images/banner16.jpg">
+            <div class="carousel-item background_bg active" data-img-src="https://www.bechtle.com/dam/jcr:7e835d15-0a75-4fd3-bb0a-bf824cdb54e4/cw44_stage1_monitors-promotion.jpg">
                 <div class="banner_slide_content banner_content_inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-7 col-10">
                                 <div class="banner_content overflow-hidden">
-                                    <h2 class="staggered-animation" data-animation="slideInLeft" data-animation-delay="0.5s">LED 75 INCH F58</h2>
+                                    <h2 class="staggered-animation" data-animation="slideInLeft" data-animation-delay="0.5s" style="color:white">LED 75 INCH F58</h2>
                                     <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light" data-animation="slideInLeft" data-animation-delay="1s">Get up to <span class="text_default">50%</span> off Today Only!</h5>
                                     <a class="btn btn-fill-out staggered-animation text-uppercase" href="shop-left-sidebar.html" data-animation="slideInLeft" data-animation-delay="1.5s">Shop Now</a>
                                 </div>
@@ -21,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item background_bg" data-img-src="images/banner17.jpg">
+            <div class="carousel-item background_bg" data-img-src="https://intercomp.com.mt/wp-content/uploads/2020/10/Register-Interest-iphone.jpg">
                 <div class="banner_slide_content banner_content_inner">
                     <div class="container">
                         <div class="row">
@@ -36,14 +46,14 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item background_bg" data-img-src="images/banner18.jpg">
+            <div class="carousel-item background_bg" data-img-src="https://cdn-abfjf.nitrocdn.com/UfvCeGWglEAeUwilOCVqVzwYXcjmpwqF/assets/static/optimized/rev-5ea4da1/wp-content/uploads/2020/10/Best-Headphones-for-Kids-KidsGearGuide-1920x500.jpg">
                 <div class="banner_slide_content banner_content_inner">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-10">
                                 <div class="banner_content overflow-hidden">
-                                    <h2 class="staggered-animation" data-animation="slideInLeft" data-animation-delay="0.5s">Beat Headphone</h2>
-                                    <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light" data-animation="slideInLeft" data-animation-delay="1s">Taking your Viewing Experience to Next Level</h5>
+                                    <h2 class="staggered-animation" data-animation="slideInLeft" data-animation-delay="0.5s" style="color:white">Beat Headphone</h2>
+                                    <h5 class="mb-3 mb-sm-4 staggered-animation font-weight-light" data-animation="slideInLeft" style="color:white" data-animation-delay="1s">Taking your Viewing Experience to Next Level</h5>
                                     <a class="btn btn-fill-out staggered-animation text-uppercase" href="shop-left-sidebar.html" data-animation="slideInLeft" data-animation-delay="1.5s">Shop Now</a>
                                 </div>
                             </div>
@@ -58,7 +68,7 @@
 </div>
 @*END CAROUSEL*@
 
-@*START SECTION SHOP*@ 
+@*START SECTION SHOP*@
 <div class="section small_pt pb_70">
     <div class="container">
         <div class="row justify-content-center">
@@ -70,290 +80,53 @@
             </div>
         </div>
         <div class="row shop_container">
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="product_box text-center">
-                    <div class="product_img">
-                        <a href="shop-product-detail.html">
-                            <img src="images/furniture_img.jpg" alt="furniture_img1">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
+            @foreach (var product in @Model.FeaturedProducts.Items)
+            {
+
+
+<div class="col-lg-3 col-md-4 col-6">
+                    <div class="product_box text-center">
+                        <div class="product_img">
+                            <a href="shop-product-detail.html">
+                                @if (@product.Images.Count > 0)
+                                {
+                                    <img src="@product.Images[0].ImageUrl" alt="furniture_img1">
+                                }
+                                else
+                                {
+                                    <img src="~/assets/images/product_img1.jpg" alt="furniture_img1">
+                                    
+                                }
+
+                            </a>
                         </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="shop-product-detail.html">enim expedita sed</a></h6>
-                        <div class="product_price">
-                            <span class="price">$45.00</span>
-                            <del>$55.25</del>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:80%"></div>
+                        <div class="product_info">
+                            <h6 class="product_title"><a asp-controller="Product" asp-action="Detail" asp-route-id="@product.Id">@product.Name</a></h6>
+                            <div class="product_price">
+                                <span class="price">@ConvertToVnd(product.Price)</span>
+                                <del>@ConvertToVnd(30000000)</del>
                             </div>
-                            <span class="rating_num">(21)</span>
-                        </div>
-                        <div class="pr_desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                        </div>
-                        <div class="add-to-cart">
-                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
+                            <div class="rating_wrap">
+                                <div class="rating">
+                                    <div class="product_rate" style="width:80%"></div>
+                                </div>
+                                <span class="rating_num">(21)</span>
+                            </div>
+                            <div class="pr_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+                            </div>
+                            <div class="add-to-cart">
+                                <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="product_box text-center">
-                    <div class="product_img">
-                        <a href="shop-product-detail.html">
-                            <img src="images/furniture_img.jpg" alt="furniture_img2">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="shop-product-detail.html">adipisci officia libero</a></h6>
-                        <div class="product_price">
-                            <span class="price">$55.00</span>
-                            <del>$95.00</del>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:68%"></div>
-                            </div>
-                            <span class="rating_num">(15)</span>
-                        </div>
-                        <div class="pr_desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                        </div>
-                        <div class="add-to-cart">
-                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="product_box text-center">
-                    <div class="product_img">
-                        <a href="shop-product-detail.html">
-                            <img src="images/furniture_img.jpg" alt="furniture_img3">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="shop-product-detail.html">Internet tend to repeat</a></h6>
-                        <div class="product_price">
-                            <span class="price">$68.00</span>
-                            <del>$99.00</del>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:87%"></div>
-                            </div>
-                            <span class="rating_num">(25)</span>
-                        </div>
-                        <div class="pr_desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                        </div>
-                        <div class="add-to-cart">
-                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="product_box text-center">
-                    <div class="product_img">
-                        <a href="shop-product-detail.html">
-                            <img src="images/furniture_img.jpg" alt="furniture_img4">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="shop-product-detail.html">Many desktop publishing</a></h6>
-                        <div class="product_price">
-                            <span class="price">$69.00</span>
-                            <del>$89.00</del>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:70%"></div>
-                            </div>
-                            <span class="rating_num">(22)</span>
-                        </div>
-                        <div class="pr_desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                        </div>
-                        <div class="add-to-cart">
-                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="product_box text-center">
-                    <div class="product_img">
-                        <a href="shop-product-detail.html">
-                            <img src="images/furniture_img.jpg" alt="furniture_img5">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="shop-product-detail.html">injected humour repetition</a></h6>
-                        <div class="product_price">
-                            <span class="price">$45.00</span>
-                            <del>$55.25</del>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:80%"></div>
-                            </div>
-                            <span class="rating_num">(21)</span>
-                        </div>
-                        <div class="pr_desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                        </div>
-                        <div class="add-to-cart">
-                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="product_box text-center">
-                    <div class="product_img">
-                        <a href="shop-product-detail.html">
-                            <img src="images/furniture_img.jpg" alt="furniture_img6">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="shop-product-detail.html">randomised humour words</a></h6>
-                        <div class="product_price">
-                            <span class="price">$55.00</span>
-                            <del>$95.00</del>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:68%"></div>
-                            </div>
-                            <span class="rating_num">(15)</span>
-                        </div>
-                        <div class="pr_desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                        </div>
-                        <div class="add-to-cart">
-                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="product_box text-center">
-                    <div class="product_img">
-                        <a href="shop-product-detail.html">
-                            <img src="images/furniture_img.jpg" alt="furniture_img7">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="shop-product-detail.html">expedita distinctio rerum</a></h6>
-                        <div class="product_price">
-                            <span class="price">$68.00</span>
-                            <del>$99.00</del>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:87%"></div>
-                            </div>
-                            <span class="rating_num">(25)</span>
-                        </div>
-                        <div class="pr_desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                        </div>
-                        <div class="add-to-cart">
-                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="product_box text-center">
-                    <div class="product_img">
-                        <a href="shop-product-detail.html">
-                            <img src="images/furniture_img8.jpg" alt="furniture_img8">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="shop-compare.html" class="popup-ajax"><i class="icon-shuffle"></i></a></li>
-                                <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                <li><a href="#"><i class="icon-heart"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="shop-product-detail.html">Itaque earum rerum</a></h6>
-                        <div class="product_price">
-                            <span class="price">$69.00</span>
-                            <del>$89.00</del>
-                            <div class="on_sale">
-                                <span>20% Off</span>
-                            </div>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:70%"></div>
-                            </div>
-                            <span class="rating_num">(22)</span>
-                        </div>
-                        <div class="pr_desc">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                        </div>
-                        <div class="add-to-cart">
-                            <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
+
+
+
+          
         </div>
     </div>
 </div>
- @*END SECTION SHOP*@ 
+@*END SECTION SHOP*@

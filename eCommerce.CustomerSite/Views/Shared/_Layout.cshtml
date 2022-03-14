@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Globalization
+@*@model eCommerce.CustomerSite.ViewModels.CartVM*@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -70,10 +72,19 @@
                 <div class="row align-items-center">
 
                     <div class="col-lg-6 col-md-8">
+
                         <div class="header_topbar_info">
-                            <span>
-                                You are not logged in ? <a href="@Url.Action("login","user")" class="widget widget_links">Login now</a>
-                            </span>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <span>Welcome @User.Identity.Name</span>
+                            }
+                            else
+                            {
+                                <span>
+                                    You are not logged in ? <a href="@Url.Action("login","user")" class="widget widget_links">Login now</a>
+                                </span>
+
+                            }
                         </div>
                     </div>
 
@@ -109,27 +120,44 @@
                         </form>
                     </div>
                     <ul class="navbar-nav attr-nav align-items-center">
-                        <li><a href="#" class="nav-link"><i class="linearicons-user"></i></a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="dropdown cart_dropdown">
+                                <a href="#" class="nav-link"><i class="linearicons-user"></i></a>
+                                <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
+                                    <ul class="cart_list">
+                                        <li>
+                                            <a href="#">Account information</a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("logout","user")">Logout</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+                        }
+
+
                         <li class="dropdown cart_dropdown">
-                            <a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">2</span><span class="amount"><span class="currency_symbol">$</span>159.00</span></a>
+                            <a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i></a>
                             <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
-                                <ul class="cart_list">
+                                @*@foreach(var item in Model.Items)
+                                    {*@
+                                <!--<ul class="cart_list">
                                     <li>
                                         <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                        <a href="#"><img src="~/assets/images/cart_thamb1.jpg" alt="cart_thumb1">Variable product 001</a>
-                                        <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>78.00</span>
+                                        <a href="#"><img src="~/assets/images/cart_thamb1.jpg" alt="cart_thumb1">a</a>
+                                        <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>5</span>
                                     </li>
-                                    <li>
-                                        <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                        <a href="#"><img src="~/assets/images/cart_thamb2.jpg" alt="cart_thumb2">Ornare sed consequat</a>
-                                        <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>81.00</span>
-                                    </li>
-                                </ul>
+
+                                </ul>-->
+                                @*}*@
+
                                 <div class="cart_footer">
-                                    <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>
+                                    @*<p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>*@
                                     <p class="cart_buttons">
                                         <a asp-controller="cart" asp-action="detail" class="btn btn-fill-line view-cart">View Cart</a>
-                                        <a asp-controller="cart" asp-action="checkout" class="btn btn-fill-line checkout">Checkout</a>
                                     </p>
                                 </div>
                             </div>
@@ -155,131 +183,19 @@
                             </button>
                             <div id="navCatContent" class="navbar collapse">
                                 <ul>
-
-                                    <li class="dropdown dropdown-mega-menu">
-                                        <a class="dropdown-item nav-link dropdown-toggler" href="#" data-bs-toggle="dropdown"><i class="flaticon-tv"></i> <span>Computer</span></a>
-                                        <div class="dropdown-menu">
-                                            <ul class="mega-menu d-lg-flex">
-                                                <li class="mega-menu-col col-lg-4">
-                                                    <ul>
-                                                        <li class="dropdown-header">Woman's</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">Vestibulum sed</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Donec porttitor</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Donec vitae facilisis</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">Curabitur tempus</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Vivamus in tortor</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-menu-col col-lg-4">
-                                                    <ul>
-                                                        <li class="dropdown-header">Men's</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Donec vitae ante ante</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Etiam ac rutrum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Quisque condimentum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="compare.html">Curabitur laoreet</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Vivamus in tortor</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-menu-col col-lg-4">
-                                                    <ul>
-                                                        <li class="dropdown-header">Kid's</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Donec vitae facilisis</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Quisque condimentum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Etiam ac rutrum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec vitae ante ante</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec porttitor</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown dropdown-mega-menu">
-                                        <a class="dropdown-item nav-link dropdown-toggler" href="#" data-bs-toggle="dropdown"><i class="flaticon-camera"></i> <span>Camera</span></a>
-                                        <div class="dropdown-menu">
-                                            <ul class="mega-menu d-lg-flex">
-                                                <li class="mega-menu-col col-lg-7">
-                                                    <ul class="d-lg-flex">
-                                                        <li class="mega-menu-col col-lg-6">
-                                                            <ul>
-                                                                <li class="dropdown-header">Featured Item</li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Vestibulum sed</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Donec porttitor</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Donec vitae facilisis</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Curabitur tempus</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Vivamus in tortor</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Donec vitae ante ante</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Etiam ac rutrum</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-menu-col col-lg-6">
-                                                            <ul>
-                                                                <li class="dropdown-header">Popular Item</li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Curabitur laoreet</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Vivamus in tortor</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Donec vitae facilisis</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Quisque condimentum</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Etiam ac rutrum</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Donec vitae ante ante</a></li>
-                                                                <li><a class="dropdown-item nav-link nav_item" href="#">Donec porttitor</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-menu-col col-lg-5">
-                                                    <div class="header-banner2">
-                                                        <a href="#"><img src="~/assets/images/menu_banner9.jpg" alt="menu_banner"></a>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown dropdown-mega-menu">
-                                        <a class="dropdown-item nav-link dropdown-toggler" href="#" data-bs-toggle="dropdown"><i class="flaticon-plugins"></i> <span>Accessories</span></a>
-                                        <div class="dropdown-menu">
-                                            <ul class="mega-menu d-lg-flex">
-                                                <li class="mega-menu-col col-lg-4">
-                                                    <ul>
-                                                        <li class="dropdown-header">Woman's</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-list-left-sidebar.html">Vestibulum sed</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-left-sidebar.html">Donec porttitor</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-right-sidebar.html">Donec vitae facilisis</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-list.html">Curabitur tempus</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-load-more.html">Vivamus in tortor</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-menu-col col-lg-4">
-                                                    <ul>
-                                                        <li class="dropdown-header">Men's</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-cart.html">Donec vitae ante ante</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="checkout.html">Etiam ac rutrum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="wishlist.html">Quisque condimentum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="compare.html">Curabitur laoreet</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="order-completed.html">Vivamus in tortor</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-menu-col col-lg-4">
-                                                    <ul>
-                                                        <li class="dropdown-header">Kid's</li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail.html">Donec vitae facilisis</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-left-sidebar.html">Quisque condimentum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-right-sidebar.html">Etiam ac rutrum</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec vitae ante ante</a></li>
-                                                        <li><a class="dropdown-item nav-link nav_item" href="shop-product-detail-thumbnails-left.html">Donec porttitor</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="coming-soon.html"><i class="flaticon-headphones"></i> <span>Headphones</span></a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="404.html"><i class="flaticon-console"></i> <span>Gaming</span></a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="login.html"><i class="flaticon-watch"></i> <span>Watches</span></a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="register.html"><i class="flaticon-music-system"></i> <span>Home Audio & Theater</span></a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="coming-soon.html"><i class="flaticon-monitor"></i> <span>TV & Smart Box</span></a></li>
-                                    <li><a class="dropdown-item nav-link nav_item" href="404.html"><i class="flaticon-printer"></i> <span>Printer</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="1"><i class="flaticon-responsive"></i> <span>Smartphone & Tablet</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="2"><i class="flaticon-tv"></i> <span>Computer</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="3"><i class="flaticon-camera"></i> <span>Camera</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="4"><i class="flaticon-plugins"></i> <span>Accessories</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="5"><i class="flaticon-headphones"></i> <span>Headphones</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="6"><i class="flaticon-console"></i> <span>Gaming</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="7"><i class="flaticon-watch"></i> <span>Watches</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="8"><i class="flaticon-music-system"></i> <span>Home Audio & Theater</span></a></li>
+                                    <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="9"><i class="flaticon-monitor"></i> <span>TV & Smart Box</span></a></li>
                                     <li>
                                         <ul class="more_slide_open">
-                                            <li><a class="dropdown-item nav-link nav_item" href="login.html"><i class="flaticon-fax"></i> <span>Fax Machine</span></a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="register.html"><i class="flaticon-mouse"></i> <span>Mouse</span></a></li>
+                                            <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="10"><i class="flaticon-printer"></i> <span>Printer</span></a></li>
+                                            <li><a class="dropdown-item nav-link nav_item" asp-action="category" asp-controller="product" asp-route-id="11"><i class="flaticon-mouse"></i> <span>Mouse</span></a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -607,10 +523,12 @@
     <script src="~/assets/js/slick.min.js"></script>
     <!-- elevatezoom js -->
     <script src="~/assets/js/jquery.elevatezoom.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
     <!-- scripts js -->
     <script src="~/assets/js/scripts.js"></script>
 
+    <script src="~/js/cart-hover.js"></script>
 
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

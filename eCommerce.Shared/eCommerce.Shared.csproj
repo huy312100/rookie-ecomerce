@@ -12,12 +12,23 @@
     <None Remove="ViewModels\Categories\" />
     <None Remove="Microsoft.AspNetCore.Http" />
     <None Remove="ViewModels\Users\" />
+    <None Remove="ViewModels\Orders\" />
+    <None Remove="Enums\" />
+    <None Remove="ViewModels\Common\" />
+    <None Remove="Constants\" />
+    <None Remove="ViewModels\Ratings\" />
+    <None Remove="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Products\" />
     <Folder Include="ViewModels\Categories\" />
     <Folder Include="ViewModels\Users\" />
+    <Folder Include="ViewModels\Orders\" />
+    <Folder Include="Enums\" />
+    <Folder Include="ViewModels\Common\" />
+    <Folder Include="Constants\" />
+    <Folder Include="ViewModels\Ratings\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
