@@ -5,14 +5,17 @@ namespace eCommerce.CustomerSite.Services
 {
 	public class BaseService
 	{
-        private readonly IConfiguration _configuration;
-        private readonly IHttpClientFactory _httpClientFactory;
+        protected readonly IConfiguration _configuration;
+        protected readonly IHttpClientFactory _httpClientFactory;
+        //protected readonly IHttpContextAccessor _httpContextAccessor;
 
         protected BaseService(IHttpClientFactory httpClientFactory,
+                   //IHttpContextAccessor httpContextAccessor,
                     IConfiguration configuration)
         {
             _configuration = configuration;
             _httpClientFactory = httpClientFactory;
+            //_httpContextAccessor = httpContextAccessor;
         }
 
 

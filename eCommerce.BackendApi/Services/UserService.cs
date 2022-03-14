@@ -53,6 +53,7 @@ namespace eCommerce.BackendApi.Services
                 new Claim(ClaimTypes.GivenName,user.FirstName),
                 new Claim(ClaimTypes.GivenName,user.LastName),
                 new Claim(ClaimTypes.Name,user.UserName),
+                new Claim("UserId",user.Id.ToString()),
                 new Claim(ClaimTypes.Role,String.Join(";",roles))
             };
 

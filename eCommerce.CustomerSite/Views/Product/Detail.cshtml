@@ -40,7 +40,15 @@
                 <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
                     <div class="product-image">
                         <div class="product_img_box">
-                            <img id="product_img" src='~/assets/images/product_img1.jpg' data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
+                            @if (Model.Images.Count > 0)
+                            {
+                                <img id="product_img" src="@Model.Images[0].ImageUrl" data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
+                            }
+                            else
+                            {
+                                <img id="product_img" src='~/assets/images/product_img1.jpg' data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
+
+                            }
                             <a href="#" class="product_img_zoom" title="Zoom">
                                 <span class="linearicons-zoom-in"></span>
                             </a>
@@ -105,33 +113,18 @@
                                     <span data-color="#DA323F"></span>
                                 </div>
                             </div>
-                            <div class="pr_switch_wrap">
-                                <span class="switch_lable">Size</span>
-                                <div class="product_size_switch">
-                                    <span>xs</span>
-                                    <span>s</span>
-                                    <span>m</span>
-                                    <span>l</span>
-                                    <span>xl</span>
-                                </div>
-                            </div>
+                            
                         </div>
                         <hr />
                         <div class="cart_extra">
-                            <div class="cart-product-quantity">
-                                <div class="quantity">
-                                    <input type="button" value="-" class="minus">
-                                    <input type="text" name="quantity" value="1" title="Qty" class="qty" size="4">
-                                    <input type="button" value="+" class="plus">
-                                </div>
-                            </div>
                             <div class="cart_btn">
-                                <button class="btn btn-fill-out btn-addtocart" type="button"><i class="icon-basket-loaded"></i> Add to cart</button>
+                                <button class="btn btn-fill-out btn-addtocart btn-add-cart" data-id=" @Model.Id" type="button">
+                                    <i class="icon-basket-loaded"></i>Add to cart
+                                </button>                               
                             </div>
                         </div>
                         <hr />
                         <ul class="product-meta">
-                            <li>SKU: <a href="#">BE45VGRT</a></li>
                             <li>Category: <a href="#">@Model.Category.Name</a></li>
                         </ul>
 
@@ -299,7 +292,7 @@
                                     </a>
                                     <div class="product_action_box">
                                         <ul class="list_none pr_action_btn">
-                                            <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                            <li class="add-to-cart"><a ><i class="icon-basket-loaded"></i> Add To Cart</a></li>
                                             <li><a href="shop-compare.html"><i class="icon-shuffle"></i></a></li>
                                             <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
                                             <li><a href="#"><i class="icon-heart"></i></a></li>

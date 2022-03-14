@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Identity;
 using System.IdentityModel.Tokens.Jwt;
 using eCommerce.CustomerSite.Interfaces;
 using eCommerce.Shared.ViewModels.Users;

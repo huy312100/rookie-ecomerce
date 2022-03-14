@@ -75,7 +75,15 @@
                                 <div class="product">
                                     <div class="product_img">
                                         <a href="shop-product-detail.html">
-                                            <img src="~/assets/images/product_img1.jpg" alt="product_img1">
+                                            @if (@product.Images.Count > 0)
+                                            {
+                                                <img src="@product.Images[0].ImageUrl" alt="furniture_img1">
+                                            }
+                                            else
+                                            {
+                                                <img src="~/assets/images/product_img1.jpg" alt="furniture_img1">
+
+                                            }
                                         </a>
                                         <div class="product_action_box">
                                             <ul class="list_none pr_action_btn">

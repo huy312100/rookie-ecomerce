@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Globalization
+@*@model eCommerce.CustomerSite.ViewModels.CartVM*@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -70,7 +72,7 @@
                 <div class="row align-items-center">
 
                     <div class="col-lg-6 col-md-8">
-                       
+
                         <div class="header_topbar_info">
                             @if (User.Identity.IsAuthenticated)
                             {
@@ -138,25 +140,24 @@
 
 
                         <li class="dropdown cart_dropdown">
-                            <a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">2</span><span class="amount"><span class="currency_symbol">$</span>159.00</span></a>
+                            <a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i></a>
                             <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
-                                <ul class="cart_list">
+                                @*@foreach(var item in Model.Items)
+                                    {*@
+                                <!--<ul class="cart_list">
                                     <li>
                                         <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                        <a href="#"><img src="~/assets/images/cart_thamb1.jpg" alt="cart_thumb1">Variable product 001</a>
-                                        <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>78.00</span>
+                                        <a href="#"><img src="~/assets/images/cart_thamb1.jpg" alt="cart_thumb1">a</a>
+                                        <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>5</span>
                                     </li>
-                                    <li>
-                                        <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                        <a href="#"><img src="~/assets/images/cart_thamb2.jpg" alt="cart_thumb2">Ornare sed consequat</a>
-                                        <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>81.00</span>
-                                    </li>
-                                </ul>
+
+                                </ul>-->
+                                @*}*@
+
                                 <div class="cart_footer">
-                                    <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>
+                                    @*<p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>*@
                                     <p class="cart_buttons">
                                         <a asp-controller="cart" asp-action="detail" class="btn btn-fill-line view-cart">View Cart</a>
-                                        <a asp-controller="cart" asp-action="checkout" class="btn btn-fill-line checkout">Checkout</a>
                                     </p>
                                 </div>
                             </div>
@@ -522,10 +523,12 @@
     <script src="~/assets/js/slick.min.js"></script>
     <!-- elevatezoom js -->
     <script src="~/assets/js/jquery.elevatezoom.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
     <!-- scripts js -->
     <script src="~/assets/js/scripts.js"></script>
 
+    <script src="~/js/cart-hover.js"></script>
 
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
