@@ -61,7 +61,8 @@ const Login = () => {
                     // disabled={loading}
                     type="submit"
                     className="mt-4 h-12 w-full"
-                    to="/customers"
+                    onClick={event =>  window.location.href='/customers'}
+                    // to="/customers"
                   >
                     Log in
                   </Button>

@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 namespace eCommerce.Shared.ViewModels.Products
 {
 	public class ProductImageVM
