@@ -6,7 +6,7 @@ namespace eCommerce.BackendApi.Interfaces
 	public interface IUserService
 	{
 		Task<bool> Register(RegisterRequest req);
-		Task<string?> Login(LoginRequest req);
+		Task<string?> Login(LoginRequest req,string roleReq);
 		Task<List<UserVM>> GetAllUser();
 		Task<UserVM> GetUserById(Guid id);
 		Task<PagedResult<UserVM>> GetUsersPaging(PagingRequest req);

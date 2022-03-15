@@ -11,16 +11,15 @@ import {
   Pagination,
 } from '@windmill/react-ui';
 
-// import useAsync from '../hooks/useAsync';
-// import useFilter from '../hooks/useFilter';
+import useAsync from '../hooks/useAsync';
 import NotFound from '../components/table/NotFound';
-// import UserServices from '../services/UserServices';
+import UserServices from '../services/UserServices';
 // import Loading from '../components/preloader/Loading';
 import PageTitle from '../components/Typography/PageTitle';
-// import CustomerTable from '../components/customer/CustomerTable';
+import CustomerTable from '../components/customer/CustomerTable';
 
 const Customers = () => {
-  // const { data, loading } = useAsync(UserServices.getAllUsers);
+  const { data } = useAsync(UserServices.getAllUsers);
 
   // const {
   //   userRef,
@@ -65,10 +64,12 @@ const Customers = () => {
                 <TableCell>Username</TableCell>
                 <TableCell>First Name</TableCell>
                 <TableCell>Last Name</TableCell>
+                <TableCell>Image Url</TableCell>
                 <TableCell>Email</TableCell>
                 <TableCell>Phone</TableCell>
             </tr>
           </TableHeader>
+          <CustomerTable customers={data} />
         </Table>
         <TableFooter>
             <Pagination
