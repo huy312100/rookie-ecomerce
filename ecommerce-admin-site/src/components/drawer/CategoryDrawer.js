@@ -6,19 +6,12 @@ import Title from '../form/Title';
 import InputArea from '../form/InputArea';
 import LabelArea from '../form/LabelArea';
 import DrawerButton from '../form/DrawerButton';
-// import useCategorySubmit from '../../hooks/useCategorySubmit';
+import useCategorySubmit from '../../hooks/useCategorySubmit';
 
 const CategoryDrawer = ({ id }) => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   onSubmit,
-  //   errors,
-  //   imageUrl,
-  //   setImageUrl,
-  //   children,
-  //   setChildren,
-  // } = useCategorySubmit(id);
+  const {
+    register,
+  } = useCategorySubmit(id);
 
   return (
     <>
@@ -42,7 +35,7 @@ const CategoryDrawer = ({ id }) => {
               <LabelArea label="Category name" />
               <div className="col-span-8 sm:col-span-4">
                 <InputArea
-                  // register={register}
+                  register={register}
                   label="Title"
                   name="parent"
                   type="text"
@@ -55,7 +48,7 @@ const CategoryDrawer = ({ id }) => {
               <LabelArea label="Category description" />
               <div className="col-span-8 sm:col-span-4">
                 <InputArea
-                  // register={register}
+                  register={register}
                   label="Detail"
                   name="parent"
                   type="text"

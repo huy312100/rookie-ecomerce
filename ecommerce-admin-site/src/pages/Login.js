@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Button } from "@windmill/react-ui";
 
 // import Error from '../components/form/Error';
@@ -6,11 +6,11 @@ import LabelArea from "../components/form/LabelArea";
 import InputArea from "../components/form/InputArea";
 import ImageLight from "../assets/img/login-office.jpeg";
 import ImageDark from "../assets/img/login-office-dark.jpeg";
-// import useLoginSubmit from '../hooks/useLoginSubmit';
+import useLoginSubmit from '../hooks/useLoginSubmit';
 
 const Login = () => {
-  // const { onSubmit, register, handleSubmit, errors, loading } =
-  //   useLoginSubmit();
+  const { onSubmit, register, handleSubmit, loading } =
+  useLoginSubmit();
 
   return (
     <>
@@ -37,36 +37,36 @@ const Login = () => {
                 <h1 className="mb-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                     Login
                 </h1>
-                <form >
+                <form onSubmit={handleSubmit(onSubmit)}>
                   <LabelArea label="Email" />
                   <InputArea
-                    // register={register}
-                    defaultValue="admin@gmail.com"
-                    label="Email"
-                    name="email"
-                    type="email"
-                    placeholder="john@doe.com"
+                    register={register}
+                    label="Username"
+                    name="username"
+                    type="text"
+                    placeholder="johndoe"
                   />
+                  {/* <Error errorName={errors.email} /> */}
                   <div className="mt-6"></div>
                   <LabelArea label="Password" />
                   <InputArea
-                    // register={register}
-                    defaultValue="12345678"
+                    register={register}
                     label="Password"
                     name="password"
                     type="password"
                     placeholder="***************"
                   />
+                  {/* <Error errorName={errors.password} /> */}
+
                   <Button
-                    // disabled={loading}
+                    disabled={loading}
                     type="submit"
                     className="mt-4 h-12 w-full"
-                    onClick={event =>  window.location.href='/customers'}
-                    // to="/customers"
+                    to="/dashboard"
                   >
                     Log in
                   </Button>
-                  
+                 
                 </form>
               </div>
             </main>
