@@ -21,12 +21,12 @@ namespace eCommerce.BackendApi.Controllers
             _prodService = prodService;
         }
 
-        //[HttpGet("all")]
-        //public async Task<IActionResult> GetAllProducts()
-        //{
-        //    var res = await _prodService.GetAllProducts();
-        //    return Ok(res);
-        //}
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllProducts()
+        {
+            var res = await _prodService.GetAllProducts();
+            return Ok(res);
+        }
 
         [HttpGet("paging")]
         public async Task<IActionResult> GetAllProductPaging([FromQuery] PagingRequest req)

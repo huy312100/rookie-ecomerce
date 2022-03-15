@@ -67,7 +67,6 @@ const Customers = () => {
                 <TableCell>Image Url</TableCell>
                 <TableCell>Email</TableCell>
                 <TableCell>Phone</TableCell>
-                <TableCell>Actions</TableCell>
             </tr>
           </TableHeader>
           <CustomerTable customers={data} />

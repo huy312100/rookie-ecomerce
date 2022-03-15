@@ -9,7 +9,6 @@ import EditDeleteButton from '../table/EditDeleteButton';
 
 const CategoryTable = ({ categories }) => {
   // const { serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
-
   return (
     <>
       <MainModal  />

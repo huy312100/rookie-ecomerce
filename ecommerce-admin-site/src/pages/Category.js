@@ -20,7 +20,6 @@ import { SidebarContext } from '../context/SidebarContext';
 import PageTitle from '../components/Typography/PageTitle';
 import CategoryServices from '../services/CategoryServices';
 import CategoryTable from '../components/category/CategoryTable';
-import SelectCategory from '../components/form/SelectCategory';
 import MainDrawer from '../components/drawer/MainDrawer';
 import CategoryDrawer from '../components/drawer/CategoryDrawer';
 
@@ -54,10 +53,6 @@ const Category = () => {
                   type="submit"
                   className="absolute right-0 top-0 mt-5 mr-1"
                 />
-            </div>
-
-            <div className="flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
-              <SelectCategory />
             </div>
 
             <div className="w-full md:w-56 lg:w-56 xl:w-56">
