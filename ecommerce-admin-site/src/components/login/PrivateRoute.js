@@ -6,11 +6,12 @@ const PrivateRoute = ({ children, ...rest }) => {
   const { state } = useContext(AdminContext);
   const { adminInfo } = state;
 
+  console.log(adminInfo);
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        adminInfo?.email ? (
+        adminInfo? (
           children
         ) : (
           <Redirect

@@ -20,12 +20,12 @@ const App = () => {
         <Switch> 
           <Route path="/login" component={Login}/>
 
-          <Route path="/" component={Layout} />
-          {/* <PrivateRoute>
+          {/* <Route path="/" component={Layout} /> */}
+          <PrivateRoute>
             {' '}
             <Route path="/" component={Layout} />
-          </PrivateRoute> */}
-          <Redirect exact from="/" to="/customers" />
+          </PrivateRoute>
+          <Redirect exact from="/" to="/login" />
         </Switch>
       </Router>
 

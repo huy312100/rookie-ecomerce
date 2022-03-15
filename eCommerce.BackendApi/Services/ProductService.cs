@@ -22,6 +22,43 @@ namespace eCommerce.BackendApi.Services
             _fileStorageService = fileStorageService;
         }
 
+        public async Task<List<ProductVM>> GetAllProducts()
+        {
+            var query = from p in _dbContext.Products
+                        join c in _dbContext.Categories
+                        on p.CategoryId equals c.Id
+                        join pi in _dbContext.ProductImages
+                        on p.Id equals pi.ProductId into obj1
+                        from pi in obj1.DefaultIfEmpty()
+                        select new { p, c, pi };
+
+            var data = await query.Select(prop => new ProductVM()
+            {
+                Id = prop.p.Id,
+                Name = prop.p.Name,
+                Description = prop.p.Description,
+                Price = prop.p.Price,
+                CreatedDate = prop.p.CreatedDate,
+                UpdatedDate = prop.p.UpdatedDate,
+                Category = new CategoryVM
+                {
+                    Id = prop.c.Id,
+                    Name = prop.c.Name
+                },
+
+                Images = query.Where(x => prop.pi.ProductId == x.p.Id && x.pi.IsThumbnail == true)
+                    .Select(data => new ProductImageVM()
+                    {
+                        Id = data.pi.Id,
+                        ImageUrl = data.pi.ImageUrl,
+                        IsThumbnail = data.pi.IsThumbnail
+                    }).ToList()
+            }).ToListAsync();
+
+            var uniqueItem = data.GroupBy(x => x.Id).Select(x => x.First()).ToList();
+
+            return uniqueItem;
+        }
 
         public async Task<PagedResult<ProductVM>> GetProductPaging(PagingRequest req)
         {

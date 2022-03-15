@@ -31,7 +31,7 @@ namespace eCommerce.BackendApi.Services
             _fileStorageService = fileStorageService;
 		}
 
-        public async Task<string?> Login(LoginRequest req)
+        public async Task<string?> Login(LoginRequest req,string roleReq)
         {
             var user = await _userManager.FindByNameAsync(req.Username);
             if(user == null)
@@ -46,27 +46,31 @@ namespace eCommerce.BackendApi.Services
             }
 
             var roles = await _userManager.GetRolesAsync(user);
-
-            var claims = new[]
+            if((roles.Count == 0 && roleReq == "Customer") || (roles.Count > 0 && roleReq == "Admin"))
             {
-                new Claim(ClaimTypes.Email,user.Email),
-                new Claim(ClaimTypes.GivenName,user.FirstName),
-                new Claim(ClaimTypes.GivenName,user.LastName),
-                new Claim(ClaimTypes.Name,user.UserName),
-                new Claim("UserId",user.Id.ToString()),
-                new Claim(ClaimTypes.Role,String.Join(";",roles))
-            };
+                var claims = new[]
+                {
+                    new Claim(ClaimTypes.Email,user.Email),
+                    new Claim(ClaimTypes.GivenName,user.FirstName),
+                    new Claim(ClaimTypes.GivenName,user.LastName),
+                    new Claim(ClaimTypes.Name,user.UserName),
+                    new Claim("UserId",user.Id.ToString()),
+                    new Claim(ClaimTypes.Role,String.Join(";",roles))
+                };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtAuthentication:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtAuthentication:Key"]));
+                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(_config["JwtAuthentication:Issuer"],
-                _config["JwtAuthentication:Issuer"],
-                claims,
-                expires: DateTime.Now.AddHours(5),
-                signingCredentials: creds);
+                var token = new JwtSecurityToken(_config["JwtAuthentication:Issuer"],
+                    _config["JwtAuthentication:Issuer"],
+                    claims,
+                    expires: DateTime.Now.AddHours(5),
+                    signingCredentials: creds);
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+                return new JwtSecurityTokenHandler().WriteToken(token);
+            }
+
+            return null;
         }
 
         public async Task<bool> Register(RegisterRequest req)
@@ -239,6 +243,7 @@ namespace eCommerce.BackendApi.Services
             }
             return false;
         }
+
     }
 }
 

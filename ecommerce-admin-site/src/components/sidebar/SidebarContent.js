@@ -3,20 +3,19 @@ import { NavLink, Route } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { Button, WindmillContext } from '@windmill/react-ui';
 import { IoLogOutOutline } from 'react-icons/io5';
-import logoDark from '../../assets/img/logo/logo-dark.svg';
-import logoLight from '../../assets/img/logo/logo-light.svg';
+
 
 import sidebar from '../../routes/sidebar';
 import { AdminContext } from '../../context/AdminContext';
 
 const SidebarContent = () => {
-  const { mode } = useContext(WindmillContext);
+
   const { dispatch } = useContext(AdminContext);
 
-  // const handleLogOut = () => {
-  //   dispatch({ type: 'USER_LOGOUT' });
-  //   Cookies.remove('adminInfo');
-  // };
+  const handleLogOut = () => {
+    dispatch({ type: 'USER_LOGOUT' });
+    Cookies.remove('adminInfo');
+  };
 
   return (
     <div className="py-4 text-gray-500 dark:text-gray-400">
@@ -49,7 +48,7 @@ const SidebarContent = () => {
         ))}
       </ul>
       <span className="lg:fixed bottom-0 px-6 py-6 w-64 mx-auto relative mt-3 block">
-        <Button size="large" className="w-full">
+        <Button onClick={handleLogOut} size="large" className="w-full">
           <span className="flex items-center">
             <IoLogOutOutline className="mr-3 text-lg" />
             <span className="text-sm">Log out</span>

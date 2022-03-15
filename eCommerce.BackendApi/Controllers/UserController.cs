@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace eCommerce.BackendApi.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private readonly IUserService _userService;
@@ -26,7 +26,20 @@ namespace eCommerce.BackendApi.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginRequest req)
         {
-            var token = await _userService.Login(req);
+            var token = await _userService.Login(req,"Customer");
+
+            if (string.IsNullOrEmpty(token))
+            {
+                return BadRequest("Username or password is incorrect");
+            }
+            return Ok(token);
+        }
+
+        [HttpPost("admin/login")]
+        [AllowAnonymous]
+        public async Task<IActionResult> AdminLogin([FromBody] LoginRequest req)
+        {
+            var token = await _userService.Login(req, "Admin");
 
             if (string.IsNullOrEmpty(token))
             {

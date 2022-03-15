@@ -11,18 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
-//var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy(name: MyAllowSpecificOrigins,
-//                      builder =>
-//                      {
-//                          builder.WithOrigins("http://localhost:7273");
-//                      });
-//});
 
 //Add dependency injection
 builder.Services.AddTransient<IProductService, ProductService>();
@@ -124,8 +114,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-//app.UseCors(MyAllowSpecificOrigins);
+app.UseCors(option => {
+    option.AllowAnyOrigin();
+    option.AllowAnyMethod();
+    option.AllowAnyHeader();
+});
 
 app.UseAuthentication();
 
