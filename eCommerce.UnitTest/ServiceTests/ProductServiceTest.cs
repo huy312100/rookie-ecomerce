@@ -4,6 +4,7 @@ using eCommerce.BackendApi.Data.EF;
 using eCommerce.BackendApi.Models;
 using eCommerce.BackendApi.Services;
 using eCommerce.BackendApi.Storage;
+using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Products;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,31 @@ namespace eCommerce.UnitTest.ServiceTests
                     BrandId= 1,
 
                 });
+                context.Products.Add(new Product
+                {
+                    Id = 2,
+                    Name = "Macbook M1",
+                    Price = 45000000,
+                    Description = "Lorem ipsum dolor sit amet",
+                    CreatedDate = DateTime.Today,
+                    UpdatedDate = null,
+                    CategoryId = 2,
+                    BrandId = 1,
+
+                });
+                context.Products.Add(new Product
+                {
+                    Id = 3,
+                    Name = "Samsung S22 Ultra",
+                    Price = 2000000,
+                    Description = "Lorem ipsum dolor sit amet",
+                    CreatedDate = DateTime.Today,
+                    UpdatedDate = null,
+                    CategoryId = 1,
+                    BrandId = 2,
+
+                });
+
                 context.Users.Add(new User
                 {
                     Id = new Guid("76251b87-c54d-47a1-bca2-df905d96c557"),
@@ -109,6 +135,78 @@ namespace eCommerce.UnitTest.ServiceTests
             // Assert
             Assert.Contains($"Cannot find product with ID {productId}", res.Exception.Message);
         }
+
+        [Fact]
+        public async Task GetProductPaging_PageIndexAndPageSizeAreEqual0_ReturnEmptyItem()
+        {
+            //Arrange
+            var req = new PagingRequest()
+            {
+                PageIndex = 0,
+                PageSize = 0
+            };
+
+            //Act
+            var result = await _productService.GetProductPaging(req);
+
+            //Arrange
+            Assert.Empty(result.Items);
+        }
+
+        [Fact]
+        public async Task GetProductByCategory_CategoryIdExistsAndPageSizeAndPageIndexEqual1_ReturnAPagedResultObjectAndProductItemsEqual1()
+        {
+            //Arrange
+            int categoryId = 1;
+            var req = new PagingRequest()
+            {
+                PageIndex = 1,
+                PageSize = 1
+            };
+            // Act 
+            var result = await _productService.GetProductByCategory(req,categoryId);
+            // Assert
+            Assert.IsType<PagedResult<ProductVM>>(result);
+            Assert.Equal(categoryId, result.Items[0].Category.Id);
+            Assert.Equal(1, result.Items.Count);
+        }
+
+        [Fact]
+        public async Task GetProductByCategory_CategoryIdIsNotExist_ReturnEmptyItem()
+        {
+            //Arrange
+            int categoryId = 99;
+            var req = new PagingRequest()
+            {
+                PageIndex = 1,
+                PageSize = 1
+            };
+            // Act 
+            var result = await _productService.GetProductByCategory(req, categoryId);
+            // Assert
+            Assert.Empty(result.Items);
+        }
+
+        [Fact]
+        public async Task CreateProduct_CategoryIsNotExist_ReturnException()
+        {
+            //Arrange
+            var req = new ProductCreateRequest()
+            {
+                Name = "Example product",
+                Price = 10,
+                Description = "Lorem ipsum dolor sit amet",
+                Image = null,
+                CategoryId = 99
+            };
+            // Act 
+            Func<Task> act = () => _productService.CreateProduct(req);
+            // Assert
+            var exception = await Assert.ThrowsAsync<Exception>(act);
+            Assert.Contains($"Cannot create product because CategoryId {req.CategoryId} not found", exception.Message);
+        }
+
+
     }
 }
 
