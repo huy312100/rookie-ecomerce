@@ -4,7 +4,7 @@ import React from 'react';
 // import CategoryServices from '../../services/CategoryServices';
 
 
-const ParentCategory = () => {
+const CategoryList = () => {
   // const { data } = useAsync(CategoryServices.getAllCategory); //   console.log(value);
   return (
     <>
@@ -17,4 +17,4 @@ const ParentCategory = () => {
   );
 };
 
-export default ParentCategory;
+export default CategoryList;
