@@ -5,8 +5,7 @@ import CategoryServices from '../services/CategoryServices';
 // import { notifyError, notifySuccess } from '../utils/toast';
 
 const useCategorySubmit = (id) => {
-  const [imageUrl, setImageUrl] = useState('');
-  const [children, setChildren] = useState([]);
+
   const { isDrawerOpen, closeDrawer, setIsUpdate } = useContext(SidebarContext);
 
   const {
@@ -17,31 +16,28 @@ const useCategorySubmit = (id) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = ({ parent, type }) => {
-    if (!imageUrl) {
-      // notifyError('Icon is required!');
-      return;
-    }
+
+  const onSubmit = ({ name, description }) => {
+    
     const categoryData = {
-      parent: parent,
+      Name: name,
       // slug: slug,
-      type: type,
-      icon: imageUrl,
-      children: children,
+      description: description,
     };
 
     if (id) {
-      CategoryServices.updateCategory(id, categoryData)
-        .then((res) => {
-          setIsUpdate(true);
-          // notifySuccess(res.message);
-        })
-        .catch((err) => console.error(err));
-      closeDrawer();
+      // CategoryServices.updateCategory(id, categoryData)
+      //   .then((res) => {
+      //     setIsUpdate(true);
+      //     // notifySuccess(res.message);
+      //   })
+      //   .catch((err) => console.error(err));
+      // closeDrawer();
     } else {
       CategoryServices.addCategory(categoryData)
         .then((res) => {
           setIsUpdate(true);
+          console.log(res);
           // notifySuccess(res.message);
         })
         .catch((err) => console.log(err));
@@ -51,16 +47,12 @@ const useCategorySubmit = (id) => {
 
   useEffect(() => {
     if (!isDrawerOpen) {
-      setValue('parent');
+      setValue('name');
       // setValue("slug");
-      setValue('children');
-      setValue('type');
-      setImageUrl('');
-      setChildren([]);
-      clearErrors('parent');
+      setValue('description');
+      clearErrors('name');
       // setValue("slug");
-      clearErrors('children');
-      clearErrors('type');
+      clearErrors('description');
       return;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -70,10 +62,6 @@ const useCategorySubmit = (id) => {
     handleSubmit,
     onSubmit,
     errors,
-    imageUrl,
-    setImageUrl,
-    children,
-    setChildren,
   };
 };
 

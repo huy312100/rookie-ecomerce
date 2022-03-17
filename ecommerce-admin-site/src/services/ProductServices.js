@@ -5,16 +5,20 @@ const ProductServices = {
     return requests.get('/product/all');
   },
 
+  getProductById(id) {
+    return requests.get(`/product/${id}`);
+  },
+
   addProduct(body) {
-    return requests.post('/products/add', body);
+    return requests.post('/product', body);
   },
 
-  updateProduct(id, body) {
-    return requests.put(`/products/${id}`, body);
-  },
+  // updateProduct(id, body) {
+  //   return requests.put(`/products/${id}`, body);
+  // },
 
-  deleteProduct(id) {
-    return requests.delete(`/products/${id}`);
+  deleteProduct(productId) {
+    return requests.delete(`/product/${productId}`);
   },
 };
 

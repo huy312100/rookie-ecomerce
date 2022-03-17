@@ -3,11 +3,10 @@ import { useLocation } from 'react-router-dom';
 import { Modal, ModalBody, ModalFooter, Button } from '@windmill/react-ui';
 import { FiTrash2 } from 'react-icons/fi';
 
-import UserServices from '../../services/UserServices';
 // import AdminServices from '../../services/AdminServices';
 // import CouponServices from '../../services/CouponServices';
-// import ProductServices from '../../services/ProductServices';
-// import CategoryServices from '../../services/CategoryServices';
+import ProductServices from '../../services/ProductServices';
+import CategoryServices from '../../services/CategoryServices';
 import { SidebarContext } from '../../context/SidebarContext';
 import { notifySuccess, notifyError } from '../../utils/toast';
 
@@ -16,53 +15,31 @@ const MainModal = ({ id }) => {
   const location = useLocation();
 
   const handleDelete = () => {
-    // if (location.pathname === '/products') {
-    //   ProductServices.deleteProduct(id)
-    //     .then((res) => {
-    //       setIsUpdate(true);
-    //       notifySuccess(res.message);
-    //     })
-    //     .catch((err) => notifyError(err.message));
-    //   closeModal();
-    // }
-
-    // if (location.pathname === '/category') {
-    //   CategoryServices.deleteCategory(id)
-    //     .then((res) => {
-    //       setIsUpdate(true);
-    //       notifySuccess(res.message);
-    //     })
-    //     .catch((err) => notifyError(err.message));
-    //   closeModal();
-    // }
-    if (location.pathname === '/customers') {
-      UserServices.deleteUser(id)
+    if (location.pathname === '/products') {
+      ProductServices.deleteProduct(id)
         .then((res) => {
           setIsUpdate(true);
           notifySuccess(res.message);
         })
-        .catch((err) => notifyError(err.message));
+        .catch((err) => 
+          notifyError(err.message)
+        );
       closeModal();
     }
 
-    // if (location.pathname === '/coupons') {
-    //   CouponServices.deleteCoupon(id)
-    //     .then((res) => {
-    //       setIsUpdate(true);
-    //       notifySuccess(res.message);
-    //     })
-    //     .catch((err) => notifyError(err.message));
-    //   closeModal();
-    // }
-    // if (location.pathname === '/our-staff') {
-    //   AdminServices.deleteStaff(id)
-    //     .then((res) => {
-    //       setIsUpdate(true);
-    //       notifySuccess(res.message);
-    //     })
-    //     .catch((err) => notifyError(err.message));
-    //   closeModal();
-    // }
+
+    if (location.pathname === '/category') {
+      CategoryServices.deleteCategory(id)
+        .then((res) => {
+          setIsUpdate(true);
+          notifySuccess(res.message);
+        })
+        .catch((err) => {
+          notifyError(err.message);
+          console.log(err.message);
+        });
+      closeModal();
+    }
   };
 
   return (

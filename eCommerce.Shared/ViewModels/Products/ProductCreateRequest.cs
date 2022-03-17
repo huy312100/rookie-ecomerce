@@ -14,6 +14,7 @@ namespace eCommerce.Shared.ViewModels.Products
 		public IFormFile Image { get; set; }
 		[Required(ErrorMessage = "Please enter category id")]
 		public int CategoryId { get; set; }
+		public int BrandId { get; set; }
 	}
 }
 

@@ -49,7 +49,9 @@ const Uploader = ({ setImageUrl, imageUrl }) => {
   // }, [files]);
 
   const thumbs = files.map((file) => (
+    
     <div key={file.name}>
+      {console.log('jump here')}
       <div>
         <img
           className="inline-flex border-2 border-gray-100 w-24 max-h-24"

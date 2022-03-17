@@ -265,7 +265,8 @@ namespace eCommerce.BackendApi.Services
                 Description=req.Description,
                 Price = req.Price,
                 CreatedDate = DateTime.Now,
-                CategoryId = req.CategoryId
+                CategoryId = req.CategoryId,
+                BrandId=req.BrandId
             };
 
             if (req.Image != null)
