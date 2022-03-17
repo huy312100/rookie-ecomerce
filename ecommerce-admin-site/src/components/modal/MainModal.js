@@ -3,8 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { Modal, ModalBody, ModalFooter, Button } from '@windmill/react-ui';
 import { FiTrash2 } from 'react-icons/fi';
 
-// import AdminServices from '../../services/AdminServices';
-// import CouponServices from '../../services/CouponServices';
 import ProductServices from '../../services/ProductServices';
 import CategoryServices from '../../services/CategoryServices';
 import { SidebarContext } from '../../context/SidebarContext';

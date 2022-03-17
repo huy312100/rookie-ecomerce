@@ -5,13 +5,17 @@ const CategoryServices = {
     return requests.get('/category/all');
   },
 
+  getCategoryById(id) {
+    return requests.get(`/category/${id}`);
+  },
+
   addCategory(body) {
     return requests.post('/category', body);
   },
 
-  // updateCategory(id, body) {
-  //   return requests.put(`/category/${id}`, body);
-  // },
+  updateCategory(body) {
+    return requests.put('/category', body);
+  },
 
   deleteCategory(categoryId) {
     return requests.delete(`/category/${categoryId}`);

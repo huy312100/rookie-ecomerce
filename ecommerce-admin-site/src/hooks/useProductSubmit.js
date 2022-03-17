@@ -17,10 +17,7 @@ const useProductSubmit = (id) => {
     formState: { errors },
   } = useForm();
 
-  console.log(id);
   const onSubmit = (data) => {
-    console.log('aaaa');
-
     const productData = {
       // id: data.id,
       Name: data.name,

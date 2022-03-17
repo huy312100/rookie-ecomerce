@@ -59,7 +59,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateCategory([FromForm] CategoryUpdateRequest req)
+        public async Task<IActionResult> UpdateCategory([FromBody] CategoryUpdateRequest req)
         {
             if (!ModelState.IsValid)
             {
