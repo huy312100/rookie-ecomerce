@@ -115,7 +115,7 @@ const ProductDrawer = ({ id }) => {
                   </option>
                   <CategoryList />
                 </Select>
-                {/* <Error errorName={errors.categoryid} /> */}
+                <Error errorName={errors.categoryid} />
               </div>
             </div>
 
@@ -134,6 +134,7 @@ const ProductDrawer = ({ id }) => {
                   </option>
                   <BrandList />
                 </Select>
+                <Error errorName={errors.brandid} />
               </div>
             </div>
 

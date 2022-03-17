@@ -82,6 +82,22 @@ namespace eCommerce.BackendApi.Controllers
             return CreatedAtAction(nameof(GetProductById), new { id = productId }, product);
         }
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateProduct([FromBody] ProductUpdateRequest req)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var res = await _prodService.UpdateProduct(req);
+            if (res < 0)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
         [HttpDelete("{productId}")]
         public async Task<IActionResult> DeleteProduct(int productId)
         {

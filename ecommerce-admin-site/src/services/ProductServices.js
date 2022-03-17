@@ -13,9 +13,9 @@ const ProductServices = {
     return requests.post('/product', body);
   },
 
-  // updateProduct(id, body) {
-  //   return requests.put(`/products/${id}`, body);
-  // },
+  updateProduct(body) {
+    return requests.put('/product', body);
+  },
 
   deleteProduct(productId) {
     return requests.delete(`/product/${productId}`);

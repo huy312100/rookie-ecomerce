@@ -19,7 +19,7 @@ const useProductSubmit = (id) => {
 
   const onSubmit = (data) => {
     const productData = {
-      // id: data.id,
+      ...(id) && {Id:id},
       Name: data.name,
       Price: data.price,
       Description: data.description,
@@ -31,13 +31,13 @@ const useProductSubmit = (id) => {
     console.log(productData);
 
     if (id) {
-      // ProductServices.updateProduct(id, productData)
-      //   .then((res) => {
-      //     setIsUpdate(true);
-      //     notifySuccess(res.message);
-      //   })
-      //   .catch((err) => notifyError(err.message));
-      // closeDrawer();
+      ProductServices.updateProduct(productData)
+        .then((res) => {
+          setIsUpdate(true);
+          notifySuccess(res.message);
+        })
+        .catch((err) => notifyError(err.message));
+      closeDrawer();
     } else {
       ProductServices.addProduct(productData)
         .then((res) => {
