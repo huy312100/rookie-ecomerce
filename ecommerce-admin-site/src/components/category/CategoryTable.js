@@ -4,16 +4,16 @@ import { TableBody, TableRow, TableCell } from '@windmill/react-ui';
 import MainModal from '../modal/MainModal';
 import MainDrawer from '../drawer/MainDrawer';
 import CategoryDrawer from '../drawer/CategoryDrawer';
-// import useToggleDrawer from '../../hooks/useToggleDrawer';
+import useToggleDrawer from '../../hooks/useToggleDrawer';
 import EditDeleteButton from '../table/EditDeleteButton';
 
 const CategoryTable = ({ categories }) => {
-  // const { serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
+  const { serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
   return (
     <>
-      <MainModal  />
+      <MainModal id={serviceId} />
       <MainDrawer>
-        <CategoryDrawer  />
+        <CategoryDrawer id={serviceId} />
       </MainDrawer>
 
       <TableBody>
@@ -30,8 +30,8 @@ const CategoryTable = ({ categories }) => {
             <TableCell>
               <EditDeleteButton
                 id={data.id}
-                // handleUpdate={handleUpdate}
-                // handleModalOpen={handleModalOpen}
+                handleUpdate={handleUpdate}
+                handleModalOpen={handleModalOpen}
               />
             </TableCell>
            

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useFilter = (data) => {
   const [currentPage, setCurrentPage] = useState(1);

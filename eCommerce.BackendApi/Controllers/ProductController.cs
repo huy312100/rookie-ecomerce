@@ -69,17 +69,33 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct([FromForm] ProductCreateRequest req)
+        public async Task<IActionResult> CreateProduct([FromBody] ProductCreateRequest req)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
             var productId = await _prodService.CreateProduct(req);
             if (productId < 0)
                 return BadRequest();
             var product = await _prodService.GetProductById(productId);
             return CreatedAtAction(nameof(GetProductById), new { id = productId }, product);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateProduct([FromBody] ProductUpdateRequest req)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var res = await _prodService.UpdateProduct(req);
+            if (res < 0)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
         }
 
         [HttpDelete("{productId}")]

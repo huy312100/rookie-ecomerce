@@ -2,11 +2,10 @@ import { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { SidebarContext } from '../context/SidebarContext';
 import CategoryServices from '../services/CategoryServices';
-// import { notifyError, notifySuccess } from '../utils/toast';
+import { notifyError, notifySuccess } from '../utils/toast';
 
 const useCategorySubmit = (id) => {
-  const [imageUrl, setImageUrl] = useState('');
-  const [children, setChildren] = useState([]);
+
   const { isDrawerOpen, closeDrawer, setIsUpdate } = useContext(SidebarContext);
 
   const {
@@ -17,23 +16,21 @@ const useCategorySubmit = (id) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = ({ parent, type }) => {
-    if (!imageUrl) {
-      // notifyError('Icon is required!');
-      return;
-    }
+
+  const onSubmit = ({ name, description }) => {
+    console.log(id);
     const categoryData = {
-      parent: parent,
+      ...(id) && {Id:id},
+      Name: name,
       // slug: slug,
-      type: type,
-      icon: imageUrl,
-      children: children,
+      Description: description,
     };
 
     if (id) {
-      CategoryServices.updateCategory(id, categoryData)
+      CategoryServices.updateCategory(categoryData)
         .then((res) => {
           setIsUpdate(true);
+          console.log(res);
           // notifySuccess(res.message);
         })
         .catch((err) => console.error(err));
@@ -42,6 +39,7 @@ const useCategorySubmit = (id) => {
       CategoryServices.addCategory(categoryData)
         .then((res) => {
           setIsUpdate(true);
+          console.log(res);
           // notifySuccess(res.message);
         })
         .catch((err) => console.log(err));
@@ -51,17 +49,24 @@ const useCategorySubmit = (id) => {
 
   useEffect(() => {
     if (!isDrawerOpen) {
-      setValue('parent');
-      // setValue("slug");
-      setValue('children');
-      setValue('type');
-      setImageUrl('');
-      setChildren([]);
-      clearErrors('parent');
-      // setValue("slug");
-      clearErrors('children');
-      clearErrors('type');
+      setValue('name');
+      setValue('description');
+      clearErrors('name');
+      clearErrors('description');
       return;
+    }
+
+    if (id) {
+      CategoryServices.getCategoryById(id)
+        .then((res) => {
+          if (res) {
+            setValue('name', res.name);
+            setValue('description', res.description);
+          }
+        })
+        .catch((err) => {
+          notifyError('There is a server error!');
+        });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, setValue, isDrawerOpen]);
@@ -70,10 +75,6 @@ const useCategorySubmit = (id) => {
     handleSubmit,
     onSubmit,
     errors,
-    imageUrl,
-    setImageUrl,
-    children,
-    setChildren,
   };
 };
 
