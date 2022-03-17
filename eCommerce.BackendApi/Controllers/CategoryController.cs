@@ -45,7 +45,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCategory([FromForm] CategoryCreateRequest req)
+        public async Task<IActionResult> CreateCategory([FromBody] CategoryCreateRequest req)
         {
             if (!ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateCategory([FromForm] CategoryUpdateRequest req)
+        public async Task<IActionResult> UpdateCategory([FromBody] CategoryUpdateRequest req)
         {
             if (!ModelState.IsValid)
             {
@@ -74,10 +74,10 @@ namespace eCommerce.BackendApi.Controllers
             return Ok(res);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteCategory([FromForm] CategoryDeleteRequest req)
+        [HttpDelete("{productId}")]
+        public async Task<IActionResult> DeleteCategory(int productId)
         {
-            var res = await _categoryService.DeleteCategory(req);
+            var res = await _categoryService.DeleteCategory(productId);
             if (res < 0)
             {
                 return BadRequest();

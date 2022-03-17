@@ -1,6 +1,6 @@
 import React from "react";
 import { Select } from "@windmill/react-ui";
-import ParentCategory from "../category/ParentCategory";
+import CategoryList from "../category/CategoryList";
 
 const SelectCategory = ({ setFilter }) => {
   return (
@@ -12,7 +12,7 @@ const SelectCategory = ({ setFilter }) => {
         <option value="All" defaultValue hidden>
           Category
         </option>
-        <ParentCategory />
+        <CategoryList />
       </Select>
     </>
   );

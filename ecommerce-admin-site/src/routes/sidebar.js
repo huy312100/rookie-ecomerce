@@ -2,7 +2,6 @@ import {
   FiShoppingBag,
   FiUsers,
   FiList,
-  FiSettings,
 } from 'react-icons/fi';
 
 const sidebar = [
@@ -20,11 +19,6 @@ const sidebar = [
     path: '/customers',
     icon: FiUsers,
     name: 'Customers',
-  },
-  {
-    path: '/setting',
-    icon: FiSettings,
-    name: 'Setting',
   },
 ];
 

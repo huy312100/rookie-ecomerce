@@ -18,6 +18,7 @@
     <None Remove="Constants\" />
     <None Remove="ViewModels\Ratings\" />
     <None Remove="Utils\" />
+    <None Remove="ViewModels\Brands\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -29,6 +30,7 @@
     <Folder Include="ViewModels\Common\" />
     <Folder Include="Constants\" />
     <Folder Include="ViewModels\Ratings\" />
+    <Folder Include="ViewModels\Brands\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />

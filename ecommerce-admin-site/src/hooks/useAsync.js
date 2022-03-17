@@ -12,11 +12,8 @@ const useAsync = (asyncFunction) => {
     let unmounted = false;
     let source = axios.CancelToken.source();
 
-    console.log(source);
-
     asyncFunction({ cancelToken: source.token })
       .then((res) => {
-        console.log(res);
         if (!unmounted) {
           setData(res);
           setError('');
