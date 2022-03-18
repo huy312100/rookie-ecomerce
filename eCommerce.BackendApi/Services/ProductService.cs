@@ -88,7 +88,7 @@ namespace eCommerce.BackendApi.Services
             var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
 
             //3.Paging
-            //int totalRow = await query.CountAsync();
+            int totalRow = await query.CountAsync();
 
             var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
                 //.GroupBy(x=>x.p.Id)
@@ -123,7 +123,7 @@ namespace eCommerce.BackendApi.Services
                 }).ToListAsync();
 
             var uniqueItem = data.GroupBy(x => x.Id).Select(x => x.First()).ToList();
-            int totalRow = uniqueItem.Count();
+            //int totalRow = uniqueItem.Count();
 
             var pagedResult = new PagedResult<ProductVM>()
             {
@@ -215,6 +215,8 @@ namespace eCommerce.BackendApi.Services
 
             var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
 
+            int totalRow = await query.CountAsync();
+
             var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
                 .Select(prop => new ProductVM()
                 {
@@ -235,7 +237,7 @@ namespace eCommerce.BackendApi.Services
                         Name=prop.b.Name,
                         Description=prop.b.Description
                     },
-                    StarAverage = (double)prop.pi.Id,
+                    StarAverage = averageStar,
 
                     Images = query.Where(x => prop.pi.ProductId == x.p.Id)
                         .Select(data => new ProductImageVM()
@@ -247,7 +249,6 @@ namespace eCommerce.BackendApi.Services
                 }).ToListAsync();
 
             var uniqueItem = data.GroupBy(x => x.Id).Select(x => x.First()).ToList();
-            int totalRow = uniqueItem.Count();
 
             var pagedResult = new PagedResult<ProductVM>()
             {

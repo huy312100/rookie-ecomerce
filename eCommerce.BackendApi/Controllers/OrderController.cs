@@ -35,6 +35,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CheckoutOrder([FromBody] CheckoutRequest req)
         {
             var res = await _orderService.CheckoutOrder(req);

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.Constants;
 using eCommerce.Shared.ViewModels.Categories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -45,6 +47,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryCreateRequest req)
         {
             if (!ModelState.IsValid)
@@ -59,6 +62,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
         public async Task<IActionResult> UpdateCategory([FromBody] CategoryUpdateRequest req)
         {
             if (!ModelState.IsValid)
@@ -75,6 +79,7 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpDelete("{productId}")]
+        [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
         public async Task<IActionResult> DeleteCategory(int productId)
         {
             var res = await _categoryService.DeleteCategory(productId);

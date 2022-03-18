@@ -10,8 +10,9 @@ namespace eCommerce.CustomerSite.Services
     public class ProductService : BaseService, IProductService
     {
 
-        public ProductService(IHttpClientFactory httpClientFactory, IConfiguration configuration)
-            : base(httpClientFactory, configuration)
+        public ProductService(IHttpClientFactory httpClientFactory,
+            IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
+            : base(httpClientFactory, httpContextAccessor, configuration)
         {
         }
 
