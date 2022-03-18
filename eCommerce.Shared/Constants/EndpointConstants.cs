@@ -7,6 +7,9 @@ namespace eCommerce.Shared.Constants
 		public static string PRODUCT= "/api/product/";
 		public static string PRODUCT_CATEGORY = "/api/product/category";
 
+		public static string PRODUCT_RATING = "/api/rating/product";
+		public static string RATING = "api/rating";
+
 		public static string CATEGORY = "/api/category";
 
 		public static string USER_LOGIN = "/api/user/login";

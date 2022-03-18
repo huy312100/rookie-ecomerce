@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.Constants;
 using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Users;
 using Microsoft.AspNetCore.Authorization;
@@ -13,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace eCommerce.BackendApi.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
     public class UserController : Controller
     {
         private readonly IUserService _userService;

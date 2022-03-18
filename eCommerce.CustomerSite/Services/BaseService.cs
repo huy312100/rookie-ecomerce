@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
 namespace eCommerce.CustomerSite.Services
@@ -7,15 +8,15 @@ namespace eCommerce.CustomerSite.Services
 	{
         protected readonly IConfiguration _configuration;
         protected readonly IHttpClientFactory _httpClientFactory;
-        //protected readonly IHttpContextAccessor _httpContextAccessor;
+        protected readonly IHttpContextAccessor _httpContextAccessor;
 
         protected BaseService(IHttpClientFactory httpClientFactory,
-                   //IHttpContextAccessor httpContextAccessor,
+                   IHttpContextAccessor httpContextAccessor,
                     IConfiguration configuration)
         {
             _configuration = configuration;
             _httpClientFactory = httpClientFactory;
-            //_httpContextAccessor = httpContextAccessor;
+            _httpContextAccessor = httpContextAccessor;
         }
 
 
@@ -23,6 +24,15 @@ namespace eCommerce.CustomerSite.Services
         {
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+            return client;
+        }
+
+        protected HttpClient CreateClientWithBearerToken()
+        {
+            var token = _httpContextAccessor.HttpContext.User.FindFirst("Token")?.Value;
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             return client;
         }
 
