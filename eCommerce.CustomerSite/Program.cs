@@ -24,6 +24,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddTransient<IRatingService, RatingService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
 
 var app = builder.Build();

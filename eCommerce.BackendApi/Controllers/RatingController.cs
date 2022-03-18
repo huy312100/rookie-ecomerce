@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
 using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Ratings;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace eCommerce.BackendApi.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class RatingController : Controller
     {
         private readonly IRatingService _ratingService;
@@ -19,6 +21,14 @@ namespace eCommerce.BackendApi.Controllers
         public RatingController(IRatingService ratingService)
         {
             _ratingService = ratingService;
+        }
+
+        [HttpGet("product/{productId}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetRatingByProduct([FromQuery] PagingRequest req,int productId)
+        {
+            var res = await _ratingService.GetRatingByProduct(req,productId);
+            return Ok(res);
         }
 
         [HttpPost]
@@ -36,20 +46,6 @@ namespace eCommerce.BackendApi.Controllers
             
             return Ok(res);
         }
-
-        [HttpGet("{productId}")]
-        public async Task<IActionResult> GetRatingByProduct([FromQuery] PagingRequest req, int productId)
-        {
-            var res = _ratingService.GetRatingByProduct(req, productId);
-            return Ok(res);
-        }
-
-        //[HttpGet("{productId}")]
-        //public async Task<IActionResult> GetRatingByProduct(int productId)
-        //{
-        //    var res = _ratingService.GetRatingByProduct(productId);
-        //    return Ok(res);
-        //}
     }
 }
 
