@@ -23,6 +23,12 @@ namespace eCommerce.UnitTest.ServiceTests
 
             using (var context = new ApplicationDbContext(options))
             {
+                context.Brands.Add(new Brand
+                {
+                    Id = 1,
+                    Name = "Apple",
+                    Description = "Lorem ipsum dolor sit amet",
+                });
                 context.Products.Add(new Product
                 {
                     Id = 1,
