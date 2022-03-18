@@ -235,7 +235,7 @@ namespace eCommerce.BackendApi.Services
                         Name=prop.b.Name,
                         Description=prop.b.Description
                     },
-                    StarAverage = (double)prop.pi.Id,
+                    StarAverage = averageStar,
 
                     Images = query.Where(x => prop.pi.ProductId == x.p.Id)
                         .Select(data => new ProductImageVM()

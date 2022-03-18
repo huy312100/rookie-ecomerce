@@ -9,6 +9,16 @@
             string res = data.ToString("#,###", cul.NumberFormat);
             return res;
         }
+
+        public static string ConvertToStar(double? star)
+        {
+            if (star == 0)
+            {
+                return "";
+            }
+            double? starAverage = (star * 100) / 5;
+            return starAverage.ToString() + "%";
+        }
     }
 }
 
@@ -82,9 +92,7 @@
         <div class="row shop_container">
             @foreach (var product in @Model.FeaturedProducts.Items)
             {
-
-
-<div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-3 col-md-4 col-6">
                     <div class="product_box text-center">
                         <div class="product_img">
                             <a href="shop-product-detail.html">
@@ -108,9 +116,8 @@
                             </div>
                             <div class="rating_wrap">
                                 <div class="rating">
-                                    <div class="product_rate" style="width:80%"></div>
+                                    <div class="product_rate" style="width: @ConvertToStar(product.StarAverage)"></div>
                                 </div>
-                                <span class="rating_num">(21)</span>
                             </div>
                             <div class="pr_desc">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
@@ -122,10 +129,6 @@
                     </div>
                 </div>
             }
-
-
-
-          
         </div>
     </div>
 </div>

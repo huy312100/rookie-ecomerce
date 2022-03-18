@@ -13,6 +13,16 @@
             string res = data.ToString("#,###", cul.NumberFormat);
             return res;
         }
+
+        public static string ConvertToStar(double? star)
+        {
+            if(star == 0)
+            {
+                return "";
+            }
+            double? starAverage= (star * 100) / 5;
+            return starAverage.ToString()+"%";
+        }
     }
 }
 
@@ -84,16 +94,11 @@
                             <h4 class="product_title">@Model.Name</h4>
                             <div class="product_price">
                                 <span class="price">@ConvertToVnd(Model.Price)</span>
-                                @*<del>$55.25</del>*@
-                                @*<div class="on_sale">
-                                    <span>35% Off</span>
-                                </div>*@
                             </div>
                             <div class="rating_wrap">
                                 <div class="rating">
-                                    <div class="product_rate" style="width:80%"></div>
+                                    <div class="product_rate" style="width: @ConvertToStar(Model.StarAverage)"></div>
                                 </div>
-                                <span class="rating_num">(21)</span>
                             </div>
                             <div class="pr_desc">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
@@ -105,15 +110,6 @@
                                     <li><i class="linearicons-bag-dollar"></i> Cash on Delivery available</li>
                                 </ul>
                             </div>
-                            <div class="pr_switch_wrap">
-                                <span class="switch_lable">Color</span>
-                                <div class="product_color_switch">
-                                    <span class="active" data-color="#87554B"></span>
-                                    <span data-color="#333333"></span>
-                                    <span data-color="#DA323F"></span>
-                                </div>
-                            </div>
-                            
                         </div>
                         <hr />
                         <div class="cart_extra">
@@ -174,20 +170,16 @@
                             <div class="tab-pane fade" id="Additional-info" role="tabpanel" aria-labelledby="Additional-info-tab">
                                 <table class="table table-bordered">
                                     <tr>
-                                        <td>Capacity</td>
-                                        <td>5 Kg</td>
+                                        <td>Category</td>
+                                        <td>@Model.Category.Name</td>
                                     </tr>
                                     <tr>
-                                        <td>Color</td>
-                                        <td>Black, Brown, Red,</td>
+                                        <td>Brand</td>
+                                        <td>@Model.Brand.Name</td>
                                     </tr>
                                     <tr>
                                         <td>Water Resistant</td>
                                         <td>Yes</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Material</td>
-                                        <td>Artificial Leather</td>
                                     </tr>
                                 </table>
                             </div>
@@ -195,7 +187,7 @@
                             @**@
                         <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
                             <div class="comments">
-                                <h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span></h5>
+                                <h5 class="product_tab_title">Review</h5>
                                 <ul class="list_none comment_list mt-4">
                                     <li>
                                         <div class="comment_img">
@@ -223,7 +215,7 @@
                                         <div class="comment_block">
                                             <div class="rating_wrap">
                                                 <div class="rating">
-                                                    <div class="product_rate" style="width:60%"></div>
+                                                    <div class="product_rate" style="width:60%">5</div>
                                                 </div>
                                             </div>
                                             <p class="customer_meta">
@@ -278,6 +270,7 @@
                     <div class="medium_divider"></div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12">
                     <div class="heading_s1">
