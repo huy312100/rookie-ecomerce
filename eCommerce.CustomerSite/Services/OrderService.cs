@@ -9,14 +9,15 @@ namespace eCommerce.CustomerSite.Services
 {
 	public class OrderService :BaseService,IOrderService
 	{
-        public OrderService(IHttpClientFactory httpClientFactory, IConfiguration configuration)
-            : base(httpClientFactory, configuration)
+        public OrderService(IHttpClientFactory httpClientFactory,
+              IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
+            : base(httpClientFactory, httpContextAccessor,configuration)
         {
         }
 
         public async Task<bool> Checkout(CheckoutRequest request)
         {
-            var client = this.CreateClient();
+            var client = this.CreateClientWithBearerToken();
 
             var url = $"{EndpointConstants.ORDER}";
 

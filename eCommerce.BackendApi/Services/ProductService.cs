@@ -8,6 +8,7 @@ using eCommerce.Shared.ViewModels.Categories;
 using System.Net.Http.Headers;
 using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Ratings;
+using eCommerce.Shared.ViewModels.Brands;
 
 namespace eCommerce.BackendApi.Services
 {
@@ -25,12 +26,14 @@ namespace eCommerce.BackendApi.Services
         public async Task<List<ProductVM>> GetAllProducts()
         {
             var query = from p in _dbContext.Products
+                        join b in _dbContext.Brands
+                        on p.BrandId equals b.Id
                         join c in _dbContext.Categories
                         on p.CategoryId equals c.Id
                         join pi in _dbContext.ProductImages
                         on p.Id equals pi.ProductId into obj1
                         from pi in obj1.DefaultIfEmpty()
-                        select new { p, c, pi };
+                        select new { p, c, pi, b };
 
             var data = await query.Select(prop => new ProductVM()
             {
@@ -44,6 +47,12 @@ namespace eCommerce.BackendApi.Services
                 {
                     Id = prop.c.Id,
                     Name = prop.c.Name
+                },
+                Brand = new BrandVM
+                {
+                    Id = prop.b.Id,
+                    Name = prop.b.Name,
+                    Description = prop.b.Description
                 },
 
                 Images = query.Where(x => prop.pi.ProductId == x.p.Id && x.pi.IsThumbnail == true)
@@ -64,6 +73,8 @@ namespace eCommerce.BackendApi.Services
         {
             //1. join product and category
             var query = from p in _dbContext.Products
+                        join b in _dbContext.Brands
+                        on p.BrandId equals b.Id
                         join c in _dbContext.Categories
                         on p.CategoryId equals c.Id
                         join pi in _dbContext.ProductImages
@@ -72,12 +83,12 @@ namespace eCommerce.BackendApi.Services
                         join r in _dbContext.Ratings
                         on p.Id equals r.ProductId into obj2
                         from r in obj2.DefaultIfEmpty()
-                        select new { p, c, pi, r };
+                        select new { p, c, pi, r, b };
 
             var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
 
             //3.Paging
-            //int totalRow = await query.CountAsync();
+            int totalRow = await query.CountAsync();
 
             var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
                 //.GroupBy(x=>x.p.Id)
@@ -94,7 +105,12 @@ namespace eCommerce.BackendApi.Services
                         Id = prop.c.Id,
                         Name = prop.c.Name
                     },
-
+                    Brand = new BrandVM
+                    {
+                        Id = prop.b.Id,
+                        Name = prop.b.Name,
+                        Description = prop.b.Description
+                    },
                     StarAverage = averageStar,
 
                     Images = query.Where(x => prop.pi.ProductId == x.p.Id)
@@ -107,7 +123,7 @@ namespace eCommerce.BackendApi.Services
                 }).ToListAsync();
 
             var uniqueItem = data.GroupBy(x => x.Id).Select(x => x.First()).ToList();
-            int totalRow = uniqueItem.Count();
+            //int totalRow = uniqueItem.Count();
 
             var pagedResult = new PagedResult<ProductVM>()
             {
@@ -123,6 +139,8 @@ namespace eCommerce.BackendApi.Services
         {
 
             var query = from p in _dbContext.Products
+                        join b in _dbContext.Brands
+                        on p.BrandId equals b.Id
                         join c in _dbContext.Categories
                         on p.CategoryId equals c.Id
                         join pi in _dbContext.ProductImages
@@ -131,8 +149,8 @@ namespace eCommerce.BackendApi.Services
                         join r in _dbContext.Ratings
                         on p.Id equals r.ProductId into obj2
                         from r in obj2.DefaultIfEmpty()
-                        where p.Id==id
-                        select new { p, c, pi, r };
+                        where p.Id == id
+                        select new { p, c, pi, r, b };
 
             var product = await query.FirstOrDefaultAsync();
             var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
@@ -162,6 +180,12 @@ namespace eCommerce.BackendApi.Services
                     CreatedDate=product.c.CreatedDate,
                     ParentId=product.c.ParentId
                 },
+                Brand = new BrandVM
+                {
+                    Id = product.b.Id,
+                    Name = product.b.Name,
+                    Description = product.b.Description
+                },
                 StarAverage = averageStar,
                 Images = images.Select(data => new ProductImageVM()
                 {
@@ -176,6 +200,8 @@ namespace eCommerce.BackendApi.Services
         public async Task<PagedResult<ProductVM>> GetProductByCategory(PagingRequest req,int categoryId)
         {
             var query = from p in _dbContext.Products
+                        join b in _dbContext.Brands
+                        on p.BrandId equals b.Id
                         join c in _dbContext.Categories
                         on p.CategoryId equals c.Id
                         join pi in _dbContext.ProductImages
@@ -185,9 +211,11 @@ namespace eCommerce.BackendApi.Services
                         on p.Id equals r.ProductId into obj2
                         from r in obj2.DefaultIfEmpty()
                         where c.Id == categoryId
-                        select new { p, c, pi, r };
+                        select new { p, c, pi, r, b };
 
             var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
+
+            int totalRow = await query.CountAsync();
 
             var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
                 .Select(prop => new ProductVM()
@@ -203,8 +231,13 @@ namespace eCommerce.BackendApi.Services
                         Id = prop.c.Id,
                         Name = prop.c.Name
                     },
-
-                    StarAverage = (double)prop.pi.Id,
+                    Brand = new BrandVM
+                    {
+                        Id= prop.b.Id,
+                        Name=prop.b.Name,
+                        Description=prop.b.Description
+                    },
+                    StarAverage = averageStar,
 
                     Images = query.Where(x => prop.pi.ProductId == x.p.Id)
                         .Select(data => new ProductImageVM()
@@ -216,7 +249,6 @@ namespace eCommerce.BackendApi.Services
                 }).ToListAsync();
 
             var uniqueItem = data.GroupBy(x => x.Id).Select(x => x.First()).ToList();
-            int totalRow = uniqueItem.Count();
 
             var pagedResult = new PagedResult<ProductVM>()
             {
@@ -265,7 +297,8 @@ namespace eCommerce.BackendApi.Services
                 Description=req.Description,
                 Price = req.Price,
                 CreatedDate = DateTime.Now,
-                CategoryId = req.CategoryId
+                CategoryId = req.CategoryId,
+                BrandId=req.BrandId
             };
 
             if (req.Image != null)
@@ -301,6 +334,38 @@ namespace eCommerce.BackendApi.Services
             }
 
             _dbContext.Products.Remove(product);
+            return await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<int> UpdateProduct(ProductUpdateRequest req)
+        {
+            //check if category is existed or not
+            var product = await _dbContext.Products.FindAsync(req.Id);
+
+            if (product == null)
+            {
+                throw new Exception($"Cannot update product because ProductId {req.Id} is null or not found");
+            }
+
+            product.Name = req.Name;
+            product.Description = req.Description;
+            product.Price = req.Price;
+            product.UpdatedDate = DateTime.Now;
+            product.CategoryId = req.CategoryId;
+            product.BrandId = req.BrandId;
+
+            if (req.Image != null)
+            {
+                var image = await _dbContext.ProductImages.FirstOrDefaultAsync(i => i.IsThumbnail == true && i.ProductId == req.Id);
+                if (image != null)
+                {
+                    image.ImageUrl = await _fileStorageService.SaveFile(req.Image);
+                    _dbContext.ProductImages.Update(image);
+                }
+
+            }
+
+            _dbContext.Products.Update(product);
             return await _dbContext.SaveChangesAsync();
         }
     }

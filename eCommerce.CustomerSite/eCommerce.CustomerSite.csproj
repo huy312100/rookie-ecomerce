@@ -18,6 +18,9 @@
     <Folder Include="Services\" />
     <Folder Include="Interfaces\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Controllers\Components\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\Pager\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Product\" />
@@ -30,6 +33,9 @@
     <None Remove="Microsoft.IdentityModel.Tokens" />
     <None Remove="System.IdentityModel.Tokens.Jwt" />
     <None Remove="ViewModels\" />
+    <None Remove="Controllers\Components\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\Pager\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Shared\eCommerce.Shared.csproj">

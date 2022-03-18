@@ -1,5 +1,5 @@
 ﻿@using System.Globalization
-@model eCommerce.Shared.ViewModels.Products.ProductVM
+@model ProductDetailVM
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -12,6 +12,16 @@
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
             string res = data.ToString("#,###", cul.NumberFormat);
             return res;
+        }
+
+        public static string ConvertToStar(double? star)
+        {
+            if(star == 0)
+            {
+                return "";
+            }
+            double? starAverage= (star * 100) / 5;
+            return starAverage.ToString()+"%";
         }
     }
 }
@@ -40,9 +50,9 @@
                 <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
                     <div class="product-image">
                         <div class="product_img_box">
-                            @if (Model.Images.Count > 0)
+                            @if (Model.Product.Images.Count > 0)
                             {
-                                <img id="product_img" src="@Model.Images[0].ImageUrl" data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
+                                <img id="product_img" src="@Model.Product.Images[0].ImageUrl" data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
                             }
                             else
                             {
@@ -81,19 +91,14 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="pr_detail">
                         <div class="product_description">
-                            <h4 class="product_title">@Model.Name</h4>
+                            <h4 class="product_title">@Model.Product.Name</h4>
                             <div class="product_price">
-                                <span class="price">@ConvertToVnd(Model.Price)</span>
-                                @*<del>$55.25</del>*@
-                                @*<div class="on_sale">
-                                    <span>35% Off</span>
-                                </div>*@
+                                <span class="price">@ConvertToVnd(Model.Product.Price)</span>
                             </div>
                             <div class="rating_wrap">
                                 <div class="rating">
-                                    <div class="product_rate" style="width:80%"></div>
+                                    <div class="product_rate" style="width: @ConvertToStar(Model.Product.StarAverage)"></div>
                                 </div>
-                                <span class="rating_num">(21)</span>
                             </div>
                             <div class="pr_desc">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
@@ -105,27 +110,18 @@
                                     <li><i class="linearicons-bag-dollar"></i> Cash on Delivery available</li>
                                 </ul>
                             </div>
-                            <div class="pr_switch_wrap">
-                                <span class="switch_lable">Color</span>
-                                <div class="product_color_switch">
-                                    <span class="active" data-color="#87554B"></span>
-                                    <span data-color="#333333"></span>
-                                    <span data-color="#DA323F"></span>
-                                </div>
-                            </div>
-                            
                         </div>
                         <hr />
                         <div class="cart_extra">
                             <div class="cart_btn">
-                                <button class="btn btn-fill-out btn-addtocart btn-add-cart" data-id=" @Model.Id" type="button">
+                                <button class="btn btn-fill-out btn-addtocart btn-add-cart" data-id=" @Model.Product.Id" type="button">
                                     <i class="icon-basket-loaded"></i>Add to cart
                                 </button>                               
                             </div>
                         </div>
                         <hr />
                         <ul class="product-meta">
-                            <li>Category: <a href="#">@Model.Category.Name</a></li>
+                            <li>Category: <a href="#">@Model.Product.Category.Name</a></li>
                         </ul>
 
                         <div class="product_share">
@@ -157,112 +153,115 @@
                                 <a class="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info" role="tab" aria-controls="Additional-info" aria-selected="false">Additional info</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews (2)</a>
+                                <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Reviews</a>
                             </li>
                         </ul>
                         <div class="tab-content shop_info_tab">
                             <div class="tab-pane fade show active" id="Description" role="tabpanel" aria-labelledby="Description-tab">
-                                @if (@Model.Description != null)
+                                @if (@Model.Product.Description != null)
                                 {
-                                    <p>@Model.Description</p>
+                                    <p>@Model.Product.Description</p>
                                 }
                                 else
                                 {
                                     <p> No description available</p>
                                 }
                             </div>
+
                             <div class="tab-pane fade" id="Additional-info" role="tabpanel" aria-labelledby="Additional-info-tab">
                                 <table class="table table-bordered">
                                     <tr>
-                                        <td>Capacity</td>
-                                        <td>5 Kg</td>
+                                        <td>Category</td>
+                                        <td>@Model.Product.Category.Name</td>
                                     </tr>
                                     <tr>
-                                        <td>Color</td>
-                                        <td>Black, Brown, Red,</td>
+                                        <td>Brand</td>
+                                        <td>@Model.Product.Brand.Name</td>
                                     </tr>
                                     <tr>
                                         <td>Water Resistant</td>
                                         <td>Yes</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Material</td>
-                                        <td>Artificial Leather</td>
                                     </tr>
                                 </table>
                             </div>
 
                             @**@
                         <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
-                            <div class="comments">
-                                <h5 class="product_tab_title">2 Review For <span>Blue Dress For Woman</span></h5>
-                                <ul class="list_none comment_list mt-4">
-                                    <li>
-                                        <div class="comment_img">
-                                            <img src="~/assets/images/user1.jpg" alt="user1" />
-                                        </div>
-                                        <div class="comment_block">
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:80%"></div>
+                            <div class="comments">   
+                                @if (Model.ProductRatings.Items.Count > 0)
+                                    {
+                                    @foreach (var item in @Model.ProductRatings.Items)
+                                    {
+                                        <ul class="list_none comment_list mt-4">
+                                            <li>
+                                                <div class="comment_img">
+                                                    <img src="~/assets/images/user1.jpg" alt="user1" />
                                                 </div>
-                                            </div>
-                                            <p class="customer_meta">
-                                                <span class="review_author">Alea Brooks</span>
-                                                <span class="comment-date">March 5, 2018</span>
-                                            </p>
-                                            <div class="description">
-                                                <p>Lorem Ipsumin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="comment_img">
-                                            <img src="~/assets/images/user2.jpg" alt="user2" />
-                                        </div>
-                                        <div class="comment_block">
-                                            <div class="rating_wrap">
-                                                <div class="rating">
-                                                    <div class="product_rate" style="width:60%"></div>
+                                                <div class="comment_block">
+                                                    <div class="rating_wrap">
+                                                        <div class="rating">
+                                                            <div class="product_rate" style="width:@ConvertToStar(@item.Star)"></div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="customer_meta">
+                                                        <span class="review_author">@item.LastName @item.FirstName</span>
+                                                        <span class="comment-date">@item.CreatedDate</span>
+                                                    </p>
+                                                    <div class="description">
+                                                        <p>@item.Comment</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <p class="customer_meta">
-                                                <span class="review_author">Grace Wong</span>
-                                                <span class="comment-date">June 17, 2018</span>
-                                            </p>
-                                            <div class="description">
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                            </li>
+                                        </ul>
+                                    }
+                                 }
+                                else
+                                {
+                                    <div>
+                                        <p> No review available</p>
+                                    </div>
+                                }
+
                             </div>
 
                             @*Form review*@
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <div class="review_form field_form">
-                                    <h5>Add a review</h5>
-                                    <form class="row mt-3">
-                                        <div class="form-group col-12 mb-3">
-                                            <div class="star_rating">
-                                                <span data-value="1"><i class="far fa-star"></i></span>
-                                                <span data-value="2"><i class="far fa-star"></i></span>
-                                                <span data-value="3"><i class="far fa-star"></i></span>
-                                                <span data-value="4"><i class="far fa-star"></i></span>
-                                                <span data-value="5"><i class="far fa-star"></i></span>
+                            <div class="review_form field_form">
+                                <h5>Add a review</h5>
+                                @*<form class="row mt-3" type>*@
+                                @using (Html.BeginForm("Detail", "Product"))
+                                {
+                                    <input id="StarSubmitxyz" name="StarSubmitxyz" type="hidden" />
+                                    <div class="form-group col-12 mb-3">
+
+                                        <div class="product_header_left">
+                                            <div class="custom_select">
+                                                <select class="form-control form-control-sm" name="starSubmit">
+                                                    <option value="1">1 star</option>
+                                                    <option value="2">2 star</option>
+                                                    <option value="3">3 star</option>
+                                                    <option value="4">4 star</option>
+                                                    <option value="5">5 star</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="form-group col-12 mb-3">
-                                            <textarea required="required" placeholder="Your review *" class="form-control" name="message" rows="4"></textarea>
-                                        </div>
 
+                                    @*</div>*@
+                                    </div>
+                                    <div class="form-group col-12 mb-3">
+                                        <textarea required="required" placeholder="Your review *" class="form-control" name="Review" rows="4"></textarea>
+                                    </div>
 
-                                        <div class="form-group col-12 mb-3">
-                                            <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                    @*Get value of productId to submit*@
+                                    <input name="ProductIdSubmit" value="@Model.Product.Id" hidden/>
+
+                                    <div class="form-group col-12 mb-3">
+                                        <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
+                                    </div>
+                                }
+                                @*</form>*@
+                            </div>
                             }
 
 
@@ -278,6 +277,7 @@
                     <div class="medium_divider"></div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-12">
                     <div class="heading_s1">
@@ -505,3 +505,5 @@
     </div>
 </div>
 <!-- END SECTION SHOP -->
+
+

@@ -1,30 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {
   TableCell,
   TableBody,
   TableRow,
-  // Badge,
-  // Avatar,
 } from '@windmill/react-ui';
-import { FiEye } from 'react-icons/fi';
 
-import Tooltip from '../tooltip/Tooltip';
-// import MainModal from '../modal/MainModal';
-// import MainDrawer from '../drawer/MainDrawer';
-// import ProductDrawer from '../drawer/ProductDrawer';
+import MainModal from '../modal/MainModal';
+import MainDrawer from '../drawer/MainDrawer';
+import ProductDrawer from '../drawer/ProductDrawer';
 import EditDeleteButton from '../table/EditDeleteButton';
-// import useToggleDrawer from '../../hooks/useToggleDrawer';
+import useToggleDrawer from '../../hooks/useToggleDrawer';
 
 const ProductTable = ({ products }) => {
-  // const { serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
+  const { serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
   // console.log(products);
   return (
     <>
-      {/* <MainModal id={serviceId} />
+      <MainModal id={serviceId} />
       <MainDrawer>
         <ProductDrawer id={serviceId} />
-      </MainDrawer> */}
+      </MainDrawer>
 
       <TableBody>
         {products.map((product, i) => (
@@ -62,8 +58,8 @@ const ProductTable = ({ products }) => {
             <TableCell>
               <EditDeleteButton
                 id={product.id}
-                // handleUpdate={handleUpdate}
-                // handleModalOpen={handleModalOpen}
+                handleUpdate={handleUpdate}
+                handleModalOpen={handleModalOpen}
               />
             </TableCell>
           </TableRow>

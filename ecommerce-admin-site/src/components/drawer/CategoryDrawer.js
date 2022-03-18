@@ -1,7 +1,7 @@
 import React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 
-// import Error from '../form/Error';
+import Error from '../form/Error';
 import Title from '../form/Title';
 import InputArea from '../form/InputArea';
 import LabelArea from '../form/LabelArea';
@@ -11,6 +11,9 @@ import useCategorySubmit from '../../hooks/useCategorySubmit';
 const CategoryDrawer = ({ id }) => {
   const {
     register,
+    handleSubmit,
+    onSubmit,
+    errors,
   } = useCategorySubmit(id);
 
   return (
@@ -29,7 +32,7 @@ const CategoryDrawer = ({ id }) => {
         )}
       </div>
       <Scrollbars className="w-full md:w-7/12 lg:w-8/12 xl:w-8/12 relative dark:bg-gray-700 dark:text-gray-200">
-        <form >
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="p-6 flex-grow scrollbar-hide w-full max-h-full pb-40">
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
               <LabelArea label="Category name" />
@@ -37,11 +40,11 @@ const CategoryDrawer = ({ id }) => {
                 <InputArea
                   register={register}
                   label="Title"
-                  name="parent"
+                  name="name"
                   type="text"
                   placeholder="Title"
                 />
-                {/* <Error errorName={errors.parent} /> */}
+                <Error errorName={errors.name} />
               </div>
             </div>
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
@@ -50,11 +53,11 @@ const CategoryDrawer = ({ id }) => {
                 <InputArea
                   register={register}
                   label="Detail"
-                  name="parent"
+                  name="description"
                   type="text"
                   placeholder="Detail"
                 />
-                {/* <Error errorName={errors.parent} /> */}
+                <Error errorName={errors.description} />
               </div>
             </div>
 

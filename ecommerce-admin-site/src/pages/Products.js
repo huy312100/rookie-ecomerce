@@ -24,8 +24,8 @@ import PageTitle from "../components/Typography/PageTitle";
 import { SidebarContext } from "../context/SidebarContext";
 import ProductTable from "../components/product/ProductTable";
 import SelectCategory from "../components/form/SelectCategory";
-// import MainDrawer from '../components/drawer/MainDrawer';
-// import ProductDrawer from '../components/drawer/ProductDrawer';
+import MainDrawer from '../components/drawer/MainDrawer';
+import ProductDrawer from '../components/drawer/ProductDrawer';
 
 
 const Products = () => {
@@ -43,9 +43,9 @@ const Products = () => {
   return (
     <>
       <PageTitle>Products</PageTitle>
-      {/* <MainDrawer>
+      <MainDrawer>
         <ProductDrawer />
-      </MainDrawer> */}
+      </MainDrawer>
 
       <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
         <CardBody>

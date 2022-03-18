@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.Constants;
 using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Products;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -69,12 +71,13 @@ namespace eCommerce.BackendApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct([FromForm] ProductCreateRequest req)
+        [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
+        public async Task<IActionResult> CreateProduct([FromBody] ProductCreateRequest req)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
             var productId = await _prodService.CreateProduct(req);
             if (productId < 0)
                 return BadRequest();
@@ -82,7 +85,25 @@ namespace eCommerce.BackendApi.Controllers
             return CreatedAtAction(nameof(GetProductById), new { id = productId }, product);
         }
 
+        [HttpPut]
+        [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
+        public async Task<IActionResult> UpdateProduct([FromBody] ProductUpdateRequest req)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var res = await _prodService.UpdateProduct(req);
+            if (res < 0)
+            {
+                return BadRequest();
+            }
+            return Ok(res);
+        }
+
         [HttpDelete("{productId}")]
+        [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
         public async Task<IActionResult> DeleteProduct(int productId)
         {
             var res = await _prodService.DeleteProduct(productId);

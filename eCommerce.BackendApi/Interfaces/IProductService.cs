@@ -11,6 +11,7 @@ namespace eCommerce.BackendApi.Interfaces
 		Task<PagedResult<ProductVM>> GetProductPaging(PagingRequest req);
 		Task<PagedResult<ProductVM>> GetProductByCategory(PagingRequest req, int categoryId);
 		Task<int> CreateProduct(ProductCreateRequest req);
+		Task<int> UpdateProduct(ProductUpdateRequest req);
 		Task<int> DeleteProduct(int productId);
 	}
 }
