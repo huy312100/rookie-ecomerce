@@ -69,32 +69,6 @@ namespace eCommerce.BackendApi.Services
 
             return pagedResult;
         }
-
-        //public async Task<List<RatingVM>> GetRatingByProduct(int productId)
-        //{
-        //    var query = (from r in _dbContext.Ratings
-        //                 join u in _dbContext.Users
-        //                 on r.UserId equals u.Id
-        //                 where r.ProductId == productId
-        //                 select new { r, u });
-
-
-        //    var data = await query.Select(res => new RatingVM()
-        //    {
-        //        Id = res.r.Id,
-        //        Star = (int)res.r.Star,
-        //        Comment = res.r.Comment,
-        //        CreatedDate = DateTime.Now,
-        //        ProductId = res.r.ProductId,
-        //        UserId = res.r.UserId,
-        //        FirstName = res.u.FirstName,
-        //        LastName = res.u.LastName,
-        //        Username = res.u.UserName,
-        //        ImageUrl = res.u.ImageUrl
-        //    }).ToListAsync();
-
-        //    return data;
-        //}
     }
 }
 

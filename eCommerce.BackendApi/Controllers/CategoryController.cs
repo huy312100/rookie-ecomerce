@@ -78,11 +78,11 @@ namespace eCommerce.BackendApi.Controllers
             return Ok(res);
         }
 
-        [HttpDelete("{productId}")]
+        [HttpDelete("{categoryId}")]
         [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
-        public async Task<IActionResult> DeleteCategory(int productId)
+        public async Task<IActionResult> DeleteCategory(int categoryId)
         {
-            var res = await _categoryService.DeleteCategory(productId);
+            var res = await _categoryService.DeleteCategory(categoryId);
             if (res < 0)
             {
                 return BadRequest();

@@ -280,6 +280,19 @@ namespace eCommerce.BackendApi.Services
             return imageViewModel;
         }
 
+        public async Task<List<ProductImageVM>> GetProductImages(int productId)
+        {
+            var data = await _dbContext.ProductImages.Where(prop => prop.ProductId == productId)
+                 .Select(prop => new ProductImageVM()
+                 {
+                     Id = prop.Id,
+                     ProductId = prop.ProductId,
+                     ImageUrl = prop.ImageUrl,
+                     IsThumbnail= prop.IsThumbnail
+                 }).ToListAsync();
+            return data;
+        }
+
         //CUD
         public async Task<int> CreateProduct(ProductCreateRequest req)
         {
@@ -368,6 +381,7 @@ namespace eCommerce.BackendApi.Services
             _dbContext.Products.Update(product);
             return await _dbContext.SaveChangesAsync();
         }
+
     }
 }
 

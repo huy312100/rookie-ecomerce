@@ -28,11 +28,11 @@ const useProductSubmit = (id) => {
       Image: imageUrl,
     };
     
-    console.log(productData);
-
     if (id) {
+      
       ProductServices.updateProduct(productData)
         .then((res) => {
+          console.log(res);
           setIsUpdate(true);
           notifySuccess(res.message);
         })
@@ -44,7 +44,7 @@ const useProductSubmit = (id) => {
           setIsUpdate(true);
           notifySuccess(res.message);
         })
-        .catch((err) => notifyError(err.message));
+        .catch((err) => console.log(err));
       closeDrawer();
     }
   };

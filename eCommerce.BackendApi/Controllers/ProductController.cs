@@ -72,7 +72,7 @@ namespace eCommerce.BackendApi.Controllers
 
         [HttpPost]
         [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
-        public async Task<IActionResult> CreateProduct([FromBody] ProductCreateRequest req)
+        public async Task<IActionResult> CreateProduct([FromForm] ProductCreateRequest req)
         {
             //if (!ModelState.IsValid)
             //{
@@ -87,7 +87,7 @@ namespace eCommerce.BackendApi.Controllers
 
         [HttpPut]
         [Authorize(Roles = SecurityConstants.ADMIN_ROLE)]
-        public async Task<IActionResult> UpdateProduct([FromBody] ProductUpdateRequest req)
+        public async Task<IActionResult> UpdateProduct([FromForm] ProductUpdateRequest req)
         {
             if (!ModelState.IsValid)
             {

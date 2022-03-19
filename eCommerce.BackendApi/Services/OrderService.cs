@@ -18,7 +18,7 @@ namespace eCommerce.BackendApi.Services
 			_dbContext = dbContext;
 		}
 
-		public async Task<List<OrderVM>> GetOrdersPaging(PagingRequest req,Guid userId)
+		public async Task<PagedResult<OrderVM>> GetOrdersPaging(PagingRequest req,Guid userId)
         {
 			var query = from o in _dbContext.Orders
 						join od in _dbContext.OrderDetails
@@ -68,7 +68,15 @@ namespace eCommerce.BackendApi.Services
 					}
 				}).ToList()
             }).ToListAsync();
-			return data;
+
+			var pagedResult = new PagedResult<OrderVM>()
+			{
+				TotalRecords = totalRow,
+				PageSize = req.PageSize,
+				PageIndex = req.PageIndex,
+				Items = data
+			};
+			return pagedResult;
         }
 
 		public async Task<int> CheckoutOrder(CheckoutRequest req)
