@@ -47,7 +47,6 @@
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
                                     <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Total</th>
                                     <th class="product-remove">Remove</th>
                                 </tr>
                             </thead>
@@ -60,14 +59,13 @@
                                         <td class="product-price" data-title="Price">@ConvertToVnd(item.Price)</td>
                                         <td class="product-quantity" data-title="Quantity">
                                             <div class="quantity">
-                                                <input type="button" value="-" class="minus">
+                                                <input type="button" value="-" class="minus btn-minus-cart" data-id=" @item.ProductId">
                                                 <input type="text" name="quantity" value="@item.Quantity" title="Qty" class="qty" size="4">
                                                 @*<a asp-action="AddToCart" asp-controller="Cart">*@
-                                                    <input type="button" value="+" class="plus">
+                                                    <input type="button" value="+" class="plus btn-add-cart" data-id=" @item.ProductId" />
                                                 @*</a>*@
                                             </div>
                                         </td>
-                                        <td class="product-subtotal" data-title="Total">@ConvertToVnd(Math.Round(item.Quantity * item.Price, 2))</td>
                                         <td class="product-remove" data-title="Remove"><a asp-action="RemoveItem" asp-controller="Cart" asp-route-id="@item.ProductId"><i class="ti-close"></i></a></td>
                                     </tr>
                                 }

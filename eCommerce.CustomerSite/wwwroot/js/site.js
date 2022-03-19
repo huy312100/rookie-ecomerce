@@ -21,3 +21,22 @@ $('body').on('click', '.btn-add-cart', function (e) {
         }
     })
 })
+
+$('body').on('click', '.btn-minus-cart', function (e) {
+    e.preventDefault();
+    const id = $(this).data('id');
+    /*alert("day la " + id);*/
+    $.ajax({
+        type: "POST",
+        url: '/Cart/MinusToCart',
+        data: {
+            id: id
+        },
+        success: function (res) {
+            console.log(res);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    })
+})

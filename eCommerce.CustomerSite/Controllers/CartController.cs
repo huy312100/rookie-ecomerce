@@ -131,6 +131,25 @@ namespace eCommerce.CustomerSite.Controllers
             return Ok(currentCart);
         }
 
+        public async Task<IActionResult> MinusToCart(int id)
+        {
+            var product = await _productService.GetProductById(id);
+
+            List<CartItemVM> currentCart = new List<CartItemVM>();
+            currentCart = GetCart();
+            if (currentCart.First(x => x.ProductId == id).Quantity > 1)
+            {
+                currentCart.First(x => x.ProductId == id).Quantity -= 1;
+            }
+            else
+            {
+                RemoveItem(id);
+            }
+
+            HttpContext.Session.SetString(_cartSession, JsonConvert.SerializeObject(currentCart));
+            return Ok(currentCart);
+        }
+
         public IActionResult RemoveItem(int id)
         {
             List<CartItemVM> currentCart = new List<CartItemVM>();

@@ -106,16 +106,13 @@
                                         {
                                             <tr>
                                                 <td>@item.Name<span class="product-qty">x @item.Quantity</span></td>
-                                                <td>@ConvertToVnd(item.Price)</td>
+                                                <td>@ConvertToVnd(item.Price*item.Quantity)</td>
                                             </tr>
                                         }
 
                                     </tbody>
                                     <tfoot>
-                                        <tr>
-                                            <th>SubTotal</th>
-                                            <td class="product-subtotal">@ConvertToVnd(Model.Cart.Total)</td>
-                                        </tr>
+                                
                                         <tr>
                                             <th>Shipping</th>
                                             <td>Free Shipping</td>

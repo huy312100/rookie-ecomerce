@@ -83,9 +83,8 @@ namespace eCommerce.BackendApi.Services
                         join r in _dbContext.Ratings
                         on p.Id equals r.ProductId into obj2
                         from r in obj2.DefaultIfEmpty()
-                        select new { p, c, pi, r, b };
+                        select new { p, c, pi, r , b };
 
-            var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
 
             //3.Paging
             int totalRow = await query.CountAsync();
@@ -111,7 +110,6 @@ namespace eCommerce.BackendApi.Services
                         Name = prop.b.Name,
                         Description = prop.b.Description
                     },
-                    StarAverage = averageStar,
 
                     Images = query.Where(x => prop.pi.ProductId == x.p.Id)
                         .Select(data => new ProductImageVM()
@@ -134,6 +132,76 @@ namespace eCommerce.BackendApi.Services
             };
             return pagedResult;
         }
+
+
+
+        public async Task<PagedResult<ProductVM>> FeaturedProduct(PagingRequest req)
+        {
+            //1. join product and category
+            var query = from p in _dbContext.Products
+                        join b in _dbContext.Brands
+                        on p.BrandId equals b.Id
+                        join c in _dbContext.Categories
+                        on p.CategoryId equals c.Id
+                        join pi in _dbContext.ProductImages
+                        on p.Id equals pi.ProductId into obj1
+                        from pi in obj1.DefaultIfEmpty()
+                        join r in _dbContext.Ratings
+                        on p.Id equals r.ProductId into obj2
+                        from r in obj2.DefaultIfEmpty()
+                        
+                        select new { p, c, pi, b ,r };
+
+
+            //3.Paging 
+            int totalRow = await query.CountAsync();
+
+            var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
+                //.GroupBy(x=>x.p.Id)
+                .Select(prop => new ProductVM()
+                {
+                    Id = prop.p.Id,
+                    Name = prop.p.Name,
+                    Description = prop.p.Description,
+                    Price = prop.p.Price,
+                    CreatedDate = prop.p.CreatedDate,
+                    UpdatedDate = prop.p.UpdatedDate,
+                    Category = new CategoryVM
+                    {
+                        Id = prop.c.Id,
+                        Name = prop.c.Name
+                    },
+                    Brand = new BrandVM
+                    {
+                        Id = prop.b.Id,
+                        Name = prop.b.Name,
+                        Description = prop.b.Description
+                    },
+                    //Star= prop.
+                    Images = query.Where(x => prop.pi.ProductId == x.p.Id)
+                        .Select(data => new ProductImageVM()
+                        {
+                            Id = data.pi.Id,
+                            ImageUrl = data.pi.ImageUrl,
+                            IsThumbnail = data.pi.IsThumbnail
+                        }).ToList()
+                }).ToListAsync();
+
+            var uniqueItem = data.GroupBy(x => x.Id).Select(x => x.First()).ToList();
+            //int totalRow = uniqueItem.Count();
+
+            var pagedResult = new PagedResult<ProductVM>()
+            {
+                TotalRecords = totalRow,
+                PageSize = req.PageSize,
+                PageIndex = req.PageIndex,
+                Items = uniqueItem
+            };
+            return pagedResult;
+        }
+
+
+
 
         public async Task<ProductVM> GetProductById(int id)
         {
@@ -213,8 +281,6 @@ namespace eCommerce.BackendApi.Services
                         where c.Id == categoryId
                         select new { p, c, pi, r, b };
 
-            var averageStar = await query.Select(prop => prop.r.Star).AverageAsync();
-
             int totalRow = await query.CountAsync();
 
             var data = await query.Skip((req.PageIndex - 1) * req.PageSize).Take(req.PageSize)
@@ -237,7 +303,6 @@ namespace eCommerce.BackendApi.Services
                         Name=prop.b.Name,
                         Description=prop.b.Description
                     },
-                    StarAverage = averageStar,
 
                     Images = query.Where(x => prop.pi.ProductId == x.p.Id)
                         .Select(data => new ProductImageVM()

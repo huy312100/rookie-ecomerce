@@ -116,14 +116,14 @@
                             </div>
                             <div class="rating_wrap">
                                 <div class="rating">
-                                    <div class="product_rate" style="width: @ConvertToStar(product.StarAverage)"></div>
+                                    <div hidden class="product_rate" style="width: @ConvertToStar(product.StarAverage)"></div>
                                 </div>
                             </div>
                             <div class="pr_desc">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
                             </div>
                             <div class="add-to-cart">
-                                <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
+                                <a href="#" class="btn btn-fill-out btn-radius btn-add-cart" data-id="@product.Id"><i class="icon-basket-loaded"></i> Add To Cart</a>
                             </div>
                         </div>
                     </div>
