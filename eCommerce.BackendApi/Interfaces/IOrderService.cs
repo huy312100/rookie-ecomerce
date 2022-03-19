@@ -6,7 +6,7 @@ namespace eCommerce.BackendApi.Interfaces
 {
 	public interface IOrderService
 	{
-		Task<List<OrderVM>> GetOrdersPaging(PagingRequest req, Guid userId);
+		Task<PagedResult<OrderVM>> GetOrdersPaging(PagingRequest req, Guid userId);
 		Task<int> CheckoutOrder(CheckoutRequest req);
 	}
 }

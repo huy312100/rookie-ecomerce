@@ -75,13 +75,13 @@ namespace eCommerce.BackendApi.Services
             return category.Id;
         }
 
-        public async Task<int> DeleteCategory(int productId)
+        public async Task<int> DeleteCategory(int categoryId)
         {
-            var category = await _dbContext.Categories.FindAsync(productId);
+            var category = await _dbContext.Categories.FindAsync(categoryId);
 
             if (category == null)
             {
-                throw new Exception($"Cannot delete category because CategoryID {productId} is null not found");
+                throw new Exception($"Cannot delete category because CategoryID {categoryId} is null not found");
             }
 
             if(category.ImageUrl != null)

@@ -1,14 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Data.EF;
+using eCommerce.BackendApi.Interfaces;
 using eCommerce.BackendApi.Models;
 using eCommerce.BackendApi.Services;
 using eCommerce.BackendApi.Storage;
 using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Products;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 using Xunit;
+
 namespace eCommerce.UnitTest.ServiceTests
 {
 	public class ProductServiceTest
@@ -118,6 +124,24 @@ namespace eCommerce.UnitTest.ServiceTests
             _productService = new ProductService(mockContext, fileService);
         }
 
+        private IFormFile MockImage()
+        {
+            var file = new Mock<IFormFile>();
+            var content = "source image path for unitTest";
+            var ms = new MemoryStream();
+            var writer = new StreamWriter(ms);
+            writer.Write(content);
+            writer.Flush();
+            ms.Position = 0;
+            var fileName = "test.png";
+            file.Setup(f => f.OpenReadStream()).Returns(ms);
+            file.Setup(f => f.FileName).Returns(fileName).Verifiable();
+            file.Setup(_ => _.ContentDisposition)
+                .Returns($"form-data;name='file';filename ='{fileName}'");
+            file.Setup(f => f.Length).Returns(ms.Length);
+            return file.Object;
+        }
+
         [Fact]
         public async Task GetProductById_IdExists_ReturnAProductVM()
         {
@@ -155,7 +179,7 @@ namespace eCommerce.UnitTest.ServiceTests
             //Act
             var result = await _productService.GetProductPaging(req);
 
-            //Arrange
+            //Assert
             Assert.Empty(result.Items);
         }
 
@@ -212,6 +236,89 @@ namespace eCommerce.UnitTest.ServiceTests
             Assert.Contains($"Cannot create product because CategoryId {req.CategoryId} not found", exception.Message);
         }
 
+        //[Fact]
+        //public async Task CreateProduct_HasImageValue_ReturnNewImageCreated()
+        //{
+        //    //Arrange
+        //    var image = MockImage();
+        //    var req = new ProductCreateRequest()
+        //    {
+        //        Description = "Lorem ipsum dolor sit amet",
+        //        Image = image,
+        //        Price = 10,
+        //        Name = "New Product",
+        //        CategoryId = 1,
+        //        BrandId = 1
+        //    };
+        //    // Act 
+        //    var newProductId = await _productService.CreateProduct(req);
+        //    var newProduct = await _productService.GetImageById(newProductId);
+
+        //    // Assert
+        //    Assert.IsType<int>(newProductId);
+        //    Assert.IsType<ProductVM>(newProduct);
+        //    Assert.Equal(newProductId, newProduct.Id);
+        //    Assert.Contains("file-source", newProduct.ImageUrl);
+        //    Assert.Single(newProduct.ImageUrl);
+        //}
+
+        [Fact]
+        public async Task UpdateProduct_CheckProductUpdatedSuccess_ReturnTrue()
+        {
+            //Arrange
+            var image = MockImage();
+            var req = new ProductUpdateRequest()
+            {
+                Id = 1,
+                Description = "Lorem ipsum dolor sit amet",
+                Image = image,
+                Price = 10,
+                Name = "New Product",
+                CategoryId = 1,
+                BrandId=1,
+            };
+            // Act 
+            var result = await _productService.UpdateProduct(req);
+            var productAfterUpdate = await _productService.GetProductById(req.Id);
+
+            // Assert
+            Assert.IsType<int>(result);
+            Assert.IsType<ProductVM>(productAfterUpdate);
+            Assert.Equal(productAfterUpdate.Id, req.Id);
+            Assert.Equal(productAfterUpdate.Name, req.Name);
+            Assert.Equal(productAfterUpdate.Price, req.Price);
+            Assert.Equal(productAfterUpdate.Description, req.Description);
+            Assert.Equal(productAfterUpdate.Category.Id, req.CategoryId);
+            Assert.Equal(productAfterUpdate.Brand.Id, req.BrandId);
+        }
+
+        [Fact]
+        public async Task DeleteProduct_CheckProductIdNotExistAfterDelete_ReturnTrue()
+        {
+            // Arrange
+            int productId = 1;
+            // Act
+            var result = await _productService.DeleteProduct(productId);
+            Func<Task> act = async () => await _productService.GetProductById(productId);
+            // Assert
+            var ex = await Assert.ThrowsAsync<Exception>(act);
+            Assert.True(result > 0);
+            Assert.Contains("Cannot find product with ID", ex.Message);
+        }
+
+        [Fact]
+        public async Task DeleteProduct_CheckRelateProductImagesDeleted_ReturnTrue()
+        {
+            // Arrange
+            int productId = 1;
+            // Act
+            var result = await _productService.DeleteProduct(productId);
+            var images = await _productService.GetProductImages(productId);
+            // Assert
+            Assert.True(result > 0);
+            Assert.IsType<List<ProductImageVM>>(images);
+            Assert.Empty(images);
+        }
 
     }
 }
