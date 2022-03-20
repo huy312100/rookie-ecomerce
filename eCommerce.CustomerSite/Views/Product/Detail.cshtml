@@ -16,16 +16,16 @@
 
         public static string ConvertToStar(double? star)
         {
-            if(star == 0)
+            if (star == 0)
             {
                 return "";
             }
-            double? starAverage= (star * 100) / 5;
-            return starAverage.ToString()+"%";
+            double? starAverage = (star * 100) / 5;
+            return starAverage.ToString() + "%";
         }
     }
 }
-
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container">
@@ -52,7 +52,7 @@
                         <div class="product_img_box">
                             @if (Model.Product.Images.Count > 0)
                             {
-                                <img id="product_img" src="@Model.Product.Images[0].ImageUrl" data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
+                                <img id="product_img" src="@(Configuration["BaseAddress"] + @Model.Product.Images[0].ImageUrl)" data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
                             }
                             else
                             {
@@ -116,7 +116,7 @@
                             <div class="cart_btn">
                                 <button class="btn btn-fill-out btn-addtocart btn-add-cart" data-id=" @Model.Product.Id" type="button">
                                     <i class="icon-basket-loaded"></i>Add to cart
-                                </button>                               
+                                </button>
                             </div>
                         </div>
                         <hr />
@@ -185,94 +185,95 @@
                                 </table>
                             </div>
 
-                            @**@
-                        <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
-                            <div class="comments">   
-                                @if (Model.ProductRatings.Items.Count > 0)
+                            @*
+                            *@
+                            <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
+                                <div class="comments">
+                                    @if (Model.ProductRatings.Items.Count > 0)
                                     {
-                                    @foreach (var item in @Model.ProductRatings.Items)
-                                    {
-                                        <ul class="list_none comment_list mt-4">
-                                            <li>
-                                                <div class="comment_img">
-                                                    <img src="~/assets/images/user1.jpg" alt="user1" />
-                                                </div>
-                                                <div class="comment_block">
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:@ConvertToStar(@item.Star)"></div>
+                                        @foreach (var item in @Model.ProductRatings.Items)
+                                        {
+                                            <ul class="list_none comment_list mt-4">
+                                                <li>
+                                                    <div class="comment_img">
+                                                        <img src="~/assets/images/user1.jpg" alt="user1" />
+                                                    </div>
+                                                    <div class="comment_block">
+                                                        <div class="rating_wrap">
+                                                            <div class="rating">
+                                                                <div class="product_rate" style="width:@ConvertToStar(@item.Star)"></div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="customer_meta">
+                                                            <span class="review_author">@item.LastName @item.FirstName</span>
+                                                            <span class="comment-date">@item.CreatedDate</span>
+                                                        </p>
+                                                        <div class="description">
+                                                            <p>@item.Comment</p>
                                                         </div>
                                                     </div>
-                                                    <p class="customer_meta">
-                                                        <span class="review_author">@item.LastName @item.FirstName</span>
-                                                        <span class="comment-date">@item.CreatedDate</span>
-                                                    </p>
-                                                    <div class="description">
-                                                        <p>@item.Comment</p>
+                                                </li>
+                                            </ul>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div>
+                                            <p> No review available</p>
+                                        </div>
+                                    }
+
+                                </div>
+
+                                @*Form review*@
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="review_form field_form">
+                                        <h5>Add a review</h5>
+                                        @*<form class="row mt-3" type>*@
+                                        @using (Html.BeginForm("Detail", "Product"))
+                                        {
+                                            <input id="StarSubmitxyz" name="StarSubmitxyz" type="hidden" />
+                                            <div class="form-group col-12 mb-3">
+
+                                                <div class="product_header_left">
+                                                    <div class="custom_select">
+                                                        <select class="form-control form-control-sm" name="starSubmit">
+                                                            <option value="1">1 star</option>
+                                                            <option value="2">2 star</option>
+                                                            <option value="3">3 star</option>
+                                                            <option value="4">4 star</option>
+                                                            <option value="5">5 star</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                            </li>
-                                        </ul>
-                                    }
-                                 }
-                                else
-                                {
-                                    <div>
-                                        <p> No review available</p>
-                                    </div>
-                                }
 
-                            </div>
-
-                            @*Form review*@
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                            <div class="review_form field_form">
-                                <h5>Add a review</h5>
-                                @*<form class="row mt-3" type>*@
-                                @using (Html.BeginForm("Detail", "Product"))
-                                {
-                                    <input id="StarSubmitxyz" name="StarSubmitxyz" type="hidden" />
-                                    <div class="form-group col-12 mb-3">
-
-                                        <div class="product_header_left">
-                                            <div class="custom_select">
-                                                <select class="form-control form-control-sm" name="starSubmit">
-                                                    <option value="1">1 star</option>
-                                                    <option value="2">2 star</option>
-                                                    <option value="3">3 star</option>
-                                                    <option value="4">4 star</option>
-                                                    <option value="5">5 star</option>
-                                                </select>
+                                                @*</div>*@
                                             </div>
-                                        </div>
+                                            <div class="form-group col-12 mb-3">
+                                                <textarea required="required" placeholder="Your review *" class="form-control" name="Review" rows="4"></textarea>
+                                            </div>
 
-                                    @*</div>*@
-                                    </div>
-                                    <div class="form-group col-12 mb-3">
-                                        <textarea required="required" placeholder="Your review *" class="form-control" name="Review" rows="4"></textarea>
-                                    </div>
+                                            @*Get value of productId to submit*@
+                                            <input name="ProductIdSubmit" value="@Model.Product.Id" hidden />
 
-                                    @*Get value of productId to submit*@
-                                    <input name="ProductIdSubmit" value="@Model.Product.Id" hidden/>
-
-                                    <div class="form-group col-12 mb-3">
-                                        <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
+                                            <div class="form-group col-12 mb-3">
+                                                <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
+                                            </div>
+                                        }
+                                        @*</form>*@
                                     </div>
                                 }
-                                @*</form>*@
+
+
                             </div>
-                            }
-
-
                         </div>
                     </div>
                 </div>
+
             </div>
-              
         </div>
     </div>
-</div>
-<!-- END SECTION SHOP -->
+    <!-- END SECTION SHOP -->
 
 

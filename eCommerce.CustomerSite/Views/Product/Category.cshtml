@@ -25,7 +25,7 @@
         }
     }
 }
-
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container">
@@ -85,17 +85,20 @@
                                         <a href="shop-product-detail.html">
                                             @if (@product.Images.Count > 0)
                                             {
-                                                <img src="@product.Images[0].ImageUrl" alt="furniture_img1">
-                                            }
-                                            else
-                                            {
+                                                <img src="@(Configuration["BaseAddress"] + product.Images[0].ImageUrl)" alt="furniture_img1">
+                                                }
+                                                else
+                                                {
                                                 <img src="~/assets/images/product_img1.jpg" alt="furniture_img1">
 
                                             }
                                         </a>
                                         <div class="product_action_box">
                                             <ul class="list_none pr_action_btn">
-                                                <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
+                                                <li class="add-to-cart">
+                                                    @*<input type="button" class="btn-add-cart" data-id="@product.Id">*@
+                                                    <a class="btn-add-cart" data-id="@product.Id"><i class="icon-basket-loaded"></i> </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -104,9 +107,9 @@
                                         <div class="product_price">
                                             <span class="price">@ConvertToVnd(product.Price)</span>
                                             @*<del>$55.25</del>
-                                    <div class="on_sale">
-                                        <span>35% Off</span>
-                                    </div>*@
+                                                <div class="on_sale">
+                                                    <span>35% Off</span>
+                                                </div>*@
                                         </div>
                                         <div class="rating_wrap">
                                             <div class="rating">
@@ -140,17 +143,17 @@
                         <div class="widget">
                             <h5 class="widget_title">Brands</h5>
                             <ul class="widget_categories">
-                                <li><a href="#"><span class="categories_name">Women</span><span class="categories_num">(9)</span></a></li>
-                                <li><a href="#"><span class="categories_name">Top</span><span class="categories_num">(6)</span></a></li>
-                                <li><a href="#"><span class="categories_name">T-Shirts</span><span class="categories_num">(4)</span></a></li>
-                                <li><a href="#"><span class="categories_name">Men</span><span class="categories_num">(7)</span></a></li>
-                                <li><a href="#"><span class="categories_name">Shoes</span><span class="categories_num">(12)</span></a></li>
+                                <li><a href="#"><span class="categories_name">Apple</span><span class="categories_num">(9)</span></a></li>
+                                <li><a href="#"><span class="categories_name">Samsung</span><span class="categories_num">(6)</span></a></li>
+                                <li><a href="#"><span class="categories_name">Sony</span><span class="categories_num">(4)</span></a></li>
+                                <li><a href="#"><span class="categories_name">Microsoft</span><span class="categories_num">(7)</span></a></li>
+                                <li><a href="#"><span class="categories_name">Beat</span><span class="categories_num">(12)</span></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                
+
 
             </div>
         </div>

@@ -21,7 +21,7 @@
         }
     }
 }
-
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 @*START CAROUSEL*@
 <div class="banner_section slide_medium shop_banner_slider staggered-animation-wrap">
     <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow" data-bs-ride="carousel">
@@ -98,12 +98,12 @@
                             <a href="shop-product-detail.html">
                                 @if (@product.Images.Count > 0)
                                 {
-                                    <img src="@product.Images[0].ImageUrl" alt="furniture_img1">
+                                    <img src="@(Configuration["BaseAddress"] + @product.Images[0].ImageUrl)" alt="furniture_img1">
                                 }
                                 else
                                 {
                                     <img src="~/assets/images/product_img1.jpg" alt="furniture_img1">
-                                    
+
                                 }
 
                             </a>

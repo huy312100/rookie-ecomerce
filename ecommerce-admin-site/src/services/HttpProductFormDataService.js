@@ -33,9 +33,11 @@ const requestsFormData = {
     body.append('Name', data.Name);
     body.append('Price', data.Price); 
     body.append('Description', data.Description);
-    body.append('Image', data.Image);
+    body.append('Image', data.Image[0]);
     body.append('CategoryId', data.CategoryId);
     body.append('BrandId', data.BrandId);
+
+    console.log(data);
 
     return instance.post(url, body).then(responseBody);
   },
@@ -47,9 +49,11 @@ const requestsFormData = {
     body.append('Name', data.Name);
     body.append('Price', data.Price); 
     body.append('Description', data.Description);
-    body.append('Image', data.Image);
+    body.append('Image', data.Image[0]);
     body.append('CategoryId', data.CategoryId);
     body.append('BrandId', data.BrandId);
+
+    console.log(data);
 
     return instance.put(url, body).then(responseBody);
   },

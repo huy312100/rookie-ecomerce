@@ -32,7 +32,6 @@ const useProductSubmit = (id) => {
       
       ProductServices.updateProduct(productData)
         .then((res) => {
-          console.log(res);
           setIsUpdate(true);
           notifySuccess(res.message);
         })
