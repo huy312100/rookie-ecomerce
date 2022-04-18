@@ -8,7 +8,7 @@ namespace eCommerce.BackendApi.Interfaces
 		Task<CategoryVM> GetCategoryById(int id);
 		Task<int> CreateCategory(CategoryCreateRequest req);
 		Task<int> UpdateCategory(CategoryUpdateRequest req);
-		Task<int> DeleteCategory(int productId);
+		Task<int> DeleteCategory(int categoryId);
 	}
 }
 

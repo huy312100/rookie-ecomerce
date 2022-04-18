@@ -16,16 +16,16 @@
 
         public static string ConvertToStar(double? star)
         {
-            if(star == 0)
+            if (star == 0)
             {
                 return "";
             }
-            double? starAverage= (star * 100) / 5;
-            return starAverage.ToString()+"%";
+            double? starAverage = (star * 100) / 5;
+            return starAverage.ToString() + "%";
         }
     }
 }
-
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container">
@@ -52,7 +52,7 @@
                         <div class="product_img_box">
                             @if (Model.Product.Images.Count > 0)
                             {
-                                <img id="product_img" src="@Model.Product.Images[0].ImageUrl" data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
+                                <img id="product_img" src="@(Configuration["BaseAddress"] + @Model.Product.Images[0].ImageUrl)" data-zoom-image="~/assets/images/product_zoom_img1.jpg" alt="product_img1" />
                             }
                             else
                             {
@@ -116,7 +116,7 @@
                             <div class="cart_btn">
                                 <button class="btn btn-fill-out btn-addtocart btn-add-cart" data-id=" @Model.Product.Id" type="button">
                                     <i class="icon-basket-loaded"></i>Add to cart
-                                </button>                               
+                                </button>
                             </div>
                         </div>
                         <hr />
@@ -185,325 +185,95 @@
                                 </table>
                             </div>
 
-                            @**@
-                        <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
-                            <div class="comments">   
-                                @if (Model.ProductRatings.Items.Count > 0)
+                            @*
+                            *@
+                            <div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
+                                <div class="comments">
+                                    @if (Model.ProductRatings.Items.Count > 0)
                                     {
-                                    @foreach (var item in @Model.ProductRatings.Items)
-                                    {
-                                        <ul class="list_none comment_list mt-4">
-                                            <li>
-                                                <div class="comment_img">
-                                                    <img src="~/assets/images/user1.jpg" alt="user1" />
-                                                </div>
-                                                <div class="comment_block">
-                                                    <div class="rating_wrap">
-                                                        <div class="rating">
-                                                            <div class="product_rate" style="width:@ConvertToStar(@item.Star)"></div>
+                                        @foreach (var item in @Model.ProductRatings.Items)
+                                        {
+                                            <ul class="list_none comment_list mt-4">
+                                                <li>
+                                                    <div class="comment_img">
+                                                        <img src="~/assets/images/user1.jpg" alt="user1" />
+                                                    </div>
+                                                    <div class="comment_block">
+                                                        <div class="rating_wrap">
+                                                            <div class="rating">
+                                                                <div class="product_rate" style="width:@ConvertToStar(@item.Star)"></div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="customer_meta">
+                                                            <span class="review_author">@item.LastName @item.FirstName</span>
+                                                            <span class="comment-date">@item.CreatedDate</span>
+                                                        </p>
+                                                        <div class="description">
+                                                            <p>@item.Comment</p>
                                                         </div>
                                                     </div>
-                                                    <p class="customer_meta">
-                                                        <span class="review_author">@item.LastName @item.FirstName</span>
-                                                        <span class="comment-date">@item.CreatedDate</span>
-                                                    </p>
-                                                    <div class="description">
-                                                        <p>@item.Comment</p>
+                                                </li>
+                                            </ul>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div>
+                                            <p> No review available</p>
+                                        </div>
+                                    }
+
+                                </div>
+
+                                @*Form review*@
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="review_form field_form">
+                                        <h5>Add a review</h5>
+                                        @*<form class="row mt-3" type>*@
+                                        @using (Html.BeginForm("Detail", "Product"))
+                                        {
+                                            <input id="StarSubmitxyz" name="StarSubmitxyz" type="hidden" />
+                                            <div class="form-group col-12 mb-3">
+
+                                                <div class="product_header_left">
+                                                    <div class="custom_select">
+                                                        <select class="form-control form-control-sm" name="starSubmit">
+                                                            <option value="1">1 star</option>
+                                                            <option value="2">2 star</option>
+                                                            <option value="3">3 star</option>
+                                                            <option value="4">4 star</option>
+                                                            <option value="5">5 star</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                            </li>
-                                        </ul>
-                                    }
-                                 }
-                                else
-                                {
-                                    <div>
-                                        <p> No review available</p>
-                                    </div>
-                                }
 
-                            </div>
-
-                            @*Form review*@
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                            <div class="review_form field_form">
-                                <h5>Add a review</h5>
-                                @*<form class="row mt-3" type>*@
-                                @using (Html.BeginForm("Detail", "Product"))
-                                {
-                                    <input id="StarSubmitxyz" name="StarSubmitxyz" type="hidden" />
-                                    <div class="form-group col-12 mb-3">
-
-                                        <div class="product_header_left">
-                                            <div class="custom_select">
-                                                <select class="form-control form-control-sm" name="starSubmit">
-                                                    <option value="1">1 star</option>
-                                                    <option value="2">2 star</option>
-                                                    <option value="3">3 star</option>
-                                                    <option value="4">4 star</option>
-                                                    <option value="5">5 star</option>
-                                                </select>
+                                                @*</div>*@
                                             </div>
-                                        </div>
+                                            <div class="form-group col-12 mb-3">
+                                                <textarea required="required" placeholder="Your review *" class="form-control" name="Review" rows="4"></textarea>
+                                            </div>
 
-                                    @*</div>*@
-                                    </div>
-                                    <div class="form-group col-12 mb-3">
-                                        <textarea required="required" placeholder="Your review *" class="form-control" name="Review" rows="4"></textarea>
-                                    </div>
+                                            @*Get value of productId to submit*@
+                                            <input name="ProductIdSubmit" value="@Model.Product.Id" hidden />
 
-                                    @*Get value of productId to submit*@
-                                    <input name="ProductIdSubmit" value="@Model.Product.Id" hidden/>
-
-                                    <div class="form-group col-12 mb-3">
-                                        <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
+                                            <div class="form-group col-12 mb-3">
+                                                <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Submit Review</button>
+                                            </div>
+                                        }
+                                        @*</form>*@
                                     </div>
                                 }
-                                @*</form>*@
-                            </div>
-                            }
 
 
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="small_divider"></div>
-                    <div class="divider"></div>
-                    <div class="medium_divider"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="heading_s1">
-                        <h3>Releted Products</h3>
-                    </div>
-                    <div class="releted_product_slider carousel_slider owl-carousel owl-theme" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": "3"}, "1199":{"items": "4"}}'>
-                        <div class="item">
-                            <div class="product">
-                                <div class="product_img">
-                                    <a href="shop-product-detail.html">
-                                        <img src="~/assets/images/product_img1.jpg" alt="product_img1">
-                                    </a>
-                                    <div class="product_action_box">
-                                        <ul class="list_none pr_action_btn">
-                                            <li class="add-to-cart"><a ><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                            <li><a href="shop-compare.html"><i class="icon-shuffle"></i></a></li>
-                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product_info">
-                                    <h6 class="product_title"><a href="shop-product-detail.html">Blue Dress For Woman</a></h6>
-                                    <div class="product_price">
-                                        <span class="price">$45.00</span>
-                                        <del>$55.25</del>
-                                        <div class="on_sale">
-                                            <span>35% Off</span>
-                                        </div>
-                                    </div>
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:80%"></div>
-                                        </div>
-                                        <span class="rating_num">(21)</span>
-                                    </div>
-                                    <div class="pr_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                    </div>
-                                    <div class="pr_switch_wrap">
-                                        <div class="product_color_switch">
-                                            <span class="active" data-color="#87554B"></span>
-                                            <span data-color="#333333"></span>
-                                            <span data-color="#DA323F"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product">
-                                <div class="product_img">
-                                    <a href="shop-product-detail.html">
-                                        <img src="~/assets/images/product_img2.jpg" alt="product_img2">
-                                    </a>
-                                    <div class="product_action_box">
-                                        <ul class="list_none pr_action_btn">
-                                            <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                            <li><a href="shop-compare.html"><i class="icon-shuffle"></i></a></li>
-                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product_info">
-                                    <h6 class="product_title"><a href="shop-product-detail.html">Lether Gray Tuxedo</a></h6>
-                                    <div class="product_price">
-                                        <span class="price">$55.00</span>
-                                        <del>$95.00</del>
-                                        <div class="on_sale">
-                                            <span>25% Off</span>
-                                        </div>
-                                    </div>
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:68%"></div>
-                                        </div>
-                                        <span class="rating_num">(15)</span>
-                                    </div>
-                                    <div class="pr_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                    </div>
-                                    <div class="pr_switch_wrap">
-                                        <div class="product_color_switch">
-                                            <span class="active" data-color="#847764"></span>
-                                            <span data-color="#0393B5"></span>
-                                            <span data-color="#DA323F"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product">
-                                <span class="pr_flash">New</span>
-                                <div class="product_img">
-                                    <a href="shop-product-detail.html">
-                                        <img src="~/assets/images/product_img3.jpg" alt="product_img3">
-                                    </a>
-                                    <div class="product_action_box">
-                                        <ul class="list_none pr_action_btn">
-                                            <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                            <li><a href="shop-compare.html"><i class="icon-shuffle"></i></a></li>
-                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product_info">
-                                    <h6 class="product_title"><a href="shop-product-detail.html">woman full sliv dress</a></h6>
-                                    <div class="product_price">
-                                        <span class="price">$68.00</span>
-                                        <del>$99.00</del>
-                                    </div>
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:87%"></div>
-                                        </div>
-                                        <span class="rating_num">(25)</span>
-                                    </div>
-                                    <div class="pr_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                    </div>
-                                    <div class="pr_switch_wrap">
-                                        <div class="product_color_switch">
-                                            <span class="active" data-color="#333333"></span>
-                                            <span data-color="#7C502F"></span>
-                                            <span data-color="#2F366C"></span>
-                                            <span data-color="#874A3D"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product">
-                                <div class="product_img">
-                                    <a href="shop-product-detail.html">
-                                        <img src="~/assets/images/product_img4.jpg" alt="product_img4">
-                                    </a>
-                                    <div class="product_action_box">
-                                        <ul class="list_none pr_action_btn">
-                                            <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                            <li><a href="shop-compare.html"><i class="icon-shuffle"></i></a></li>
-                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product_info">
-                                    <h6 class="product_title"><a href="shop-product-detail.html">light blue Shirt</a></h6>
-                                    <div class="product_price">
-                                        <span class="price">$69.00</span>
-                                        <del>$89.00</del>
-                                        <div class="on_sale">
-                                            <span>20% Off</span>
-                                        </div>
-                                    </div>
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:70%"></div>
-                                        </div>
-                                        <span class="rating_num">(22)</span>
-                                    </div>
-                                    <div class="pr_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                    </div>
-                                    <div class="pr_switch_wrap">
-                                        <div class="product_color_switch">
-                                            <span class="active" data-color="#333333"></span>
-                                            <span data-color="#A92534"></span>
-                                            <span data-color="#B9C2DF"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product">
-                                <div class="product_img">
-                                    <a href="shop-product-detail.html">
-                                        <img src="~/assets/images/product_img5.jpg" alt="product_img5">
-                                    </a>
-                                    <div class="product_action_box">
-                                        <ul class="list_none pr_action_btn">
-                                            <li class="add-to-cart"><a href="#"><i class="icon-basket-loaded"></i> Add To Cart</a></li>
-                                            <li><a href="shop-compare.html"><i class="icon-shuffle"></i></a></li>
-                                            <li><a href="shop-quick-view.html" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-                                            <li><a href="#"><i class="icon-heart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product_info">
-                                    <h6 class="product_title"><a href="shop-product-detail.html">blue dress for woman</a></h6>
-                                    <div class="product_price">
-                                        <span class="price">$45.00</span>
-                                        <del>$55.25</del>
-                                        <div class="on_sale">
-                                            <span>35% Off</span>
-                                        </div>
-                                    </div>
-                                    <div class="rating_wrap">
-                                        <div class="rating">
-                                            <div class="product_rate" style="width:80%"></div>
-                                        </div>
-                                        <span class="rating_num">(21)</span>
-                                    </div>
-                                    <div class="pr_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
-                                    </div>
-                                    <div class="pr_switch_wrap">
-                                        <div class="product_color_switch">
-                                            <span class="active" data-color="#87554B"></span>
-                                            <span data-color="#333333"></span>
-                                            <span data-color="#5FB7D4"></span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-</div>
-<!-- END SECTION SHOP -->
+    <!-- END SECTION SHOP -->
 
 

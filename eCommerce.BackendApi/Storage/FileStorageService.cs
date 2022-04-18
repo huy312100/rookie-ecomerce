@@ -12,7 +12,7 @@ namespace eCommerce.BackendApi.Storage
 
 		public FileStorageService(IWebHostEnvironment webHostEnvironment)
 		{
-            _fileSourceFolder = Path.Combine(webHostEnvironment.ContentRootPath, "Repo/"+FILE_SOURCE_FOLDER_NAME);
+            _fileSourceFolder = Path.Combine(webHostEnvironment.WebRootPath, FILE_SOURCE_FOLDER_NAME);
 		}
 
         public async Task<string> SaveFile(IFormFile file)

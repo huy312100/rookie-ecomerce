@@ -21,7 +21,7 @@
         }
     }
 }
-
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 @*START CAROUSEL*@
 <div class="banner_section slide_medium shop_banner_slider staggered-animation-wrap">
     <div id="carouselExampleControls" class="carousel slide carousel-fade light_arrow" data-bs-ride="carousel">
@@ -98,12 +98,12 @@
                             <a href="shop-product-detail.html">
                                 @if (@product.Images.Count > 0)
                                 {
-                                    <img src="@product.Images[0].ImageUrl" alt="furniture_img1">
+                                    <img src="@(Configuration["BaseAddress"] + @product.Images[0].ImageUrl)" alt="furniture_img1">
                                 }
                                 else
                                 {
                                     <img src="~/assets/images/product_img1.jpg" alt="furniture_img1">
-                                    
+
                                 }
 
                             </a>
@@ -116,14 +116,14 @@
                             </div>
                             <div class="rating_wrap">
                                 <div class="rating">
-                                    <div class="product_rate" style="width: @ConvertToStar(product.StarAverage)"></div>
+                                    <div hidden class="product_rate" style="width: @ConvertToStar(product.StarAverage)"></div>
                                 </div>
                             </div>
                             <div class="pr_desc">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
                             </div>
                             <div class="add-to-cart">
-                                <a href="#" class="btn btn-fill-out btn-radius"><i class="icon-basket-loaded"></i> Add To Cart</a>
+                                <a href="#" class="btn btn-fill-out btn-radius btn-add-cart" data-id="@product.Id"><i class="icon-basket-loaded"></i> Add To Cart</a>
                             </div>
                         </div>
                     </div>

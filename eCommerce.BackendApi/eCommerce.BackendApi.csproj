@@ -40,8 +40,6 @@
     <None Remove="Services\" />
     <None Remove="Microsoft.AspNetCore.Http" />
     <None Remove="Storage\" />
-    <None Remove="Repo\" />
-    <None Remove="Repo\file-source\" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
@@ -55,13 +53,17 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="Storage\" />
-    <Folder Include="Repo\" />
-    <Folder Include="Repo\file-source\" />
     <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\file-source\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Shared\eCommerce.Shared.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\file-source\" />
   </ItemGroup>
 </Project>

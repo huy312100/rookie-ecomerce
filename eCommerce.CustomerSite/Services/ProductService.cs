@@ -19,7 +19,7 @@ namespace eCommerce.CustomerSite.Services
         public async Task<PagedResult<ProductVM>> GetTop8Product()
 		{
             var client = this.CreateClient();
-            var url = $"{EndpointConstants.PRODUCT_PAGING}?pageIndex=2&pageSize=8";
+            var url = $"{EndpointConstants.PRODUCT_PAGING}?pageIndex=3&pageSize=8";
             return await this.GetAsync<PagedResult<ProductVM>>(url, client);
 
         }

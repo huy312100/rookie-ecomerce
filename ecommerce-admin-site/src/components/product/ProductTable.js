@@ -43,7 +43,7 @@ const ProductTable = ({ products }) => {
             </TableCell>
 
             <TableCell>              
-              <span className="text-sm">{product.images.length > 0 ? <img src={product.images[0].imageUrl} alt='images'></img> : ""}</span>
+              <span className="text-sm">{product.images.length > 0 ? <img src={"https://localhost:7273/"+product.images[0].imageUrl} alt='images'></img> : ""}</span>
             </TableCell>
 
             <TableCell>

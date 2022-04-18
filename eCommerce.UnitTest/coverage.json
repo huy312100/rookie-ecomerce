@@ -1,0 +1,5878 @@
+{
+  "eCommerce.BackendApi.dll": {
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "14": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "36": 0,
+            "37": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "110": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "124": 0,
+            "126": 0,
+            "128": 0,
+            "130": 0,
+            "132": 0
+          },
+          "Branches": [
+            {
+              "Line": 113,
+              "Offset": 621,
+              "EndOffset": 623,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 113,
+              "Offset": 621,
+              "EndOffset": 641,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/WeatherForecast.cs": {
+      "eCommerce.BackendApi.WeatherForecast": {
+        "System.DateTime eCommerce.BackendApi.WeatherForecast::get_Date()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.WeatherForecast::get_TemperatureC()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.WeatherForecast::get_TemperatureF()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.WeatherForecast::get_Summary()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Storage/FileStorageService.cs": {
+      "eCommerce.BackendApi.Storage.FileStorageService": {
+        "System.Void eCommerce.BackendApi.Storage.FileStorageService::.ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Storage.FileStorageService/<>c__DisplayClass5_0": {
+        "System.Void eCommerce.BackendApi.Storage.FileStorageService/<>c__DisplayClass5_0::<DeleteFileAsync>b__0()": {
+          "Lines": {
+            "41": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Storage.FileStorageService/<DeleteFileAsync>d__5": {
+        "System.Void eCommerce.BackendApi.Storage.FileStorageService/<DeleteFileAsync>d__5::MoveNext()": {
+          "Lines": {
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": [
+            {
+              "Line": 39,
+              "Offset": 80,
+              "EndOffset": 82,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 39,
+              "Offset": 80,
+              "EndOffset": 193,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Storage.FileStorageService/<SaveFile>d__3": {
+        "System.Void eCommerce.BackendApi.Storage.FileStorageService/<SaveFile>d__3::MoveNext()": {
+          "Lines": {
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Storage.FileStorageService/<SaveFileAsync>d__4": {
+        "System.Void eCommerce.BackendApi.Storage.FileStorageService/<SaveFileAsync>d__4::MoveNext()": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Services/BrandServices.cs": {
+      "eCommerce.BackendApi.Services.BrandServices": {
+        "System.Void eCommerce.BackendApi.Services.BrandServices::.ctor(eCommerce.BackendApi.Data.EF.ApplicationDbContext)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.BrandServices/<GetAllBrands>d__2": {
+        "System.Void eCommerce.BackendApi.Services.BrandServices/<GetAllBrands>d__2::MoveNext()": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Services/CategoryService.cs": {
+      "eCommerce.BackendApi.Services.CategoryService": {
+        "System.Void eCommerce.BackendApi.Services.CategoryService::.ctor(eCommerce.BackendApi.Data.EF.ApplicationDbContext,eCommerce.BackendApi.Interfaces.IFileStorageService)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.CategoryService/<CreateCategory>d__5": {
+        "System.Void eCommerce.BackendApi.Services.CategoryService/<CreateCategory>d__5::MoveNext()": {
+          "Lines": {
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0
+          },
+          "Branches": [
+            {
+              "Line": 69,
+              "Offset": 127,
+              "EndOffset": 132,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 127,
+              "EndOffset": 301,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.CategoryService/<DeleteCategory>d__6": {
+        "System.Void eCommerce.BackendApi.Services.CategoryService/<DeleteCategory>d__6::MoveNext()": {
+          "Lines": {
+            "79": 0,
+            "80": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0
+          },
+          "Branches": [
+            {
+              "Line": 82,
+              "Offset": 212,
+              "EndOffset": 214,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 82,
+              "Offset": 212,
+              "EndOffset": 278,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 296,
+              "EndOffset": 298,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 296,
+              "EndOffset": 421,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.CategoryService/<GetAllCategories>d__3": {
+        "System.Void eCommerce.BackendApi.Services.CategoryService/<GetAllCategories>d__3::MoveNext()": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.CategoryService/<GetCategoryById>d__4": {
+        "System.Void eCommerce.BackendApi.Services.CategoryService/<GetCategoryById>d__4::MoveNext()": {
+          "Lines": {
+            "38": 0,
+            "39": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "56": 0,
+            "57": 0
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 187,
+              "EndOffset": 189,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 187,
+              "EndOffset": 240,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.CategoryService/<UpdateCategory>d__7": {
+        "System.Void eCommerce.BackendApi.Services.CategoryService/<UpdateCategory>d__7::MoveNext()": {
+          "Lines": {
+            "97": 0,
+            "98": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "110": 0,
+            "111": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0
+          },
+          "Branches": [
+            {
+              "Line": 100,
+              "Offset": 217,
+              "EndOffset": 219,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 100,
+              "Offset": 217,
+              "EndOffset": 288,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 105,
+              "Offset": 306,
+              "EndOffset": 308,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 105,
+              "Offset": 306,
+              "EndOffset": 333,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 113,
+              "Offset": 397,
+              "EndOffset": 402,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 113,
+              "Offset": 397,
+              "EndOffset": 574,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Services/OrderService.cs": {
+      "eCommerce.BackendApi.Services.OrderService": {
+        "System.Void eCommerce.BackendApi.Services.OrderService::.ctor(eCommerce.BackendApi.Data.EF.ApplicationDbContext)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.OrderService/<CheckoutOrder>d__3": {
+        "System.Void eCommerce.BackendApi.Services.OrderService/<CheckoutOrder>d__3::MoveNext()": {
+          "Lines": {
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "88": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "113": 0,
+            "128": 0,
+            "129": 0
+          },
+          "Branches": [
+            {
+              "Line": 78,
+              "Offset": 675,
+              "EndOffset": 91,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 78,
+              "Offset": 675,
+              "EndOffset": 680,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.OrderService/<GetOrdersPaging>d__2": {
+        "System.Void eCommerce.BackendApi.Services.OrderService/<GetOrdersPaging>d__2::MoveNext()": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Services/ProductService.cs": {
+      "eCommerce.BackendApi.Services.ProductService": {
+        "System.Void eCommerce.BackendApi.Services.ProductService::.ctor(eCommerce.BackendApi.Data.EF.ApplicationDbContext,eCommerce.BackendApi.Interfaces.IFileStorageService)": {
+          "Lines": {
+            "20": 6,
+            "21": 6,
+            "22": 6,
+            "23": 6,
+            "24": 6
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<>c": {
+        "System.Int32 eCommerce.BackendApi.Services.ProductService/<>c::<GetAllProducts>b__3_11(eCommerce.Shared.ViewModels.Products.ProductVM)": {
+          "Lines": {
+            "67": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Services.ProductService/<>c::<GetProductPaging>b__4_16(eCommerce.Shared.ViewModels.Products.ProductVM)": {
+          "Lines": {
+            "125": 1
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.ViewModels.Products.ProductImageVM eCommerce.BackendApi.Services.ProductService/<>c::<GetProductById>b__5_20(eCommerce.BackendApi.Models.ProductImage)": {
+          "Lines": {
+            "190": 2,
+            "191": 2,
+            "192": 2,
+            "193": 2,
+            "194": 2,
+            "195": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Services.ProductService/<>c::<GetProductByCategory>b__6_18(eCommerce.Shared.ViewModels.Products.ProductVM)": {
+          "Lines": {
+            "251": 4
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<CreateProduct>d__8": {
+        "System.Void eCommerce.BackendApi.Services.ProductService/<CreateProduct>d__8::MoveNext()": {
+          "Lines": {
+            "285": 1,
+            "287": 1,
+            "289": 1,
+            "290": 1,
+            "291": 1,
+            "294": 0,
+            "295": 0,
+            "296": 0,
+            "297": 0,
+            "298": 0,
+            "299": 0,
+            "300": 0,
+            "301": 0,
+            "302": 0,
+            "304": 0,
+            "305": 0,
+            "306": 0,
+            "307": 0,
+            "308": 0,
+            "309": 0,
+            "310": 0,
+            "311": 0,
+            "312": 0,
+            "313": 0,
+            "314": 0,
+            "315": 0,
+            "316": 0,
+            "317": 0,
+            "318": 0
+          },
+          "Branches": [
+            {
+              "Line": 289,
+              "Offset": 217,
+              "EndOffset": 219,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 289,
+              "Offset": 217,
+              "EndOffset": 288,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 304,
+              "Offset": 419,
+              "EndOffset": 424,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 304,
+              "Offset": 419,
+              "EndOffset": 719,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<DeleteProduct>d__9": {
+        "System.Void eCommerce.BackendApi.Services.ProductService/<DeleteProduct>d__9::MoveNext()": {
+          "Lines": {
+            "321": 0,
+            "322": 0,
+            "324": 0,
+            "325": 0,
+            "326": 0,
+            "329": 0,
+            "331": 0,
+            "332": 0,
+            "333": 0,
+            "334": 0,
+            "336": 0,
+            "337": 0,
+            "338": 0
+          },
+          "Branches": [
+            {
+              "Line": 324,
+              "Offset": 248,
+              "EndOffset": 250,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 324,
+              "Offset": 248,
+              "EndOffset": 262,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 331,
+              "Offset": 580,
+              "EndOffset": 422,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 331,
+              "Offset": 580,
+              "EndOffset": 585,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<GetAllProducts>d__3": {
+        "System.Void eCommerce.BackendApi.Services.ProductService/<GetAllProducts>d__3::MoveNext()": {
+          "Lines": {
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "69": 0,
+            "70": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<GetImageById>d__7": {
+        "System.Void eCommerce.BackendApi.Services.ProductService/<GetImageById>d__7::MoveNext()": {
+          "Lines": {
+            "264": 0,
+            "265": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "272": 0,
+            "273": 0,
+            "274": 0,
+            "275": 0,
+            "276": 0,
+            "277": 0,
+            "278": 0,
+            "280": 0,
+            "281": 0
+          },
+          "Branches": [
+            {
+              "Line": 267,
+              "Offset": 187,
+              "EndOffset": 189,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 267,
+              "Offset": 187,
+              "EndOffset": 240,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<GetProductByCategory>d__6": {
+        "System.Void eCommerce.BackendApi.Services.ProductService/<GetProductByCategory>d__6::MoveNext()": {
+          "Lines": {
+            "201": 2,
+            "202": 2,
+            "203": 2,
+            "204": 2,
+            "205": 2,
+            "206": 2,
+            "207": 2,
+            "208": 2,
+            "209": 2,
+            "210": 2,
+            "211": 2,
+            "212": 2,
+            "213": 2,
+            "214": 2,
+            "216": 2,
+            "218": 2,
+            "220": 2,
+            "221": 2,
+            "222": 2,
+            "223": 2,
+            "224": 2,
+            "225": 2,
+            "226": 2,
+            "227": 2,
+            "228": 2,
+            "229": 2,
+            "230": 2,
+            "231": 2,
+            "232": 2,
+            "233": 2,
+            "234": 2,
+            "235": 2,
+            "236": 2,
+            "237": 2,
+            "238": 2,
+            "239": 2,
+            "240": 2,
+            "241": 2,
+            "242": 2,
+            "243": 2,
+            "244": 2,
+            "245": 2,
+            "246": 2,
+            "247": 2,
+            "248": 2,
+            "249": 2,
+            "253": 2,
+            "254": 2,
+            "255": 2,
+            "256": 2,
+            "257": 2,
+            "258": 2,
+            "259": 2,
+            "260": 2,
+            "261": 2
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<GetProductById>d__5": {
+        "System.Void eCommerce.BackendApi.Services.ProductService/<GetProductById>d__5::MoveNext()": {
+          "Lines": {
+            "139": 2,
+            "141": 2,
+            "142": 2,
+            "143": 2,
+            "144": 2,
+            "145": 2,
+            "146": 2,
+            "147": 2,
+            "148": 2,
+            "149": 2,
+            "150": 2,
+            "151": 2,
+            "152": 2,
+            "153": 2,
+            "155": 2,
+            "156": 2,
+            "158": 2,
+            "159": 1,
+            "160": 1,
+            "163": 1,
+            "164": 1,
+            "166": 1,
+            "167": 1,
+            "168": 1,
+            "169": 1,
+            "170": 1,
+            "171": 1,
+            "172": 1,
+            "173": 1,
+            "174": 1,
+            "175": 1,
+            "176": 1,
+            "177": 1,
+            "178": 1,
+            "179": 1,
+            "180": 1,
+            "181": 1,
+            "182": 1,
+            "183": 1,
+            "184": 1,
+            "185": 1,
+            "186": 1,
+            "187": 1,
+            "188": 1,
+            "189": 1,
+            "196": 1,
+            "197": 1,
+            "198": 1
+          },
+          "Branches": [
+            {
+              "Line": 158,
+              "Offset": 3288,
+              "EndOffset": 3290,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 158,
+              "Offset": 3288,
+              "EndOffset": 3346,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<GetProductPaging>d__4": {
+        "System.Void eCommerce.BackendApi.Services.ProductService/<GetProductPaging>d__4::MoveNext()": {
+          "Lines": {
+            "73": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "88": 1,
+            "91": 1,
+            "93": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "119": 1,
+            "120": 1,
+            "121": 1,
+            "122": 1,
+            "123": 1,
+            "128": 1,
+            "129": 1,
+            "130": 1,
+            "131": 1,
+            "132": 1,
+            "133": 1,
+            "134": 1,
+            "135": 1,
+            "136": 1
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.ProductService/<UpdateProduct>d__10": {
+        "System.Void eCommerce.BackendApi.Services.ProductService/<UpdateProduct>d__10::MoveNext()": {
+          "Lines": {
+            "341": 0,
+            "343": 0,
+            "345": 0,
+            "346": 0,
+            "347": 0,
+            "350": 0,
+            "351": 0,
+            "352": 0,
+            "353": 0,
+            "354": 0,
+            "355": 0,
+            "357": 0,
+            "358": 0,
+            "359": 0,
+            "360": 0,
+            "361": 0,
+            "362": 0,
+            "363": 0,
+            "364": 0,
+            "366": 0,
+            "368": 0,
+            "369": 0,
+            "370": 0
+          },
+          "Branches": [
+            {
+              "Line": 345,
+              "Offset": 262,
+              "EndOffset": 264,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 345,
+              "Offset": 262,
+              "EndOffset": 338,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 357,
+              "Offset": 523,
+              "EndOffset": 528,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 360,
+              "Offset": 865,
+              "EndOffset": 870,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 360,
+              "Offset": 865,
+              "EndOffset": 1075,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 357,
+              "Offset": 523,
+              "EndOffset": 1083,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Services/RatingService.cs": {
+      "eCommerce.BackendApi.Services.RatingService": {
+        "System.Void eCommerce.BackendApi.Services.RatingService::.ctor(eCommerce.BackendApi.Data.EF.ApplicationDbContext)": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.RatingService/<AddRating>d__2": {
+        "System.Void eCommerce.BackendApi.Services.RatingService/<AddRating>d__2::MoveNext()": {
+          "Lines": {
+            "21": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 30,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 51,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.RatingService/<GetRatingByProduct>d__3": {
+        "System.Void eCommerce.BackendApi.Services.RatingService/<GetRatingByProduct>d__3::MoveNext()": {
+          "Lines": {
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "70": 0,
+            "71": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Services/UserService.cs": {
+      "eCommerce.BackendApi.Services.UserService": {
+        "System.Void eCommerce.BackendApi.Services.UserService::.ctor(Microsoft.AspNetCore.Identity.UserManager`1<eCommerce.BackendApi.Models.User>,Microsoft.AspNetCore.Identity.SignInManager`1<eCommerce.BackendApi.Models.User>,Microsoft.AspNetCore.Identity.RoleManager`1<eCommerce.BackendApi.Models.Role>,Microsoft.Extensions.Configuration.IConfiguration,eCommerce.BackendApi.Interfaces.IFileStorageService)": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.UserService/<DeleteUser>d__12": {
+        "System.Void eCommerce.BackendApi.Services.UserService/<DeleteUser>d__12::MoveNext()": {
+          "Lines": {
+            "225": 0,
+            "226": 0,
+            "228": 0,
+            "229": 0,
+            "230": 0,
+            "233": 0,
+            "234": 0,
+            "235": 0,
+            "236": 0,
+            "238": 0,
+            "240": 0,
+            "241": 0,
+            "242": 0,
+            "244": 0,
+            "245": 0
+          },
+          "Branches": [
+            {
+              "Line": 228,
+              "Offset": 209,
+              "EndOffset": 211,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 228,
+              "Offset": 209,
+              "EndOffset": 223,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 233,
+              "Offset": 241,
+              "EndOffset": 243,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 233,
+              "Offset": 241,
+              "EndOffset": 366,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 240,
+              "Offset": 521,
+              "EndOffset": 523,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 240,
+              "Offset": 521,
+              "EndOffset": 528,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.UserService/<GetAllUser>d__8": {
+        "System.Void eCommerce.BackendApi.Services.UserService/<GetAllUser>d__8::MoveNext()": {
+          "Lines": {
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.UserService/<GetUserById>d__10": {
+        "System.Void eCommerce.BackendApi.Services.UserService/<GetUserById>d__10::MoveNext()": {
+          "Lines": {
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0,
+            "170": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "175": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "182": 0,
+            "183": 0
+          },
+          "Branches": [
+            {
+              "Line": 165,
+              "Offset": 175,
+              "EndOffset": 177,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 165,
+              "Offset": 175,
+              "EndOffset": 189,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.UserService/<GetUsersPaging>d__9": {
+        "System.Void eCommerce.BackendApi.Services.UserService/<GetUsersPaging>d__9::MoveNext()": {
+          "Lines": {
+            "131": 0,
+            "132": 0,
+            "135": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Services.UserService/<Login>d__6": {
+        "System.Void eCommerce.BackendApi.Services.UserService/<Login>d__6::MoveNext()": {
+          "Lines": {
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "61": 0,
+            "62": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "70": 0,
+            "73": 0,
+            "74": 0
+          },
+          "Branches": [
+            {
+              "Line": 37,
+              "Offset": 194,
+              "EndOffset": 196,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 37,
+              "Offset": 194,
+              "EndOffset": 204,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 384,
+              "EndOffset": 386,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 384,
+              "EndOffset": 394,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 544,
+              "EndOffset": 546,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 544,
+              "EndOffset": 564,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 562,
+              "EndOffset": 564,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 576,
+              "EndOffset": 578,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 576,
+              "EndOffset": 596,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 562,
+              "EndOffset": 599,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 604,
+              "EndOffset": 609,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 604,
+              "EndOffset": 980,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.UserService/<Register>d__7": {
+        "System.Void eCommerce.BackendApi.Services.UserService/<Register>d__7::MoveNext()": {
+          "Lines": {
+            "77": 0,
+            "78": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "110": 0,
+            "111": 0
+          },
+          "Branches": [
+            {
+              "Line": 80,
+              "Offset": 203,
+              "EndOffset": 205,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 203,
+              "EndOffset": 217,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 85,
+              "Offset": 355,
+              "EndOffset": 357,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 85,
+              "Offset": 355,
+              "EndOffset": 376,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 100,
+              "Offset": 513,
+              "EndOffset": 518,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 100,
+              "Offset": 513,
+              "EndOffset": 689,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 106,
+              "Offset": 854,
+              "EndOffset": 856,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 106,
+              "Offset": 854,
+              "EndOffset": 861,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Services.UserService/<UpdateUser>d__11": {
+        "System.Void eCommerce.BackendApi.Services.UserService/<UpdateUser>d__11::MoveNext()": {
+          "Lines": {
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "191": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "211": 0,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "216": 0,
+            "217": 0,
+            "218": 0,
+            "219": 0,
+            "221": 0,
+            "222": 0
+          },
+          "Branches": [
+            {
+              "Line": 187,
+              "Offset": 450,
+              "EndOffset": 452,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 187,
+              "Offset": 450,
+              "EndOffset": 464,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 193,
+              "Offset": 642,
+              "EndOffset": 644,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 193,
+              "Offset": 642,
+              "EndOffset": 718,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 198,
+              "Offset": 741,
+              "EndOffset": 743,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 198,
+              "Offset": 741,
+              "EndOffset": 773,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 202,
+              "Offset": 796,
+              "EndOffset": 798,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 202,
+              "Offset": 796,
+              "EndOffset": 828,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 211,
+              "Offset": 935,
+              "EndOffset": 940,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 211,
+              "Offset": 935,
+              "EndOffset": 1117,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 217,
+              "Offset": 1272,
+              "EndOffset": 1274,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 217,
+              "Offset": 1272,
+              "EndOffset": 1279,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/Brand.cs": {
+      "eCommerce.BackendApi.Models.Brand": {
+        "System.Int32 eCommerce.BackendApi.Models.Brand::get_Id()": {
+          "Lines": {
+            "9": 7
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Brand::get_Name()": {
+          "Lines": {
+            "11": 7
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Brand::get_Description()": {
+          "Lines": {
+            "12": 7
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.BrandCategory> eCommerce.BackendApi.Models.Brand::get_BrandCategories()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.Product> eCommerce.BackendApi.Models.Brand::get_Products()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/BrandCategory.cs": {
+      "eCommerce.BackendApi.Models.BrandCategory": {
+        "System.Int32 eCommerce.BackendApi.Models.BrandCategory::get_Id()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.BrandCategory::get_BrandId()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.BrandCategory::get_CategoryId()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Brand eCommerce.BackendApi.Models.BrandCategory::get_Brand()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Category eCommerce.BackendApi.Models.BrandCategory::get_Category()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/Category.cs": {
+      "eCommerce.BackendApi.Models.Category": {
+        "System.Int32 eCommerce.BackendApi.Models.Category::get_Id()": {
+          "Lines": {
+            "10": 7
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Category::get_Name()": {
+          "Lines": {
+            "12": 7
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Category::get_Description()": {
+          "Lines": {
+            "13": 7
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Category::get_ImageUrl()": {
+          "Lines": {
+            "14": 7
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.BackendApi.Models.Category::get_CreatedDate()": {
+          "Lines": {
+            "15": 1
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> eCommerce.BackendApi.Models.Category::get_ParentId()": {
+          "Lines": {
+            "16": 1
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Category eCommerce.BackendApi.Models.Category::get_Parent()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.BrandCategory> eCommerce.BackendApi.Models.Category::get_BrandCategories()": {
+          "Lines": {
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.Product> eCommerce.BackendApi.Models.Category::get_Products()": {
+          "Lines": {
+            "23": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/Order.cs": {
+      "eCommerce.BackendApi.Models.Order": {
+        "System.Int32 eCommerce.BackendApi.Models.Order::get_Id()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime eCommerce.BackendApi.Models.Order::get_OrderDate()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Order::get_Address()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Order::get_Email()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Order::get_PhoneNumber()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Order::get_Note()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.Enums.Order.OrderStatus eCommerce.BackendApi.Models.Order::get_Status()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.Enums.Order.OrderPayment eCommerce.BackendApi.Models.Order::get_PaymentType()": {
+          "Lines": {
+            "24": 0
+          },
+          "Branches": []
+        },
+        "System.Double eCommerce.BackendApi.Models.Order::get_Total()": {
+          "Lines": {
+            "25": 0
+          },
+          "Branches": []
+        },
+        "System.Guid eCommerce.BackendApi.Models.Order::get_UserId()": {
+          "Lines": {
+            "26": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.OrderDetail> eCommerce.BackendApi.Models.Order::get_OrderDetails()": {
+          "Lines": {
+            "29": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.User eCommerce.BackendApi.Models.Order::get_User()": {
+          "Lines": {
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/OrderDetail.cs": {
+      "eCommerce.BackendApi.Models.OrderDetail": {
+        "System.Int32 eCommerce.BackendApi.Models.OrderDetail::get_Id()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.OrderDetail::get_Quantity()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.OrderDetail::get_OrderId()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.OrderDetail::get_ProductId()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Double eCommerce.BackendApi.Models.OrderDetail::get_SubTotal()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Order eCommerce.BackendApi.Models.OrderDetail::get_Order()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Product eCommerce.BackendApi.Models.OrderDetail::get_Product()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/Product.cs": {
+      "eCommerce.BackendApi.Models.Product": {
+        "System.Int32 eCommerce.BackendApi.Models.Product::get_Id()": {
+          "Lines": {
+            "11": 19
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Product::get_Name()": {
+          "Lines": {
+            "13": 19
+          },
+          "Branches": []
+        },
+        "System.Double eCommerce.BackendApi.Models.Product::get_Price()": {
+          "Lines": {
+            "15": 19
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Product::get_Description()": {
+          "Lines": {
+            "16": 19
+          },
+          "Branches": []
+        },
+        "System.DateTime eCommerce.BackendApi.Models.Product::get_CreatedDate()": {
+          "Lines": {
+            "18": 19
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.BackendApi.Models.Product::get_UpdatedDate()": {
+          "Lines": {
+            "19": 19
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.Product::get_CategoryId()": {
+          "Lines": {
+            "20": 18
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.Product::get_BrandId()": {
+          "Lines": {
+            "21": 18
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Category eCommerce.BackendApi.Models.Product::get_Category()": {
+          "Lines": {
+            "24": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Brand eCommerce.BackendApi.Models.Product::get_Brand()": {
+          "Lines": {
+            "26": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.ProductImage> eCommerce.BackendApi.Models.Product::get_ProductImages()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.Rating> eCommerce.BackendApi.Models.Product::get_Ratings()": {
+          "Lines": {
+            "30": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.OrderDetail> eCommerce.BackendApi.Models.Product::get_OrderDetails()": {
+          "Lines": {
+            "32": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/ProductImage.cs": {
+      "eCommerce.BackendApi.Models.ProductImage": {
+        "System.Int32 eCommerce.BackendApi.Models.ProductImage::get_Id()": {
+          "Lines": {
+            "10": 14
+          },
+          "Branches": []
+        },
+        "System.Boolean eCommerce.BackendApi.Models.ProductImage::get_IsThumbnail()": {
+          "Lines": {
+            "12": 14
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.ProductImage::get_ImageUrl()": {
+          "Lines": {
+            "14": 14
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.ProductImage::get_ProductId()": {
+          "Lines": {
+            "15": 12
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Product eCommerce.BackendApi.Models.ProductImage::get_Product()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/Rating.cs": {
+      "eCommerce.BackendApi.Models.Rating": {
+        "System.Int32 eCommerce.BackendApi.Models.Rating::get_Id()": {
+          "Lines": {
+            "10": 6
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> eCommerce.BackendApi.Models.Rating::get_Star()": {
+          "Lines": {
+            "12": 6
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.Rating::get_Comment()": {
+          "Lines": {
+            "14": 6
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.BackendApi.Models.Rating::get_CreatedDate()": {
+          "Lines": {
+            "15": 6
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.BackendApi.Models.Rating::get_ProductId()": {
+          "Lines": {
+            "16": 6
+          },
+          "Branches": []
+        },
+        "System.Guid eCommerce.BackendApi.Models.Rating::get_UserId()": {
+          "Lines": {
+            "17": 6
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.Product eCommerce.BackendApi.Models.Rating::get_Product()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.BackendApi.Models.User eCommerce.BackendApi.Models.Rating::get_User()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/Role.cs": {
+      "eCommerce.BackendApi.Models.Role": {
+        "System.String eCommerce.BackendApi.Models.Role::get_Description()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Models/User.cs": {
+      "eCommerce.BackendApi.Models.User": {
+        "System.String eCommerce.BackendApi.Models.User::get_FirstName()": {
+          "Lines": {
+            "14": 6
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.User::get_LastName()": {
+          "Lines": {
+            "18": 6
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.BackendApi.Models.User::get_Dob()": {
+          "Lines": {
+            "20": 6
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.Enums.User.UserGender eCommerce.BackendApi.Models.User::get_Gender()": {
+          "Lines": {
+            "22": 6
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.BackendApi.Models.User::get_ImageUrl()": {
+          "Lines": {
+            "24": 6
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.Rating> eCommerce.BackendApi.Models.User::get_Ratings()": {
+          "Lines": {
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.BackendApi.Models.Order> eCommerce.BackendApi.Models.User::get_Orders()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Migrations/20220312081452_RecreateDbWithBrand.cs": {
+      "eCommerce.BackendApi.Migrations.RecreateDbWithBrand": {
+        "System.Void eCommerce.BackendApi.Migrations.RecreateDbWithBrand::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0,
+            "168": 0,
+            "169": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "175": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "196": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 0,
+            "211": 0,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "215": 0,
+            "216": 0,
+            "217": 0,
+            "219": 0,
+            "220": 0,
+            "221": 0,
+            "222": 0,
+            "223": 0,
+            "224": 0,
+            "225": 0,
+            "226": 0,
+            "227": 0,
+            "228": 0,
+            "229": 0,
+            "230": 0,
+            "231": 0,
+            "232": 0,
+            "233": 0,
+            "234": 0,
+            "235": 0,
+            "236": 0,
+            "237": 0,
+            "239": 0,
+            "240": 0,
+            "241": 0,
+            "242": 0,
+            "243": 0,
+            "244": 0,
+            "245": 0,
+            "246": 0,
+            "247": 0,
+            "248": 0,
+            "249": 0,
+            "250": 0,
+            "251": 0,
+            "252": 0,
+            "253": 0,
+            "254": 0,
+            "255": 0,
+            "256": 0,
+            "257": 0,
+            "258": 0,
+            "259": 0,
+            "260": 0,
+            "261": 0,
+            "263": 0,
+            "264": 0,
+            "265": 0,
+            "266": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "270": 0,
+            "271": 0,
+            "272": 0,
+            "273": 0,
+            "274": 0,
+            "275": 0,
+            "276": 0,
+            "277": 0,
+            "278": 0,
+            "279": 0,
+            "280": 0,
+            "281": 0,
+            "283": 0,
+            "284": 0,
+            "285": 0,
+            "286": 0,
+            "287": 0,
+            "288": 0,
+            "289": 0,
+            "290": 0,
+            "291": 0,
+            "292": 0,
+            "293": 0,
+            "294": 0,
+            "295": 0,
+            "296": 0,
+            "297": 0,
+            "298": 0,
+            "299": 0,
+            "300": 0,
+            "301": 0,
+            "302": 0,
+            "304": 0,
+            "305": 0,
+            "306": 0,
+            "307": 0,
+            "308": 0,
+            "309": 0,
+            "310": 0,
+            "311": 0,
+            "312": 0,
+            "313": 0,
+            "314": 0,
+            "315": 0,
+            "316": 0,
+            "317": 0,
+            "318": 0,
+            "319": 0,
+            "320": 0,
+            "321": 0,
+            "322": 0,
+            "323": 0,
+            "324": 0,
+            "325": 0,
+            "326": 0,
+            "327": 0,
+            "328": 0,
+            "329": 0,
+            "330": 0,
+            "331": 0,
+            "333": 0,
+            "334": 0,
+            "335": 0,
+            "336": 0,
+            "337": 0,
+            "338": 0,
+            "339": 0,
+            "340": 0,
+            "341": 0,
+            "342": 0,
+            "343": 0,
+            "344": 0,
+            "345": 0,
+            "346": 0,
+            "347": 0,
+            "348": 0,
+            "349": 0,
+            "350": 0,
+            "351": 0,
+            "352": 0,
+            "353": 0,
+            "354": 0,
+            "355": 0,
+            "356": 0,
+            "357": 0,
+            "358": 0,
+            "359": 0,
+            "361": 0,
+            "362": 0,
+            "363": 0,
+            "364": 0,
+            "366": 0,
+            "367": 0,
+            "368": 0,
+            "369": 0,
+            "371": 0,
+            "372": 0,
+            "373": 0,
+            "374": 0,
+            "375": 0,
+            "376": 0,
+            "378": 0,
+            "379": 0,
+            "380": 0,
+            "381": 0,
+            "383": 0,
+            "384": 0,
+            "385": 0,
+            "386": 0,
+            "388": 0,
+            "389": 0,
+            "390": 0,
+            "391": 0,
+            "393": 0,
+            "394": 0,
+            "395": 0,
+            "396": 0,
+            "398": 0,
+            "399": 0,
+            "400": 0,
+            "401": 0,
+            "403": 0,
+            "404": 0,
+            "405": 0,
+            "406": 0,
+            "408": 0,
+            "409": 0,
+            "410": 0,
+            "411": 0,
+            "413": 0,
+            "414": 0,
+            "415": 0,
+            "416": 0,
+            "418": 0,
+            "419": 0,
+            "420": 0,
+            "421": 0,
+            "423": 0,
+            "424": 0,
+            "425": 0,
+            "426": 0,
+            "427": 0,
+            "428": 0,
+            "430": 0,
+            "431": 0,
+            "432": 0,
+            "433": 0,
+            "435": 0,
+            "436": 0,
+            "437": 0,
+            "438": 0,
+            "440": 0,
+            "441": 0,
+            "442": 0,
+            "443": 0,
+            "445": 0,
+            "446": 0,
+            "447": 0,
+            "448": 0,
+            "449": 0,
+            "450": 0,
+            "451": 0
+          },
+          "Branches": []
+        },
+        "System.Void eCommerce.BackendApi.Migrations.RecreateDbWithBrand::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "454": 0,
+            "455": 0,
+            "456": 0,
+            "458": 0,
+            "459": 0,
+            "461": 0,
+            "462": 0,
+            "464": 0,
+            "465": 0,
+            "467": 0,
+            "468": 0,
+            "470": 0,
+            "471": 0,
+            "473": 0,
+            "474": 0,
+            "476": 0,
+            "477": 0,
+            "479": 0,
+            "480": 0,
+            "482": 0,
+            "483": 0,
+            "485": 0,
+            "486": 0,
+            "488": 0,
+            "489": 0,
+            "491": 0,
+            "492": 0,
+            "494": 0,
+            "495": 0,
+            "497": 0,
+            "498": 0,
+            "499": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Migrations/20220312081452_RecreateDbWithBrand.Designer.cs": {
+      "eCommerce.BackendApi.Migrations.RecreateDbWithBrand": {
+        "System.Void eCommerce.BackendApi.Migrations.RecreateDbWithBrand::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "145": 0,
+            "146": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0,
+            "168": 0,
+            "169": 0,
+            "170": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "175": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "196": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 0,
+            "211": 0,
+            "212": 0,
+            "213": 0,
+            "214": 0,
+            "216": 0,
+            "217": 0,
+            "218": 0,
+            "219": 0,
+            "220": 0,
+            "221": 0,
+            "222": 0,
+            "223": 0,
+            "224": 0,
+            "225": 0,
+            "226": 0,
+            "227": 0,
+            "228": 0,
+            "229": 0,
+            "230": 0,
+            "231": 0,
+            "232": 0,
+            "233": 0,
+            "234": 0,
+            "235": 0,
+            "236": 0,
+            "237": 0,
+            "238": 0,
+            "239": 0,
+            "241": 0,
+            "242": 0,
+            "243": 0,
+            "244": 0,
+            "245": 0,
+            "246": 0,
+            "247": 0,
+            "248": 0,
+            "249": 0,
+            "250": 0,
+            "251": 0,
+            "252": 0,
+            "253": 0,
+            "254": 0,
+            "255": 0,
+            "256": 0,
+            "257": 0,
+            "258": 0,
+            "259": 0,
+            "260": 0,
+            "261": 0,
+            "262": 0,
+            "263": 0,
+            "264": 0,
+            "265": 0,
+            "266": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "270": 0,
+            "271": 0,
+            "272": 0,
+            "274": 0,
+            "275": 0,
+            "276": 0,
+            "277": 0,
+            "278": 0,
+            "279": 0,
+            "280": 0,
+            "281": 0,
+            "282": 0,
+            "283": 0,
+            "284": 0,
+            "285": 0,
+            "286": 0,
+            "287": 0,
+            "288": 0,
+            "289": 0,
+            "290": 0,
+            "291": 0,
+            "292": 0,
+            "293": 0,
+            "294": 0,
+            "295": 0,
+            "296": 0,
+            "297": 0,
+            "298": 0,
+            "299": 0,
+            "300": 0,
+            "301": 0,
+            "302": 0,
+            "303": 0,
+            "304": 0,
+            "306": 0,
+            "307": 0,
+            "308": 0,
+            "309": 0,
+            "310": 0,
+            "311": 0,
+            "312": 0,
+            "313": 0,
+            "314": 0,
+            "315": 0,
+            "316": 0,
+            "317": 0,
+            "318": 0,
+            "319": 0,
+            "320": 0,
+            "321": 0,
+            "322": 0,
+            "323": 0,
+            "324": 0,
+            "325": 0,
+            "326": 0,
+            "327": 0,
+            "328": 0,
+            "329": 0,
+            "330": 0,
+            "331": 0,
+            "332": 0,
+            "333": 0,
+            "334": 0,
+            "335": 0,
+            "336": 0,
+            "337": 0,
+            "338": 0,
+            "339": 0,
+            "340": 0,
+            "341": 0,
+            "342": 0,
+            "343": 0,
+            "344": 0,
+            "345": 0,
+            "346": 0,
+            "347": 0,
+            "348": 0,
+            "349": 0,
+            "350": 0,
+            "351": 0,
+            "352": 0,
+            "353": 0,
+            "354": 0,
+            "355": 0,
+            "356": 0,
+            "357": 0,
+            "358": 0,
+            "359": 0,
+            "360": 0,
+            "361": 0,
+            "362": 0,
+            "363": 0,
+            "364": 0,
+            "365": 0,
+            "366": 0,
+            "367": 0,
+            "368": 0,
+            "369": 0,
+            "370": 0,
+            "371": 0,
+            "372": 0,
+            "373": 0,
+            "374": 0,
+            "375": 0,
+            "376": 0,
+            "377": 0,
+            "378": 0,
+            "379": 0,
+            "380": 0,
+            "381": 0,
+            "382": 0,
+            "383": 0,
+            "384": 0,
+            "385": 0,
+            "386": 0,
+            "387": 0,
+            "388": 0,
+            "389": 0,
+            "391": 0,
+            "392": 0,
+            "393": 0,
+            "394": 0,
+            "395": 0,
+            "396": 0,
+            "397": 0,
+            "398": 0,
+            "399": 0,
+            "400": 0,
+            "401": 0,
+            "402": 0,
+            "403": 0,
+            "404": 0,
+            "405": 0,
+            "406": 0,
+            "407": 0,
+            "408": 0,
+            "409": 0,
+            "410": 0,
+            "411": 0,
+            "412": 0,
+            "413": 0,
+            "415": 0,
+            "416": 0,
+            "417": 0,
+            "418": 0,
+            "419": 0,
+            "420": 0,
+            "421": 0,
+            "422": 0,
+            "423": 0,
+            "424": 0,
+            "425": 0,
+            "426": 0,
+            "427": 0,
+            "428": 0,
+            "429": 0,
+            "430": 0,
+            "431": 0,
+            "432": 0,
+            "433": 0,
+            "434": 0,
+            "435": 0,
+            "436": 0,
+            "437": 0,
+            "439": 0,
+            "440": 0,
+            "441": 0,
+            "442": 0,
+            "443": 0,
+            "444": 0,
+            "445": 0,
+            "446": 0,
+            "447": 0,
+            "448": 0,
+            "449": 0,
+            "450": 0,
+            "451": 0,
+            "452": 0,
+            "453": 0,
+            "454": 0,
+            "455": 0,
+            "456": 0,
+            "458": 0,
+            "459": 0,
+            "460": 0,
+            "461": 0,
+            "462": 0,
+            "463": 0,
+            "464": 0,
+            "465": 0,
+            "466": 0,
+            "467": 0,
+            "468": 0,
+            "469": 0,
+            "470": 0,
+            "471": 0,
+            "473": 0,
+            "474": 0,
+            "475": 0,
+            "476": 0,
+            "477": 0,
+            "478": 0,
+            "479": 0,
+            "480": 0,
+            "481": 0,
+            "482": 0,
+            "483": 0,
+            "484": 0,
+            "485": 0,
+            "486": 0,
+            "487": 0,
+            "488": 0,
+            "489": 0,
+            "490": 0,
+            "492": 0,
+            "493": 0,
+            "494": 0,
+            "495": 0,
+            "496": 0,
+            "497": 0,
+            "498": 0,
+            "499": 0,
+            "500": 0,
+            "501": 0,
+            "502": 0,
+            "503": 0,
+            "504": 0,
+            "505": 0,
+            "506": 0,
+            "507": 0,
+            "508": 0,
+            "509": 0,
+            "511": 0,
+            "512": 0,
+            "513": 0,
+            "514": 0,
+            "515": 0,
+            "516": 0,
+            "517": 0,
+            "518": 0,
+            "520": 0,
+            "521": 0,
+            "522": 0,
+            "523": 0,
+            "524": 0,
+            "525": 0,
+            "526": 0,
+            "527": 0,
+            "528": 0,
+            "529": 0,
+            "531": 0,
+            "532": 0,
+            "533": 0,
+            "534": 0,
+            "535": 0,
+            "536": 0,
+            "537": 0,
+            "538": 0,
+            "539": 0,
+            "540": 0,
+            "541": 0,
+            "542": 0,
+            "543": 0,
+            "544": 0,
+            "545": 0,
+            "546": 0,
+            "547": 0,
+            "548": 0,
+            "550": 0,
+            "551": 0,
+            "552": 0,
+            "553": 0,
+            "554": 0,
+            "555": 0,
+            "556": 0,
+            "557": 0,
+            "558": 0,
+            "559": 0,
+            "560": 0,
+            "561": 0,
+            "562": 0,
+            "563": 0,
+            "564": 0,
+            "565": 0,
+            "566": 0,
+            "567": 0,
+            "569": 0,
+            "570": 0,
+            "571": 0,
+            "572": 0,
+            "573": 0,
+            "574": 0,
+            "575": 0,
+            "576": 0,
+            "577": 0,
+            "578": 0,
+            "580": 0,
+            "581": 0,
+            "582": 0,
+            "583": 0,
+            "584": 0,
+            "585": 0,
+            "586": 0,
+            "587": 0,
+            "588": 0,
+            "589": 0,
+            "590": 0,
+            "591": 0,
+            "592": 0,
+            "593": 0,
+            "594": 0,
+            "595": 0,
+            "596": 0,
+            "597": 0,
+            "599": 0,
+            "600": 0,
+            "601": 0,
+            "602": 0,
+            "603": 0,
+            "604": 0,
+            "605": 0,
+            "606": 0,
+            "608": 0,
+            "609": 0,
+            "610": 0,
+            "611": 0,
+            "612": 0,
+            "613": 0,
+            "614": 0,
+            "615": 0,
+            "617": 0,
+            "618": 0,
+            "619": 0,
+            "620": 0,
+            "621": 0,
+            "622": 0,
+            "623": 0,
+            "624": 0,
+            "626": 0,
+            "627": 0,
+            "628": 0,
+            "629": 0,
+            "630": 0,
+            "631": 0,
+            "632": 0,
+            "633": 0,
+            "634": 0,
+            "635": 0,
+            "636": 0,
+            "637": 0,
+            "638": 0,
+            "639": 0,
+            "641": 0,
+            "642": 0,
+            "643": 0,
+            "644": 0,
+            "645": 0,
+            "646": 0,
+            "647": 0,
+            "648": 0,
+            "650": 0,
+            "651": 0,
+            "652": 0,
+            "653": 0,
+            "654": 0,
+            "655": 0,
+            "657": 0,
+            "658": 0,
+            "659": 0,
+            "660": 0,
+            "661": 0,
+            "662": 0,
+            "664": 0,
+            "665": 0,
+            "666": 0,
+            "667": 0,
+            "669": 0,
+            "670": 0,
+            "671": 0,
+            "672": 0,
+            "673": 0,
+            "674": 0,
+            "675": 0,
+            "676": 0,
+            "678": 0,
+            "679": 0,
+            "680": 0,
+            "681": 0,
+            "682": 0,
+            "683": 0,
+            "685": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Migrations/ApplicationDbContextModelSnapshot.cs": {
+      "eCommerce.BackendApi.Migrations.ApplicationDbContextModelSnapshot": {
+        "System.Void eCommerce.BackendApi.Migrations.ApplicationDbContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "17": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "140": 0,
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "146": 0,
+            "147": 0,
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "165": 0,
+            "166": 0,
+            "167": 0,
+            "168": 0,
+            "169": 0,
+            "170": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "175": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "186": 0,
+            "187": 0,
+            "188": 0,
+            "189": 0,
+            "190": 0,
+            "191": 0,
+            "192": 0,
+            "193": 0,
+            "194": 0,
+            "195": 0,
+            "196": 0,
+            "197": 0,
+            "198": 0,
+            "199": 0,
+            "200": 0,
+            "201": 0,
+            "202": 0,
+            "203": 0,
+            "204": 0,
+            "205": 0,
+            "206": 0,
+            "207": 0,
+            "208": 0,
+            "209": 0,
+            "210": 0,
+            "211": 0,
+            "212": 0,
+            "214": 0,
+            "215": 0,
+            "216": 0,
+            "217": 0,
+            "218": 0,
+            "219": 0,
+            "220": 0,
+            "221": 0,
+            "222": 0,
+            "223": 0,
+            "224": 0,
+            "225": 0,
+            "226": 0,
+            "227": 0,
+            "228": 0,
+            "229": 0,
+            "230": 0,
+            "231": 0,
+            "232": 0,
+            "233": 0,
+            "234": 0,
+            "235": 0,
+            "236": 0,
+            "237": 0,
+            "239": 0,
+            "240": 0,
+            "241": 0,
+            "242": 0,
+            "243": 0,
+            "244": 0,
+            "245": 0,
+            "246": 0,
+            "247": 0,
+            "248": 0,
+            "249": 0,
+            "250": 0,
+            "251": 0,
+            "252": 0,
+            "253": 0,
+            "254": 0,
+            "255": 0,
+            "256": 0,
+            "257": 0,
+            "258": 0,
+            "259": 0,
+            "260": 0,
+            "261": 0,
+            "262": 0,
+            "263": 0,
+            "264": 0,
+            "265": 0,
+            "266": 0,
+            "267": 0,
+            "268": 0,
+            "269": 0,
+            "270": 0,
+            "272": 0,
+            "273": 0,
+            "274": 0,
+            "275": 0,
+            "276": 0,
+            "277": 0,
+            "278": 0,
+            "279": 0,
+            "280": 0,
+            "281": 0,
+            "282": 0,
+            "283": 0,
+            "284": 0,
+            "285": 0,
+            "286": 0,
+            "287": 0,
+            "288": 0,
+            "289": 0,
+            "290": 0,
+            "291": 0,
+            "292": 0,
+            "293": 0,
+            "294": 0,
+            "295": 0,
+            "296": 0,
+            "297": 0,
+            "298": 0,
+            "299": 0,
+            "300": 0,
+            "301": 0,
+            "302": 0,
+            "304": 0,
+            "305": 0,
+            "306": 0,
+            "307": 0,
+            "308": 0,
+            "309": 0,
+            "310": 0,
+            "311": 0,
+            "312": 0,
+            "313": 0,
+            "314": 0,
+            "315": 0,
+            "316": 0,
+            "317": 0,
+            "318": 0,
+            "319": 0,
+            "320": 0,
+            "321": 0,
+            "322": 0,
+            "323": 0,
+            "324": 0,
+            "325": 0,
+            "326": 0,
+            "327": 0,
+            "328": 0,
+            "329": 0,
+            "330": 0,
+            "331": 0,
+            "332": 0,
+            "333": 0,
+            "334": 0,
+            "335": 0,
+            "336": 0,
+            "337": 0,
+            "338": 0,
+            "339": 0,
+            "340": 0,
+            "341": 0,
+            "342": 0,
+            "343": 0,
+            "344": 0,
+            "345": 0,
+            "346": 0,
+            "347": 0,
+            "348": 0,
+            "349": 0,
+            "350": 0,
+            "351": 0,
+            "352": 0,
+            "353": 0,
+            "354": 0,
+            "355": 0,
+            "356": 0,
+            "357": 0,
+            "358": 0,
+            "359": 0,
+            "360": 0,
+            "361": 0,
+            "362": 0,
+            "363": 0,
+            "364": 0,
+            "365": 0,
+            "366": 0,
+            "367": 0,
+            "368": 0,
+            "369": 0,
+            "370": 0,
+            "371": 0,
+            "372": 0,
+            "373": 0,
+            "374": 0,
+            "375": 0,
+            "376": 0,
+            "377": 0,
+            "378": 0,
+            "379": 0,
+            "380": 0,
+            "381": 0,
+            "382": 0,
+            "383": 0,
+            "384": 0,
+            "385": 0,
+            "386": 0,
+            "387": 0,
+            "389": 0,
+            "390": 0,
+            "391": 0,
+            "392": 0,
+            "393": 0,
+            "394": 0,
+            "395": 0,
+            "396": 0,
+            "397": 0,
+            "398": 0,
+            "399": 0,
+            "400": 0,
+            "401": 0,
+            "402": 0,
+            "403": 0,
+            "404": 0,
+            "405": 0,
+            "406": 0,
+            "407": 0,
+            "408": 0,
+            "409": 0,
+            "410": 0,
+            "411": 0,
+            "413": 0,
+            "414": 0,
+            "415": 0,
+            "416": 0,
+            "417": 0,
+            "418": 0,
+            "419": 0,
+            "420": 0,
+            "421": 0,
+            "422": 0,
+            "423": 0,
+            "424": 0,
+            "425": 0,
+            "426": 0,
+            "427": 0,
+            "428": 0,
+            "429": 0,
+            "430": 0,
+            "431": 0,
+            "432": 0,
+            "433": 0,
+            "434": 0,
+            "435": 0,
+            "437": 0,
+            "438": 0,
+            "439": 0,
+            "440": 0,
+            "441": 0,
+            "442": 0,
+            "443": 0,
+            "444": 0,
+            "445": 0,
+            "446": 0,
+            "447": 0,
+            "448": 0,
+            "449": 0,
+            "450": 0,
+            "451": 0,
+            "452": 0,
+            "453": 0,
+            "454": 0,
+            "456": 0,
+            "457": 0,
+            "458": 0,
+            "459": 0,
+            "460": 0,
+            "461": 0,
+            "462": 0,
+            "463": 0,
+            "464": 0,
+            "465": 0,
+            "466": 0,
+            "467": 0,
+            "468": 0,
+            "469": 0,
+            "471": 0,
+            "472": 0,
+            "473": 0,
+            "474": 0,
+            "475": 0,
+            "476": 0,
+            "477": 0,
+            "478": 0,
+            "479": 0,
+            "480": 0,
+            "481": 0,
+            "482": 0,
+            "483": 0,
+            "484": 0,
+            "485": 0,
+            "486": 0,
+            "487": 0,
+            "488": 0,
+            "490": 0,
+            "491": 0,
+            "492": 0,
+            "493": 0,
+            "494": 0,
+            "495": 0,
+            "496": 0,
+            "497": 0,
+            "498": 0,
+            "499": 0,
+            "500": 0,
+            "501": 0,
+            "502": 0,
+            "503": 0,
+            "504": 0,
+            "505": 0,
+            "506": 0,
+            "507": 0,
+            "509": 0,
+            "510": 0,
+            "511": 0,
+            "512": 0,
+            "513": 0,
+            "514": 0,
+            "515": 0,
+            "516": 0,
+            "518": 0,
+            "519": 0,
+            "520": 0,
+            "521": 0,
+            "522": 0,
+            "523": 0,
+            "524": 0,
+            "525": 0,
+            "526": 0,
+            "527": 0,
+            "529": 0,
+            "530": 0,
+            "531": 0,
+            "532": 0,
+            "533": 0,
+            "534": 0,
+            "535": 0,
+            "536": 0,
+            "537": 0,
+            "538": 0,
+            "539": 0,
+            "540": 0,
+            "541": 0,
+            "542": 0,
+            "543": 0,
+            "544": 0,
+            "545": 0,
+            "546": 0,
+            "548": 0,
+            "549": 0,
+            "550": 0,
+            "551": 0,
+            "552": 0,
+            "553": 0,
+            "554": 0,
+            "555": 0,
+            "556": 0,
+            "557": 0,
+            "558": 0,
+            "559": 0,
+            "560": 0,
+            "561": 0,
+            "562": 0,
+            "563": 0,
+            "564": 0,
+            "565": 0,
+            "567": 0,
+            "568": 0,
+            "569": 0,
+            "570": 0,
+            "571": 0,
+            "572": 0,
+            "573": 0,
+            "574": 0,
+            "575": 0,
+            "576": 0,
+            "578": 0,
+            "579": 0,
+            "580": 0,
+            "581": 0,
+            "582": 0,
+            "583": 0,
+            "584": 0,
+            "585": 0,
+            "586": 0,
+            "587": 0,
+            "588": 0,
+            "589": 0,
+            "590": 0,
+            "591": 0,
+            "592": 0,
+            "593": 0,
+            "594": 0,
+            "595": 0,
+            "597": 0,
+            "598": 0,
+            "599": 0,
+            "600": 0,
+            "601": 0,
+            "602": 0,
+            "603": 0,
+            "604": 0,
+            "606": 0,
+            "607": 0,
+            "608": 0,
+            "609": 0,
+            "610": 0,
+            "611": 0,
+            "612": 0,
+            "613": 0,
+            "615": 0,
+            "616": 0,
+            "617": 0,
+            "618": 0,
+            "619": 0,
+            "620": 0,
+            "621": 0,
+            "622": 0,
+            "624": 0,
+            "625": 0,
+            "626": 0,
+            "627": 0,
+            "628": 0,
+            "629": 0,
+            "630": 0,
+            "631": 0,
+            "632": 0,
+            "633": 0,
+            "634": 0,
+            "635": 0,
+            "636": 0,
+            "637": 0,
+            "639": 0,
+            "640": 0,
+            "641": 0,
+            "642": 0,
+            "643": 0,
+            "644": 0,
+            "645": 0,
+            "646": 0,
+            "648": 0,
+            "649": 0,
+            "650": 0,
+            "651": 0,
+            "652": 0,
+            "653": 0,
+            "655": 0,
+            "656": 0,
+            "657": 0,
+            "658": 0,
+            "659": 0,
+            "660": 0,
+            "662": 0,
+            "663": 0,
+            "664": 0,
+            "665": 0,
+            "667": 0,
+            "668": 0,
+            "669": 0,
+            "670": 0,
+            "671": 0,
+            "672": 0,
+            "673": 0,
+            "674": 0,
+            "676": 0,
+            "677": 0,
+            "678": 0,
+            "679": 0,
+            "680": 0,
+            "681": 0,
+            "683": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Data/EF/ApplicationDbContext.cs": {
+      "eCommerce.BackendApi.Data.EF.ApplicationDbContext": {
+        "System.Void eCommerce.BackendApi.Data.EF.ApplicationDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "15": 1,
+            "16": 1,
+            "19": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 2,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<eCommerce.BackendApi.Models.Brand> eCommerce.BackendApi.Data.EF.ApplicationDbContext::get_Brands()": {
+          "Lines": {
+            "81": 23
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<eCommerce.BackendApi.Models.BrandCategory> eCommerce.BackendApi.Data.EF.ApplicationDbContext::get_BrandCategories()": {
+          "Lines": {
+            "82": 12
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<eCommerce.BackendApi.Models.Category> eCommerce.BackendApi.Data.EF.ApplicationDbContext::get_Categories()": {
+          "Lines": {
+            "83": 24
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<eCommerce.BackendApi.Models.Order> eCommerce.BackendApi.Data.EF.ApplicationDbContext::get_Orders()": {
+          "Lines": {
+            "84": 12
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<eCommerce.BackendApi.Models.OrderDetail> eCommerce.BackendApi.Data.EF.ApplicationDbContext::get_OrderDetails()": {
+          "Lines": {
+            "85": 12
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<eCommerce.BackendApi.Models.Product> eCommerce.BackendApi.Data.EF.ApplicationDbContext::get_Products()": {
+          "Lines": {
+            "86": 35
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<eCommerce.BackendApi.Models.ProductImage> eCommerce.BackendApi.Data.EF.ApplicationDbContext::get_ProductImages()": {
+          "Lines": {
+            "87": 24
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<eCommerce.BackendApi.Models.Rating> eCommerce.BackendApi.Data.EF.ApplicationDbContext::get_Ratings()": {
+          "Lines": {
+            "88": 23
+          },
+          "Branches": []
+        },
+        "System.Void eCommerce.BackendApi.Data.EF.ApplicationDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<eCommerce.BackendApi.Data.EF.ApplicationDbContext>)": {
+          "Lines": {
+            "12": 36
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Controllers/BrandController.cs": {
+      "eCommerce.BackendApi.Controllers.BrandController": {
+        "System.Void eCommerce.BackendApi.Controllers.BrandController::.ctor(eCommerce.BackendApi.Interfaces.IBrandService)": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.BrandController/<GetAllBrand>d__2": {
+        "System.Void eCommerce.BackendApi.Controllers.BrandController/<GetAllBrand>d__2::MoveNext()": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 158,
+              "EndOffset": 160,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 158,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Controllers/CategoryController.cs": {
+      "eCommerce.BackendApi.Controllers.CategoryController": {
+        "System.Void eCommerce.BackendApi.Controllers.CategoryController::.ctor(eCommerce.BackendApi.Interfaces.ICategoryService)": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.CategoryController/<CreateCategory>d__4": {
+        "System.Void eCommerce.BackendApi.Controllers.CategoryController/<CreateCategory>d__4::MoveNext()": {
+          "Lines": {
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0
+          },
+          "Branches": [
+            {
+              "Line": 53,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 50,
+              "EndOffset": 81,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 58,
+              "Offset": 224,
+              "EndOffset": 226,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 58,
+              "Offset": 224,
+              "EndOffset": 243,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.CategoryController/<DeleteCategory>d__6": {
+        "System.Void eCommerce.BackendApi.Controllers.CategoryController/<DeleteCategory>d__6::MoveNext()": {
+          "Lines": {
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "91": 0,
+            "92": 0
+          },
+          "Branches": [
+            {
+              "Line": 86,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 157,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.CategoryController/<GetAllCategory>d__2": {
+        "System.Void eCommerce.BackendApi.Controllers.CategoryController/<GetAllCategory>d__2::MoveNext()": {
+          "Lines": {
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 158,
+              "EndOffset": 160,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 158,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.CategoryController/<GetCategoryById>d__3": {
+        "System.Void eCommerce.BackendApi.Controllers.CategoryController/<GetCategoryById>d__3::MoveNext()": {
+          "Lines": {
+            "38": 0,
+            "39": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "46": 0,
+            "47": 0
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 164,
+              "EndOffset": 180,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.CategoryController/<UpdateCategory>d__5": {
+        "System.Void eCommerce.BackendApi.Controllers.CategoryController/<UpdateCategory>d__5::MoveNext()": {
+          "Lines": {
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "78": 0,
+            "79": 0
+          },
+          "Branches": [
+            {
+              "Line": 68,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 39,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 213,
+              "EndOffset": 215,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 213,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Controllers/OrderController.cs": {
+      "eCommerce.BackendApi.Controllers.OrderController": {
+        "System.Void eCommerce.BackendApi.Controllers.OrderController::.ctor(eCommerce.BackendApi.Interfaces.IOrderService)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.OrderController/<CheckoutOrder>d__3": {
+        "System.Void eCommerce.BackendApi.Controllers.OrderController/<CheckoutOrder>d__3::MoveNext()": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "46": 0,
+            "47": 0
+          },
+          "Branches": [
+            {
+              "Line": 42,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 157,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.OrderController/<GetOrdersPaging>d__2": {
+        "System.Void eCommerce.BackendApi.Controllers.OrderController/<GetOrdersPaging>d__2::MoveNext()": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": [
+            {
+              "Line": 30,
+              "Offset": 170,
+              "EndOffset": 172,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 170,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Controllers/ProductController.cs": {
+      "eCommerce.BackendApi.Controllers.ProductController": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController::.ctor(eCommerce.BackendApi.Interfaces.IProductService)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.ProductController/<CreateProduct>d__7": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController/<CreateProduct>d__7::MoveNext()": {
+          "Lines": {
+            "76": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0
+          },
+          "Branches": [
+            {
+              "Line": 82,
+              "Offset": 168,
+              "EndOffset": 170,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 82,
+              "Offset": 168,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.ProductController/<DeleteProduct>d__9": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController/<DeleteProduct>d__9::MoveNext()": {
+          "Lines": {
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "115": 0,
+            "116": 0
+          },
+          "Branches": [
+            {
+              "Line": 110,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 110,
+              "Offset": 157,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.ProductController/<GetAllProductPaging>d__3": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController/<GetAllProductPaging>d__3::MoveNext()": {
+          "Lines": {
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.ProductController/<GetAllProducts>d__2": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController/<GetAllProducts>d__2::MoveNext()": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.ProductController/<GetImageById>d__5": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController/<GetImageById>d__5::MoveNext()": {
+          "Lines": {
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "59": 0,
+            "60": 0
+          },
+          "Branches": [
+            {
+              "Line": 55,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 164,
+              "EndOffset": 181,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.ProductController/<GetProductByCategory>d__6": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController/<GetProductByCategory>d__6::MoveNext()": {
+          "Lines": {
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "70": 0,
+            "71": 0
+          },
+          "Branches": [
+            {
+              "Line": 66,
+              "Offset": 170,
+              "EndOffset": 172,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 170,
+              "EndOffset": 187,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.ProductController/<GetProductById>d__4": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController/<GetProductById>d__4::MoveNext()": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "48": 0,
+            "49": 0
+          },
+          "Branches": [
+            {
+              "Line": 44,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 44,
+              "Offset": 164,
+              "EndOffset": 181,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.ProductController/<UpdateProduct>d__8": {
+        "System.Void eCommerce.BackendApi.Controllers.ProductController/<UpdateProduct>d__8::MoveNext()": {
+          "Lines": {
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "102": 0,
+            "103": 0
+          },
+          "Branches": [
+            {
+              "Line": 92,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 39,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 98,
+              "Offset": 213,
+              "EndOffset": 215,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 98,
+              "Offset": 213,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Controllers/RatingController.cs": {
+      "eCommerce.BackendApi.Controllers.RatingController": {
+        "System.Void eCommerce.BackendApi.Controllers.RatingController::.ctor(eCommerce.BackendApi.Interfaces.IRatingService)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.RatingController/<CreateRating>d__3": {
+        "System.Void eCommerce.BackendApi.Controllers.RatingController/<CreateRating>d__3::MoveNext()": {
+          "Lines": {
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "47": 0,
+            "48": 0
+          },
+          "Branches": [
+            {
+              "Line": 37,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 37,
+              "Offset": 39,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 213,
+              "EndOffset": 215,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 213,
+              "EndOffset": 230,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.RatingController/<GetRatingByProduct>d__2": {
+        "System.Void eCommerce.BackendApi.Controllers.RatingController/<GetRatingByProduct>d__2::MoveNext()": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Controllers/UserController.cs": {
+      "eCommerce.BackendApi.Controllers.UserController": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController::.ctor(eCommerce.BackendApi.Interfaces.IUserService)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.UserController/<AdminLogin>d__3": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController/<AdminLogin>d__3::MoveNext()": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "50": 0
+          },
+          "Branches": [
+            {
+              "Line": 45,
+              "Offset": 171,
+              "EndOffset": 173,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 171,
+              "EndOffset": 193,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.UserController/<DeleteUser>d__9": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController/<DeleteUser>d__9::MoveNext()": {
+          "Lines": {
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "113": 0,
+            "114": 0
+          },
+          "Branches": [
+            {
+              "Line": 109,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 109,
+              "Offset": 157,
+              "EndOffset": 179,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.UserController/<GetAllUser>d__5": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController/<GetAllUser>d__5::MoveNext()": {
+          "Lines": {
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "73": 0,
+            "74": 0
+          },
+          "Branches": [
+            {
+              "Line": 69,
+              "Offset": 158,
+              "EndOffset": 160,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 158,
+              "EndOffset": 175,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.UserController/<GetUserById>d__6": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController/<GetUserById>d__6::MoveNext()": {
+          "Lines": {
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "84": 0,
+            "85": 0
+          },
+          "Branches": [
+            {
+              "Line": 80,
+              "Offset": 164,
+              "EndOffset": 166,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 164,
+              "EndOffset": 181,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.UserController/<GetUsersPaging>d__7": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController/<GetUsersPaging>d__7::MoveNext()": {
+          "Lines": {
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0
+          },
+          "Branches": []
+        }
+      },
+      "eCommerce.BackendApi.Controllers.UserController/<Login>d__2": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController/<Login>d__2::MoveNext()": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "36": 0,
+            "37": 0
+          },
+          "Branches": [
+            {
+              "Line": 32,
+              "Offset": 171,
+              "EndOffset": 173,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 32,
+              "Offset": 171,
+              "EndOffset": 193,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.UserController/<Register>d__4": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController/<Register>d__4::MoveNext()": {
+          "Lines": {
+            "55": 0,
+            "56": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "62": 0,
+            "63": 0
+          },
+          "Branches": [
+            {
+              "Line": 58,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 58,
+              "Offset": 157,
+              "EndOffset": 179,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "eCommerce.BackendApi.Controllers.UserController/<UpdateUser>d__8": {
+        "System.Void eCommerce.BackendApi.Controllers.UserController/<UpdateUser>d__8::MoveNext()": {
+          "Lines": {
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "102": 0,
+            "103": 0
+          },
+          "Branches": [
+            {
+              "Line": 98,
+              "Offset": 157,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 98,
+              "Offset": 157,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.BackendApi/Controllers/WeatherForecastController.cs": {
+      "eCommerce.BackendApi.Controllers.WeatherForecastController": {
+        "System.Collections.Generic.IEnumerable`1<eCommerce.BackendApi.WeatherForecast> eCommerce.BackendApi.Controllers.WeatherForecastController::Get()": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.Void eCommerce.BackendApi.Controllers.WeatherForecastController::.ctor(Microsoft.Extensions.Logging.ILogger`1<eCommerce.BackendApi.Controllers.WeatherForecastController>)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Void eCommerce.BackendApi.Controllers.WeatherForecastController::.cctor()": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "eCommerce.Shared.dll": {
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Users/LoginRequest.cs": {
+      "eCommerce.Shared.ViewModels.Users.LoginRequest": {
+        "System.String eCommerce.Shared.ViewModels.Users.LoginRequest::get_Username()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.LoginRequest::get_Password()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean eCommerce.Shared.ViewModels.Users.LoginRequest::get_RememberMe()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Users/RegisterRequest.cs": {
+      "eCommerce.Shared.ViewModels.Users.RegisterRequest": {
+        "System.String eCommerce.Shared.ViewModels.Users.RegisterRequest::get_FirstName()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.RegisterRequest::get_LastName()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.Shared.ViewModels.Users.RegisterRequest::get_Dob()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Http.IFormFile eCommerce.Shared.ViewModels.Users.RegisterRequest::get_ImageUrl()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.RegisterRequest::get_Email()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.RegisterRequest::get_PhoneNumber()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.RegisterRequest::get_Username()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.RegisterRequest::get_Password()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Users/UserDeleteRequest.cs": {
+      "eCommerce.Shared.ViewModels.Users.UserDeleteRequest": {
+        "System.Guid eCommerce.Shared.ViewModels.Users.UserDeleteRequest::get_Id()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Users/UserUpdateRequest.cs": {
+      "eCommerce.Shared.ViewModels.Users.UserUpdateRequest": {
+        "System.Guid eCommerce.Shared.ViewModels.Users.UserUpdateRequest::get_Id()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserUpdateRequest::get_FirstName()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserUpdateRequest::get_LastName()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.Shared.ViewModels.Users.UserUpdateRequest::get_Dob()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Http.IFormFile eCommerce.Shared.ViewModels.Users.UserUpdateRequest::get_ImageUrl()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserUpdateRequest::get_Email()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserUpdateRequest::get_PhoneNumber()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Users/UserVM.cs": {
+      "eCommerce.Shared.ViewModels.Users.UserVM": {
+        "System.Guid eCommerce.Shared.ViewModels.Users.UserVM::get_Id()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserVM::get_FirstName()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserVM::get_LastName()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.Shared.ViewModels.Users.UserVM::get_Dob()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserVM::get_ImageUrl()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserVM::get_PhoneNumber()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserVM::get_Username()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Users.UserVM::get_Email()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Ratings/RatingCreateRequest.cs": {
+      "eCommerce.Shared.ViewModels.Ratings.RatingCreateRequest": {
+        "System.Int32 eCommerce.Shared.ViewModels.Ratings.RatingCreateRequest::get_Star()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Ratings.RatingCreateRequest::get_Comment()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime eCommerce.Shared.ViewModels.Ratings.RatingCreateRequest::get_CreatedDate()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Ratings.RatingCreateRequest::get_ProductId()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Guid eCommerce.Shared.ViewModels.Ratings.RatingCreateRequest::get_UserId()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Ratings/RatingVM.cs": {
+      "eCommerce.Shared.ViewModels.Ratings.RatingVM": {
+        "System.Int32 eCommerce.Shared.ViewModels.Ratings.RatingVM::get_Id()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Ratings.RatingVM::get_Star()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Ratings.RatingVM::get_Comment()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime eCommerce.Shared.ViewModels.Ratings.RatingVM::get_CreatedDate()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Ratings.RatingVM::get_ProductId()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Guid eCommerce.Shared.ViewModels.Ratings.RatingVM::get_UserId()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Ratings.RatingVM::get_FirstName()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Ratings.RatingVM::get_LastName()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Ratings.RatingVM::get_Username()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Ratings.RatingVM::get_ImageUrl()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Products/ProductCreateRequest.cs": {
+      "eCommerce.Shared.ViewModels.Products.ProductCreateRequest": {
+        "System.String eCommerce.Shared.ViewModels.Products.ProductCreateRequest::get_Name()": {
+          "Lines": {
+            "10": 1
+          },
+          "Branches": []
+        },
+        "System.Double eCommerce.Shared.ViewModels.Products.ProductCreateRequest::get_Price()": {
+          "Lines": {
+            "12": 1
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Products.ProductCreateRequest::get_Description()": {
+          "Lines": {
+            "13": 1
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Http.IFormFile eCommerce.Shared.ViewModels.Products.ProductCreateRequest::get_Image()": {
+          "Lines": {
+            "14": 1
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Products.ProductCreateRequest::get_CategoryId()": {
+          "Lines": {
+            "16": 4
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Products.ProductCreateRequest::get_BrandId()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Products/ProductImageVM.cs": {
+      "eCommerce.Shared.ViewModels.Products.ProductImageVM": {
+        "System.Int32 eCommerce.Shared.ViewModels.Products.ProductImageVM::get_Id()": {
+          "Lines": {
+            "6": 4
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Products.ProductImageVM::get_ProductId()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Products.ProductImageVM::get_ImageUrl()": {
+          "Lines": {
+            "8": 4
+          },
+          "Branches": []
+        },
+        "System.Boolean eCommerce.Shared.ViewModels.Products.ProductImageVM::get_IsThumbnail()": {
+          "Lines": {
+            "9": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Products/ProductUpdateRequest.cs": {
+      "eCommerce.Shared.ViewModels.Products.ProductUpdateRequest": {
+        "System.Int32 eCommerce.Shared.ViewModels.Products.ProductUpdateRequest::get_Id()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Products.ProductUpdateRequest::get_Name()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Double eCommerce.Shared.ViewModels.Products.ProductUpdateRequest::get_Price()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Products.ProductUpdateRequest::get_Description()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Http.IFormFile eCommerce.Shared.ViewModels.Products.ProductUpdateRequest::get_Image()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Products.ProductUpdateRequest::get_CategoryId()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Products.ProductUpdateRequest::get_BrandId()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Products/ProductVM.cs": {
+      "eCommerce.Shared.ViewModels.Products.ProductVM": {
+        "System.Int32 eCommerce.Shared.ViewModels.Products.ProductVM::get_Id()": {
+          "Lines": {
+            "10": 4
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Products.ProductVM::get_Name()": {
+          "Lines": {
+            "11": 2
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Products.ProductVM::get_Description()": {
+          "Lines": {
+            "12": 2
+          },
+          "Branches": []
+        },
+        "System.Double eCommerce.Shared.ViewModels.Products.ProductVM::get_Price()": {
+          "Lines": {
+            "13": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Double> eCommerce.Shared.ViewModels.Products.ProductVM::get_StarAverage()": {
+          "Lines": {
+            "14": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime eCommerce.Shared.ViewModels.Products.ProductVM::get_CreatedDate()": {
+          "Lines": {
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.Shared.ViewModels.Products.ProductVM::get_UpdatedDate()": {
+          "Lines": {
+            "16": 2
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.ViewModels.Categories.CategoryVM eCommerce.Shared.ViewModels.Products.ProductVM::get_Category()": {
+          "Lines": {
+            "17": 3
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.ViewModels.Brands.BrandVM eCommerce.Shared.ViewModels.Products.ProductVM::get_Brand()": {
+          "Lines": {
+            "18": 2
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.Shared.ViewModels.Products.ProductImageVM> eCommerce.Shared.ViewModels.Products.ProductVM::get_Images()": {
+          "Lines": {
+            "19": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Orders/CheckoutRequest.cs": {
+      "eCommerce.Shared.ViewModels.Orders.CheckoutRequest": {
+        "System.Guid eCommerce.Shared.ViewModels.Orders.CheckoutRequest::get_UserId()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Orders.CheckoutRequest::get_Address()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Orders.CheckoutRequest::get_Email()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Orders.CheckoutRequest::get_PhoneNumber()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Orders.CheckoutRequest::get_Note()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.Enums.Order.OrderPayment eCommerce.Shared.ViewModels.Orders.CheckoutRequest::get_PaymentType()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Void eCommerce.Shared.ViewModels.Orders.CheckoutRequest::set_OrderDetails(System.Collections.Generic.List`1<eCommerce.Shared.ViewModels.Orders.OrderDetailCreateRequest>)": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Orders/OrderDetailCreateRequest.cs": {
+      "eCommerce.Shared.ViewModels.Orders.OrderDetailCreateRequest": {
+        "System.Int32 eCommerce.Shared.ViewModels.Orders.OrderDetailCreateRequest::get_Quantity()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Orders.OrderDetailCreateRequest::get_OrderId()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Orders.OrderDetailCreateRequest::get_ProductId()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Orders/OrderDetailVM.cs": {
+      "eCommerce.Shared.ViewModels.Orders.OrderDetailVM": {
+        "System.Int32 eCommerce.Shared.ViewModels.Orders.OrderDetailVM::get_Quantity()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.ViewModels.Products.ProductVM eCommerce.Shared.ViewModels.Orders.OrderDetailVM::get_Product()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Orders/OrderVM.cs": {
+      "eCommerce.Shared.ViewModels.Orders.OrderVM": {
+        "System.Int32 eCommerce.Shared.ViewModels.Orders.OrderVM::get_Id()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime eCommerce.Shared.ViewModels.Orders.OrderVM::get_OrderDate()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Orders.OrderVM::get_Address()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Orders.OrderVM::get_Email()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Orders.OrderVM::get_PhoneNumber()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Orders.OrderVM::get_Note()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.Enums.Order.OrderStatus eCommerce.Shared.ViewModels.Orders.OrderVM::get_Status()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "eCommerce.Shared.Enums.Order.OrderPayment eCommerce.Shared.ViewModels.Orders.OrderVM::get_PaymentType()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Double eCommerce.Shared.ViewModels.Orders.OrderVM::get_Total()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<eCommerce.Shared.ViewModels.Orders.OrderDetailVM> eCommerce.Shared.ViewModels.Orders.OrderVM::get_OrderDetails()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Common/PagedResult.cs": {
+      "eCommerce.Shared.ViewModels.Common.PagedResult`1": {
+        "System.Void eCommerce.Shared.ViewModels.Common.PagedResult`1::set_Items(System.Collections.Generic.List`1<T>)": {
+          "Lines": {
+            "6": 7
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Common/PagedResultBase.cs": {
+      "eCommerce.Shared.ViewModels.Common.PagedResultBase": {
+        "System.Int32 eCommerce.Shared.ViewModels.Common.PagedResultBase::get_PageIndex()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Common.PagedResultBase::get_PageSize()": {
+          "Lines": {
+            "8": 3
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Common.PagedResultBase::get_TotalRecords()": {
+          "Lines": {
+            "10": 3
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Common.PagedResultBase::get_PageCount()": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Common/PagingRequest.cs": {
+      "eCommerce.Shared.ViewModels.Common.PagingRequest": {
+        "System.Int32 eCommerce.Shared.ViewModels.Common.PagingRequest::get_PageIndex()": {
+          "Lines": {
+            "6": 9
+          },
+          "Branches": []
+        },
+        "System.Int32 eCommerce.Shared.ViewModels.Common.PagingRequest::get_PageSize()": {
+          "Lines": {
+            "8": 12
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Categories/CategoryCreateRequest.cs": {
+      "eCommerce.Shared.ViewModels.Categories.CategoryCreateRequest": {
+        "System.String eCommerce.Shared.ViewModels.Categories.CategoryCreateRequest::get_Name()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Categories.CategoryCreateRequest::get_Description()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Http.IFormFile eCommerce.Shared.ViewModels.Categories.CategoryCreateRequest::get_Image()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> eCommerce.Shared.ViewModels.Categories.CategoryCreateRequest::get_ParentId()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Categories/CategoryUpdateRequest.cs": {
+      "eCommerce.Shared.ViewModels.Categories.CategoryUpdateRequest": {
+        "System.Int32 eCommerce.Shared.ViewModels.Categories.CategoryUpdateRequest::get_Id()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Categories.CategoryUpdateRequest::get_Name()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Categories.CategoryUpdateRequest::get_Description()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Http.IFormFile eCommerce.Shared.ViewModels.Categories.CategoryUpdateRequest::get_Image()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> eCommerce.Shared.ViewModels.Categories.CategoryUpdateRequest::get_ParentId()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Categories/CategoryVM.cs": {
+      "eCommerce.Shared.ViewModels.Categories.CategoryVM": {
+        "System.Int32 eCommerce.Shared.ViewModels.Categories.CategoryVM::get_Id()": {
+          "Lines": {
+            "5": 3
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Categories.CategoryVM::get_Name()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Categories.CategoryVM::get_Description()": {
+          "Lines": {
+            "7": 1
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Categories.CategoryVM::get_ImageUrl()": {
+          "Lines": {
+            "8": 1
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> eCommerce.Shared.ViewModels.Categories.CategoryVM::get_CreatedDate()": {
+          "Lines": {
+            "9": 1
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> eCommerce.Shared.ViewModels.Categories.CategoryVM::get_ParentId()": {
+          "Lines": {
+            "10": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/ViewModels/Brands/BrandVM.cs": {
+      "eCommerce.Shared.ViewModels.Brands.BrandVM": {
+        "System.Int32 eCommerce.Shared.ViewModels.Brands.BrandVM::get_Id()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Brands.BrandVM::get_Name()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        },
+        "System.String eCommerce.Shared.ViewModels.Brands.BrandVM::get_Description()": {
+          "Lines": {
+            "8": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/Constants/EndpointConstants.cs": {
+      "eCommerce.Shared.Constants.EndpointConstants": {
+        "System.Void eCommerce.Shared.Constants.EndpointConstants::.cctor()": {
+          "Lines": {
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "10": 0,
+            "11": 0,
+            "13": 0,
+            "15": 0,
+            "16": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/Users/nguyenngocduc/Projects/Rookie-eCommerce/eCommerce.Shared/Constants/PageConstants.cs": {
+      "eCommerce.Shared.Constants.PageConstants": {
+        "System.Void eCommerce.Shared.Constants.PageConstants::.cctor()": {
+          "Lines": {
+            "6": 0,
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
