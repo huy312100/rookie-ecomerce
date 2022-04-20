@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.CustomerSite.Interfaces;
+using eCommerce.Shared.Constants;
 using eCommerce.Shared.ViewModels.Users;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -31,7 +32,6 @@ namespace eCommerce.CustomerSite.Controllers
             {
                 return RedirectToAction("index", "home");
             }
-            //await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return View();
         }
 
@@ -50,6 +50,12 @@ namespace eCommerce.CustomerSite.Controllers
                 return View(ModelState);
             }
             var token = await _userService.Login(req);
+
+            if(token == ErrorConstants.APILoginError)
+            {
+                ViewBag.ErrMsg = ErrorConstants.APILoginError;
+                return View();
+            }
 
             var userPrincipal = _userService.ValidateToken(token);
             var authProperties = new AuthenticationProperties
@@ -82,7 +88,8 @@ namespace eCommerce.CustomerSite.Controllers
             var result = await _userService.RegisterUser(req);
             if (!result)
             {
-                ModelState.AddModelError("", "Register fail");
+                ModelState.AddModelError("", ErrorConstants.APIUserRegisterError);
+                ViewBag.ErrMsg = ErrorConstants.APIUserRegisterError;
                 return View();
             }
 

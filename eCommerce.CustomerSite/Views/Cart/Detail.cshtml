@@ -15,7 +15,7 @@
         }
     }
 }
-
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 <!-- START SECTION BREADCRUMB -->
 <div class="breadcrumb_section bg_gray page-title-mini">
     <div class="container">
@@ -54,7 +54,7 @@
                                 @foreach (var item in Model.Items)
                                 {
                                     <tr>
-                                        <td class="product-thumbnail"><a href="#"><img src="assets/images/product_img1.jpg" alt="product1"></a></td>
+                                        <td class="product-thumbnail"><a href="#"><img src="@(Configuration["BaseAddress"] + item.Images[0].ImageUrl)" alt="product1"></a></td>
                                         <td class="product-name" data-title="Product"><a href="#">@item.Name</a></td>
                                         <td class="product-price" data-title="Price">@ConvertToVnd(item.Price)</td>
                                         <td class="product-quantity" data-title="Quantity">
@@ -62,7 +62,7 @@
                                                 <input type="button" value="-" class="minus btn-minus-cart" data-id=" @item.ProductId">
                                                 <input type="text" name="quantity" value="@item.Quantity" title="Qty" class="qty" size="4">
                                                 @*<a asp-action="AddToCart" asp-controller="Cart">*@
-                                                <input type="button" value="+" class="plus btn-add-cart" data-id=" @item.ProductId" >
+                                                <input type="button" value="+" class="plus btn-add-cart" data-id=" @item.ProductId">
                                                 @*</a>*@
                                             </div>
                                         </td>

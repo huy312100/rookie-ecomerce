@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - eCommerce.CustomerSite</title>
 
+    <link runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link runat="server" rel="icon" href="~/favicon.ico" type="image/ico" />
+
     @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
     <link rel="stylesheet" href="~/eCommerce.CustomerSite.styles.css" asp-append-version="true" />
     <!-- Bootstrap -->
@@ -68,9 +71,9 @@
                         <div class="d-flex align-items-center justify-content-center justify-content-md-end">
                             <div class="lng_dropdown">
                                 <select name="countries" class="custome_select">
-                                    <option value='en' data-image="images/eng.png" data-title="English">English</option>
-                                    <option value='fn' data-image="images/fn.png" data-title="France">France</option>
-                                    <option value='us' data-image="images/us.png" data-title="United States">United States</option>
+                                    <option value='en' data-title="English">English</option>
+                                    <option value='vn' data-title="Vietnam">Vietnamese</option>
+                                    <option value='fn' data-title="France">France</option>
                                 </select>
                             </div>
                         </div>
@@ -83,9 +86,8 @@
         <div class="middle-header dark_skin">
             <div class="container">
                 <div class="nav_block">
-                    <a class="navbar-brand" asp-controller="home" asp-action="index">
-                        <img class="logo_light" src="" alt="logo">
-                        <img class="logo_dark" src="" alt="logo">
+                    <a asp-controller="home" asp-action="index">
+                        <img src="/assets/logo/transparent_logo.png" alt="logo">
                     </a>
                     <div class="product_search_form radius_input search_form_btn">
                         <form>

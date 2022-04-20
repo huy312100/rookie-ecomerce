@@ -3,6 +3,9 @@ namespace eCommerce.Shared.Constants
 {
 	public class ErrorConstants
 	{
+		//Common
+		public const string APIPermissionDenied = "Permission Denied";
+
 		//User
 		public const string APILoginError = "Username or password is incorrect";
 		public const string APIUserRegisterError = "Register Unsuccessfully";

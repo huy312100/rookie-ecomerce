@@ -48,6 +48,14 @@
                                 <div class="form-group mb-3">
                                     <input class="form-control" required="" asp-for="Password" type="password" name="password" placeholder="Password">
                                 </div>
+                                @if (ViewBag.ErrMsg != null)
+                                 {
+                                    <div>
+                                        <span style="color: red">
+                                            @ViewBag.ErrMsg
+                                        </span>
+                                    </div>
+                                 }
                                 <div class="login_footer form-group mb-3">
                                     <div class="chek-form">
                                         <div class="custome-checkbox">

@@ -9,6 +9,7 @@
   <ItemGroup>
     <Content Remove="wwwroot\css\" />
     <Content Remove="App_Code\Functions.cshtml" />
+    <Content Remove="wwwroot\assets\logo\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
@@ -21,6 +22,7 @@
     <Folder Include="Controllers\Components\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Pager\" />
+    <Folder Include="wwwroot\assets\logo\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Product\" />
@@ -36,6 +38,7 @@
     <None Remove="Controllers\Components\" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Pager\" />
+    <None Remove="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Shared\eCommerce.Shared.csproj">
@@ -47,5 +50,8 @@
     <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.16.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.16.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
 </Project>

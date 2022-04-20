@@ -69,14 +69,14 @@ namespace eCommerce.CustomerSite.Controllers
             List<CartItemVM> currentCart = new List<CartItemVM>();
             currentCart = GetCart();
 
-            
+
             var orderDetails = new List<OrderDetailCreateRequest>();
             foreach (var item in currentCart)
             {
                 orderDetails.Add(new OrderDetailCreateRequest()
                 {
                     ProductId = item.ProductId,
-                    Quantity = item.Quantity               
+                    Quantity = item.Quantity
                 });
             }
 
@@ -91,7 +91,7 @@ namespace eCommerce.CustomerSite.Controllers
                 Note = form["Note"],
                 PaymentType = (Shared.Enums.Order.OrderPayment)ConvertPaymentTypeToInt(form["payment_option"])
             };
-            var res=await _orderService.Checkout(checkoutRequest);
+            var res = await _orderService.Checkout(checkoutRequest);
             if (res)
             {
                 HttpContext.Session.Remove(_cartSession);
@@ -101,6 +101,9 @@ namespace eCommerce.CustomerSite.Controllers
             {
                 return View();
             }
+
+            
+           
         }
 
         public async Task<IActionResult> AddToCart(int id)
@@ -118,7 +121,7 @@ namespace eCommerce.CustomerSite.Controllers
                 var cartItem = new CartItemVM()
                 {
                     ProductId = id,
-                    //Image = product.Images.,
+                    Images = product.Images,
                     Name = product.Name,
                     Price = product.Price,
                     Quantity = 1
