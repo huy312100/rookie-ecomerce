@@ -1,32 +1,31 @@
-import React, { useContext } from 'react';
-import { NavLink, Route } from 'react-router-dom';
-import Cookies from 'js-cookie';
-import { Button, WindmillContext } from '@windmill/react-ui';
-import { IoLogOutOutline } from 'react-icons/io5';
-
-
-import sidebar from '../../routes/sidebar';
-import { AdminContext } from '../../context/AdminContext';
+import React, { useContext } from "react";
+import { NavLink, Route } from "react-router-dom";
+import Cookies from "js-cookie";
+import { Button, WindmillContext } from "@windmill/react-ui";
+import { IoLogOutOutline } from "react-icons/io5";
+// import logoDark from '../../assets/img/logo/logo-dark.svg';
+// import logoLight from '../../assets/img/logo/logo-light.svg';
+import sidebar from "../../routes/sidebar";
+import { AdminContext } from "../../context/AdminContext";
 
 const SidebarContent = () => {
-
   const { dispatch } = useContext(AdminContext);
-
   const handleLogOut = () => {
-    dispatch({ type: 'USER_LOGOUT' });
-    Cookies.remove('adminInfo');
+    dispatch({ type: "USER_LOGOUT" });
+    Cookies.remove("adminInfo");
   };
 
   return (
-    <div className="py-4 text-gray-500 dark:text-gray-400">
-      <a className=" text-gray-900 dark:text-gray-200" href="/dashboard">
-        {/* {mode === 'dark' ? (
-            <img src={logoLight} alt="dashtar" width="135" className="pl-6" />
-          ) : (
-            <img src={logoDark} alt="dashtar" width="135" className="pl-6" />
-          )} */}
+    <div className=" text-gray-500 dark:text-gray-400">
+      <a className=" text-gray-900 dark:text-gray-200" href="/customers">
+        <img
+          src={require("../../assets/img/logo/transparent-logo.png")}
+          alt="Rookie-eCommerce"
+          width="150"
+          className="pl-6"
+        />
       </a>
-      <ul className="mt-8">
+      <ul>
         {sidebar.map((route) => (
           <li className="relative" key={route.name}>
             <NavLink

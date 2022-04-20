@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { AdminContext } from '../context/AdminContext';
 import AuthenServices from '../services/AuthenServices';
+import Swal from "sweetalert2"; 
+
 // import { notifyError, notifySuccess } from '../utils/toast';
 
 const useLoginSubmit = () => {
@@ -32,7 +34,12 @@ const useLoginSubmit = () => {
           }
         })
         .catch((err) => {
-          // notifyError(err ? err.response.data.message : err.message);
+          // console.log("aaa");
+          Swal.fire({ 
+            icon: 'error',
+            title: 'Oops...',
+            text: err.response.data,
+          });
           setLoading(false);
         });
   };

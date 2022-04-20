@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using eCommerce.BackendApi.Interfaces;
+using eCommerce.Shared.Constants;
 using eCommerce.Shared.ViewModels.Common;
 using eCommerce.Shared.ViewModels.Ratings;
 using Microsoft.AspNetCore.Authorization;
@@ -41,7 +42,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _ratingService.AddRating(req);
             if (res < 0)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APICreateRatingError);
             }
             
             return Ok(res);

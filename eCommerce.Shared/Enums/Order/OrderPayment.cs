@@ -3,9 +3,9 @@ namespace eCommerce.Shared.Enums.Order
 {
 	public enum OrderPayment
 	{
-		BankTranfer,
-		MobileWallet,
-		Cash,
+		BankTranfer = 0,
+		MobileWallet = 1,
+		Cash = 2,
 	}
 }
 

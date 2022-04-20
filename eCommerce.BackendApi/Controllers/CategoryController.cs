@@ -28,7 +28,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _categoryService.GetAllCategories();
             if(res == null)
             {
-                BadRequest();
+                BadRequest(ErrorConstants.APIGetCategoryError);
             }
             return Ok(res);
         }
@@ -40,7 +40,7 @@ namespace eCommerce.BackendApi.Controllers
 
             if(res == null)
             {
-                BadRequest();
+                BadRequest(ErrorConstants.APIGetCategoryByIdError);
             }
 
             return Ok(res);
@@ -56,7 +56,7 @@ namespace eCommerce.BackendApi.Controllers
             }
             var categoryId = await _categoryService.CreateCategory(req);
             if (categoryId < 0)
-                return BadRequest();
+                return BadRequest(ErrorConstants.APICreateCategoryError);
             var category = await _categoryService.GetCategoryById(categoryId);
             return CreatedAtAction(nameof(GetCategoryById), new { id = categoryId }, category);
         }
@@ -73,7 +73,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _categoryService.UpdateCategory(req);
             if (res < 0)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APIUpdateCategoryError);
             }
             return Ok(res);
         }
@@ -85,7 +85,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _categoryService.DeleteCategory(categoryId);
             if (res < 0)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APIDeleteCategoryError);
             }
 
             return Ok(res);
