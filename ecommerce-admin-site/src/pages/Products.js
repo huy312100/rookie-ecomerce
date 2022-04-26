@@ -32,7 +32,6 @@ const Products = () => {
   const { toggleDrawer } = useContext(SidebarContext);
   const { data }= useAsync(ProductServices.getAllProducts);
 
-
   const {
     handleChangePage,
     totalResults,
