@@ -43,7 +43,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _prodService.GetProductById(id);
             if(res == null)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APIGetProductByIdError);
             }
             return Ok(res);
         }
@@ -54,7 +54,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _prodService.GetImageById(id);
             if (res == null)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APIGetProductImageByIdError);
             }
             return Ok(res);
         }
@@ -65,7 +65,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _prodService.GetProductByCategory(req,categoryId);
             if (res == null)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APIGetProductByCategoryError);
             }
             return Ok(res);
         }
@@ -80,7 +80,7 @@ namespace eCommerce.BackendApi.Controllers
             //}
             var productId = await _prodService.CreateProduct(req);
             if (productId < 0)
-                return BadRequest();
+                return BadRequest(ErrorConstants.APICreateProductError);
             var product = await _prodService.GetProductById(productId);
             return CreatedAtAction(nameof(GetProductById), new { id = productId }, product);
         }
@@ -97,7 +97,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _prodService.UpdateProduct(req);
             if (res < 0)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APIUpdateProductError);
             }
             return Ok(res);
         }
@@ -109,7 +109,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _prodService.DeleteProduct(productId);
             if (res < 0)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APIDeleteProductError);
             }
 
             return Ok(res);

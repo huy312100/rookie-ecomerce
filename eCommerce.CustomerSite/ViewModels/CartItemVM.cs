@@ -1,4 +1,6 @@
 ﻿using System;
+using eCommerce.Shared.ViewModels.Products;
+
 namespace eCommerce.CustomerSite.ViewModels
 {
 	public class CartItemVM
@@ -9,7 +11,7 @@ namespace eCommerce.CustomerSite.ViewModels
 
         public string Name { get; set; }
 
-        public string Image { get; set; }
+        public List<ProductImageVM>? Images { get; set; }
 
         public double Price { get; set; }
 

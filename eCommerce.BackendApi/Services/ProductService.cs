@@ -55,7 +55,7 @@ namespace eCommerce.BackendApi.Services
                     Description = prop.b.Description
                 },
 
-                Images = query.Where(x => prop.pi.ProductId == x.p.Id && x.pi.IsThumbnail == true)
+                Images = query.Where(x => prop.pi.ProductId == x.p.Id)
                     .Select(data => new ProductImageVM()
                     {
                         Id = data.pi.Id,

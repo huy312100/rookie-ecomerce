@@ -3,8 +3,8 @@ namespace eCommerce.Shared.Enums.User
 {
 	public enum UserGender
 	{
-		Male,
-		Female
+		Male = 0,
+		Female = 1
 	}
 }
 

@@ -31,7 +31,7 @@ namespace eCommerce.BackendApi.Controllers
 
             if (string.IsNullOrEmpty(token))
             {
-                return BadRequest("Username or password is incorrect");
+                return BadRequest(ErrorConstants.APILoginError);
             }
             return Ok(token);
         }
@@ -44,7 +44,7 @@ namespace eCommerce.BackendApi.Controllers
 
             if (string.IsNullOrEmpty(token))
             {
-                return BadRequest("Username or password is incorrect");
+                return BadRequest(ErrorConstants.APILoginError);
             }
             return Ok(token);
         }
@@ -57,7 +57,7 @@ namespace eCommerce.BackendApi.Controllers
 
             if (!res)
             {
-                return BadRequest("Register unsuccessful");
+                return BadRequest(ErrorConstants.APIUserRegisterError);
             }
             return Ok();
         }
@@ -97,7 +97,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _userService.UpdateUser(req);
             if (!res)
             {
-                return BadRequest();
+                return BadRequest(ErrorConstants.APIUserUpdateError);
             }
             return Ok(res);
         }
@@ -108,7 +108,7 @@ namespace eCommerce.BackendApi.Controllers
             var res = await _userService.DeleteUser(req);
             if (!res)
             {
-                return BadRequest("Delete user unsuccessful");
+                return BadRequest(ErrorConstants.APIUserDeleteError);
             }
             return Ok(res);
         }

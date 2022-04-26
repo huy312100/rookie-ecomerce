@@ -6,6 +6,10 @@ const ProductServices = {
     return requests.get('/product/all');
   },
 
+  getProductPaging() {
+    return requestsFormData.get('/product/paging');
+  },
+
   getProductById(id) {
     return requests.get(`/product/${id}`);
   },
