@@ -66,7 +66,7 @@
     <p>Sign Up</p>
     <br/>
     <img alt="Order" src="eCommerce.CustomerSite/Screenshots/Order.png">
-    <p>Order</p>
+    <p>Cart</p>
     <br/>
     <img alt="ConfirmOrder" src="eCommerce.CustomerSite/Screenshots/ConfirmOrder.png">
     <p>Confirm Order</p>
