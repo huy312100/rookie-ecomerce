@@ -3,6 +3,9 @@
 * Author: Huy Nguyen
 * Mentor: Phong Nguyen 
 
+## Logo
+<img alt="Logo" src="eCommerce.CustomerSite/Screenshots/Logo.png">
+
 ## Language
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -42,6 +45,64 @@
   - For .NET example: TagHelpers, ViewComponents…
 
 * UnitTest: The Unit Test do not need to have a high coverage number but should demonstrate the ability to write unit test for common components.
+
+***
+## Screenshots
+### 1. Customer
+<div style="display:flex;justify-content: space-between;">
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="Homepage" src="eCommerce.CustomerSite/Screenshots/Homepage.png">
+    <p>Homepage</p>
+  </div>
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="Contact" src="eCommerce.CustomerSite/Screenshots/Contact.png">
+    <p>Contact</p>
+  </div>
+</div>
+
+<div style="display:flex;justify-content: space-between;">
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="ProductDetail" src="eCommerce.CustomerSite/Screenshots/ProductDetail.png">
+    <p>Product Detail</p>
+  </div>
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="ProductList" src="eCommerce.CustomerSite/Screenshots/ProductList.png">
+    <p>Product List</p>
+  </div>
+</div>
+
+<div style="display:flex;justify-content: space-between;">
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="Login" src="eCommerce.CustomerSite/Screenshots/Login.png">
+    <p>Login</p>
+  </div>
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="Signup" src="eCommerce.CustomerSite/Screenshots/Signup.png">
+    <p>Sign Up</p>
+  </div>
+</div>
+
+<div style="display:flex;justify-content: space-between;">
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="Login" src="eCommerce.CustomerSite/Screenshots/Login.png">
+    <p>Login</p>
+  </div>
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="Signup" src="eCommerce.CustomerSite/Screenshots/Signup.png">
+    <p>Sign Up</p>
+  </div>
+</div>
+
+<div style="display:flex;justify-content: space-between;">
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="Order" src="eCommerce.CustomerSite/Screenshots/Order.png">
+    <p>Order</p>
+  </div>
+  <div style="width:45%;text-align: center;">
+    <img width="260" height="360" alt="ConfirmOrder" src="eCommerce.CustomerSite/Screenshots/ConfirmOrder.png">
+    <p>Confirm Order</p>
+  </div>
+</div>
 
 
 
