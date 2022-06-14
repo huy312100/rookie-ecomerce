@@ -49,65 +49,26 @@
 ***
 ## Screenshots
 ### 1. Customer
-<div style="display:flex;justify-content: space-between;">
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="Homepage" src="eCommerce.CustomerSite/Screenshots/Homepage.png">
+<div align="center">
+    <img alt="Homepage" src="eCommerce.CustomerSite/Screenshots/Homepage.png">
     <p>Homepage</p>
-  </div>
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="Contact" src="eCommerce.CustomerSite/Screenshots/Contact.png">
-    <p>Contact</p>
-  </div>
-</div>
-
-<div style="display:flex;justify-content: space-between;">
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="ProductDetail" src="eCommerce.CustomerSite/Screenshots/ProductDetail.png">
-    <p>Product Detail</p>
-  </div>
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="ProductList" src="eCommerce.CustomerSite/Screenshots/ProductList.png">
+    <br/>
+    <img alt="ProductList" src="eCommerce.CustomerSite/Screenshots/ProductList.png">
     <p>Product List</p>
-  </div>
-</div>
-
-<div style="display:flex;justify-content: space-between;">
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="Login" src="eCommerce.CustomerSite/Screenshots/Login.png">
+    <br/>
+    <img alt="ProductDetail" src="eCommerce.CustomerSite/Screenshots/ProductDetail.png">
+    <p>Product Detail</p>
+    <br/>
+    <img alt="Login" src="eCommerce.CustomerSite/Screenshots/Login.png">
     <p>Login</p>
-  </div>
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="Signup" src="eCommerce.CustomerSite/Screenshots/Signup.png">
+    <br/>
+    <img alt="Signup" src="eCommerce.CustomerSite/Screenshots/Signup.png">
     <p>Sign Up</p>
-  </div>
-</div>
-
-<div style="display:flex;justify-content: space-between;">
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="Login" src="eCommerce.CustomerSite/Screenshots/Login.png">
-    <p>Login</p>
-  </div>
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="Signup" src="eCommerce.CustomerSite/Screenshots/Signup.png">
-    <p>Sign Up</p>
-  </div>
-</div>
-
-<div style="display:flex;justify-content: space-between;">
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="Order" src="eCommerce.CustomerSite/Screenshots/Order.png">
+    <br/>
+    <img alt="Order" src="eCommerce.CustomerSite/Screenshots/Order.png">
     <p>Order</p>
-  </div>
-  <div style="width:45%;text-align: center;">
-    <img width="260" height="360" alt="ConfirmOrder" src="eCommerce.CustomerSite/Screenshots/ConfirmOrder.png">
+    <br/>
+    <img alt="ConfirmOrder" src="eCommerce.CustomerSite/Screenshots/ConfirmOrder.png">
     <p>Confirm Order</p>
-  </div>
+    <br/>
 </div>
-
-
-
-
-
-
-
-
