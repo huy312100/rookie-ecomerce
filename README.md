@@ -62,10 +62,10 @@
     <img alt="Login" src="eCommerce.CustomerSite/Screenshots/Login.png">
     <p>Login</p>
     <br/>
-    <img alt="Signup" src="eCommerce.CustomerSite/Screenshots/Signup.png">
-    <p>Sign Up</p>
+    <img alt="Register" src="eCommerce.CustomerSite/Screenshots/Signup.png">
+    <p>Register</p>
     <br/>
-    <img alt="Order" src="eCommerce.CustomerSite/Screenshots/Order.png">
+    <img alt="Cart" src="eCommerce.CustomerSite/Screenshots/Order.png">
     <p>Cart</p>
     <br/>
     <img alt="ConfirmOrder" src="eCommerce.CustomerSite/Screenshots/ConfirmOrder.png">
