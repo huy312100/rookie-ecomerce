@@ -69,6 +69,6 @@
     <p>Cart</p>
     <br/>
     <img alt="ConfirmOrder" src="eCommerce.CustomerSite/Screenshots/ConfirmOrder.png">
-    <p>Confirm Order</p>
+    <p>Checkout</p>
     <br/>
 </div>
