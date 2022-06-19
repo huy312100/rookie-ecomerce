@@ -68,7 +68,7 @@
     <img alt="Cart" src="eCommerce.CustomerSite/Screenshots/Order.png">
     <p>Cart</p>
     <br/>
-    <img alt="ConfirmOrder" src="eCommerce.CustomerSite/Screenshots/ConfirmOrder.png">
+    <img alt="Checkout" src="eCommerce.CustomerSite/Screenshots/ConfirmOrder.png">
     <p>Checkout</p>
     <br/>
 </div>
